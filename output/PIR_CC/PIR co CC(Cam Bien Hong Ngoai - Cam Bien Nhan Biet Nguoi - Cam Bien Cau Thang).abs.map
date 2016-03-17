@@ -1,0 +1,2073 @@
+*** EVALUATION ***
+PROGRAM "PIR co CC(Cam Bien Hong Ngoai - Cam Bien Nhan Biet Nguoi - Cam Bien Cau Thang).abs.abs"
+
+*********************************************************************************************
+TARGET SECTION
+---------------------------------------------------------------------------------------------
+Processor   : Freescale HC08
+Memory Model: SMALL
+File Format : ELF\DWARF 2.0
+Linker      : SmartLinker V-5.0.51 Build 14019, Jan 20 2014
+
+*********************************************************************************************
+FILE SECTION
+---------------------------------------------------------------------------------------------
+ADC_c.obj                               Model: SMALL,         Lang: ANSI-C
+CC_c.obj                                Model: SMALL,         Lang: ANSI-C
+EEP_ROM_c.obj                           Model: SMALL,         Lang: ANSI-C
+FTM_c.obj                               Model: SMALL,         Lang: ANSI-C
+I2C_c.obj                               Model: SMALL,         Lang: ANSI-C
+Init_IO_c.obj                           Model: SMALL,         Lang: ANSI-C
+PIR_c.obj                               Model: SMALL,         Lang: ANSI-C
+RTC_c.obj                               Model: SMALL,         Lang: ANSI-C
+RelayControl_c.obj                      Model: SMALL,         Lang: ANSI-C
+UART_c.obj                              Model: SMALL,         Lang: ANSI-C
+delay_c.obj                             Model: SMALL,         Lang: ANSI-C
+main_c.obj                              Model: SMALL,         Lang: ANSI-C
+wdog_c.obj                              Model: SMALL,         Lang: ANSI-C
+start08_c.obj                           Model: SMALL,         Lang: ANSI-C
+mc9s08pt16_c.obj                        Model: SMALL,         Lang: ANSI-C
+rtshc08.o (ansiis.lib)                  Model: SMALL,         Lang: ANSI-C
+
+*********************************************************************************************
+STARTUP SECTION
+---------------------------------------------------------------------------------------------
+Entry point: 0xC07B (_Startup)
+_startupData is allocated at 0xC084 and uses 6 Bytes
+extern struct _tagStartup {
+  unsigned nofZeroOut     1
+  _Range   pZeroOut       0x100     953
+  _Copy    *toCopyDownBeg 0xD80B
+} _startupData;
+
+*********************************************************************************************
+SECTION-ALLOCATION SECTION
+Section Name                    Size  Type     From       To       Segment
+---------------------------------------------------------------------------------------------
+.data                             68   R/W      0x100      0x143   RAM
+.init                            132     R     0xC000     0xC083   ROM
+.startData                        14     R     0xC084     0xC091   ROM
+.text                           6009     R     0xC092     0xD80A   ROM
+.copy                             73     R     0xD80B     0xD853   ROM
+.abs_section_ffce                  2     R     0xFFCE     0xFFCF   .absSeg0
+.abs_section_ffe6                  2     R     0xFFE6     0xFFE7   .absSeg1
+.abs_section_ffda                  2     R     0xFFDA     0xFFDB   .absSeg2
+.abs_section_ffd8                  2     R     0xFFD8     0xFFD9   .absSeg3
+.abs_section_0                     1   N/I        0x0        0x0   .absSeg4
+.abs_section_1                     1   N/I        0x1        0x1   .absSeg5
+.abs_section_2                     1   N/I        0x2        0x2   .absSeg6
+.abs_section_3                     1   N/I        0x3        0x3   .absSeg7
+.abs_section_4                     1   N/I        0x4        0x4   .absSeg8
+.abs_section_8                     1   N/I        0x8        0x8   .absSeg9
+.abs_section_9                     1   N/I        0x9        0x9   .absSeg10
+.abs_section_a                     1   N/I        0xA        0xA   .absSeg11
+.abs_section_b                     1   N/I        0xB        0xB   .absSeg12
+.abs_section_c                     1   N/I        0xC        0xC   .absSeg13
+.abs_section_d                     1   N/I        0xD        0xD   .absSeg14
+.abs_section_10                    1   N/I       0x10       0x10   .absSeg15
+.abs_section_11                    1   N/I       0x11       0x11   .absSeg16
+.abs_section_12                    1   N/I       0x12       0x12   .absSeg17
+.abs_section_13                    1   N/I       0x13       0x13   .absSeg18
+.abs_section_18                    1   N/I       0x18       0x18   .absSeg19
+.abs_section_19                    1   N/I       0x19       0x19   .absSeg20
+.abs_section_1a                    1   N/I       0x1A       0x1A   .absSeg21
+.abs_section_1b                    1   N/I       0x1B       0x1B   .absSeg22
+.abs_section_20                    1   N/I       0x20       0x20   .absSeg23
+.abs_section_25                    1   N/I       0x25       0x25   .absSeg24
+.abs_section_28                    1   N/I       0x28       0x28   .absSeg25
+.abs_section_2c                    1   N/I       0x2C       0x2C   .absSeg26
+.abs_section_2d                    1   N/I       0x2D       0x2D   .absSeg27
+.abs_section_2e                    1   N/I       0x2E       0x2E   .absSeg28
+.abs_section_2f                    1   N/I       0x2F       0x2F   .absSeg29
+.abs_section_3b                    1   N/I       0x3B       0x3B   .absSeg30
+.abs_section_3c                    1   N/I       0x3C       0x3C   .absSeg31
+.abs_section_3e                    1   N/I       0x3E       0x3E   .absSeg32
+.abs_section_3f                    1   N/I       0x3F       0x3F   .absSeg33
+.abs_section_3000                  1   N/I     0x3000     0x3000   .absSeg34
+.abs_section_3001                  1   N/I     0x3001     0x3001   .absSeg35
+.abs_section_3004                  1   N/I     0x3004     0x3004   .absSeg36
+.abs_section_3005                  1   N/I     0x3005     0x3005   .absSeg37
+.abs_section_3006                  1   N/I     0x3006     0x3006   .absSeg38
+.abs_section_3007                  1   N/I     0x3007     0x3007   .absSeg39
+.abs_section_300c                  1   N/I     0x300C     0x300C   .absSeg40
+.abs_section_300d                  1   N/I     0x300D     0x300D   .absSeg41
+.abs_section_300e                  1   N/I     0x300E     0x300E   .absSeg42
+.abs_section_300f                  1   N/I     0x300F     0x300F   .absSeg43
+.abs_section_3010                  1   N/I     0x3010     0x3010   .absSeg44
+.abs_section_3011                  1   N/I     0x3011     0x3011   .absSeg45
+.abs_section_3012                  1   N/I     0x3012     0x3012   .absSeg46
+.abs_section_3013                  1   N/I     0x3013     0x3013   .absSeg47
+.abs_section_3014                  1   N/I     0x3014     0x3014   .absSeg48
+.abs_section_3015                  1   N/I     0x3015     0x3015   .absSeg49
+.abs_section_3016                  1   N/I     0x3016     0x3016   .absSeg50
+.abs_section_3017                  1   N/I     0x3017     0x3017   .absSeg51
+.abs_section_3018                  1   N/I     0x3018     0x3018   .absSeg52
+.abs_section_3019                  1   N/I     0x3019     0x3019   .absSeg53
+.abs_section_301a                  1   N/I     0x301A     0x301A   .absSeg54
+.abs_section_301b                  1   N/I     0x301B     0x301B   .absSeg55
+.abs_section_301c                  1   N/I     0x301C     0x301C   .absSeg56
+.abs_section_301d                  1   N/I     0x301D     0x301D   .absSeg57
+.abs_section_301e                  1   N/I     0x301E     0x301E   .absSeg58
+.abs_section_301f                  1   N/I     0x301F     0x301F   .absSeg59
+.abs_section_3020                  1   N/I     0x3020     0x3020   .absSeg60
+.abs_section_3021                  1   N/I     0x3021     0x3021   .absSeg61
+.abs_section_3022                  1   N/I     0x3022     0x3022   .absSeg62
+.abs_section_3024                  1   N/I     0x3024     0x3024   .absSeg63
+.abs_section_3025                  1   N/I     0x3025     0x3025   .absSeg64
+.abs_section_3026                  1   N/I     0x3026     0x3026   .absSeg65
+.abs_section_3027                  1   N/I     0x3027     0x3027   .absSeg66
+.abs_section_3028                  1   N/I     0x3028     0x3028   .absSeg67
+.abs_section_3029                  1   N/I     0x3029     0x3029   .absSeg68
+.abs_section_302c                  1   N/I     0x302C     0x302C   .absSeg69
+.abs_section_3030                  1   N/I     0x3030     0x3030   .absSeg70
+.abs_section_3031                  1   N/I     0x3031     0x3031   .absSeg71
+.abs_section_3038                  1   N/I     0x3038     0x3038   .absSeg72
+.abs_section_3039                  1   N/I     0x3039     0x3039   .absSeg73
+.abs_section_303a                  1   N/I     0x303A     0x303A   .absSeg74
+.abs_section_303b                  1   N/I     0x303B     0x303B   .absSeg75
+.abs_section_303c                  1   N/I     0x303C     0x303C   .absSeg76
+.abs_section_303e                  1   N/I     0x303E     0x303E   .absSeg77
+.abs_section_3040                  1   N/I     0x3040     0x3040   .absSeg78
+.abs_section_3041                  1   N/I     0x3041     0x3041   .absSeg79
+.abs_section_304a                  1   N/I     0x304A     0x304A   .absSeg80
+.abs_section_304b                  1   N/I     0x304B     0x304B   .absSeg81
+.abs_section_3050                  1   N/I     0x3050     0x3050   .absSeg82
+.abs_section_3051                  1   N/I     0x3051     0x3051   .absSeg83
+.abs_section_3052                  1   N/I     0x3052     0x3052   .absSeg84
+.abs_section_3053                  1   N/I     0x3053     0x3053   .absSeg85
+.abs_section_3054                  1   N/I     0x3054     0x3054   .absSeg86
+.abs_section_3055                  1   N/I     0x3055     0x3055   .absSeg87
+.abs_section_3056                  1   N/I     0x3056     0x3056   .absSeg88
+.abs_section_3057                  1   N/I     0x3057     0x3057   .absSeg89
+.abs_section_3058                  1   N/I     0x3058     0x3058   .absSeg90
+.abs_section_3059                  1   N/I     0x3059     0x3059   .absSeg91
+.abs_section_3068                  1   N/I     0x3068     0x3068   .absSeg92
+.abs_section_306a                  1   N/I     0x306A     0x306A   .absSeg93
+.abs_section_306b                  1   N/I     0x306B     0x306B   .absSeg94
+.abs_section_3070                  1   N/I     0x3070     0x3070   .absSeg95
+.abs_section_3071                  1   N/I     0x3071     0x3071   .absSeg96
+.abs_section_3072                  1   N/I     0x3072     0x3072   .absSeg97
+.abs_section_3073                  1   N/I     0x3073     0x3073   .absSeg98
+.abs_section_3074                  1   N/I     0x3074     0x3074   .absSeg99
+.abs_section_3075                  1   N/I     0x3075     0x3075   .absSeg100
+.abs_section_3076                  1   N/I     0x3076     0x3076   .absSeg101
+.abs_section_3077                  1   N/I     0x3077     0x3077   .absSeg102
+.abs_section_3078                  1   N/I     0x3078     0x3078   .absSeg103
+.abs_section_3079                  1   N/I     0x3079     0x3079   .absSeg104
+.abs_section_307c                  1   N/I     0x307C     0x307C   .absSeg105
+.abs_section_307d                  1   N/I     0x307D     0x307D   .absSeg106
+.abs_section_3082                  1   N/I     0x3082     0x3082   .absSeg107
+.abs_section_3083                  1   N/I     0x3083     0x3083   .absSeg108
+.abs_section_3084                  1   N/I     0x3084     0x3084   .absSeg109
+.abs_section_3085                  1   N/I     0x3085     0x3085   .absSeg110
+.abs_section_3086                  1   N/I     0x3086     0x3086   .absSeg111
+.abs_section_3087                  1   N/I     0x3087     0x3087   .absSeg112
+.abs_section_308a                  1   N/I     0x308A     0x308A   .absSeg113
+.abs_section_308b                  1   N/I     0x308B     0x308B   .absSeg114
+.abs_section_308c                  1   N/I     0x308C     0x308C   .absSeg115
+.abs_section_308d                  1   N/I     0x308D     0x308D   .absSeg116
+.abs_section_308e                  1   N/I     0x308E     0x308E   .absSeg117
+.abs_section_308f                  1   N/I     0x308F     0x308F   .absSeg118
+.abs_section_3098                  1   N/I     0x3098     0x3098   .absSeg119
+.abs_section_3099                  1   N/I     0x3099     0x3099   .absSeg120
+.abs_section_309a                  1   N/I     0x309A     0x309A   .absSeg121
+.abs_section_309b                  1   N/I     0x309B     0x309B   .absSeg122
+.abs_section_309d                  1   N/I     0x309D     0x309D   .absSeg123
+.abs_section_309f                  1   N/I     0x309F     0x309F   .absSeg124
+.abs_section_30ac                  1   N/I     0x30AC     0x30AC   .absSeg125
+.abs_section_30ad                  1   N/I     0x30AD     0x30AD   .absSeg126
+.abs_section_30af                  1   N/I     0x30AF     0x30AF   .absSeg127
+.abs_section_30b0                  1   N/I     0x30B0     0x30B0   .absSeg128
+.abs_section_30b1                  1   N/I     0x30B1     0x30B1   .absSeg129
+.abs_section_30b2                  1   N/I     0x30B2     0x30B2   .absSeg130
+.abs_section_30b3                  1   N/I     0x30B3     0x30B3   .absSeg131
+.abs_section_30b4                  1   N/I     0x30B4     0x30B4   .absSeg132
+.abs_section_30b8                  1   N/I     0x30B8     0x30B8   .absSeg133
+.abs_section_30b9                  1   N/I     0x30B9     0x30B9   .absSeg134
+.abs_section_30ba                  1   N/I     0x30BA     0x30BA   .absSeg135
+.abs_section_30bb                  1   N/I     0x30BB     0x30BB   .absSeg136
+.abs_section_30bc                  1   N/I     0x30BC     0x30BC   .absSeg137
+.abs_section_30c0                  1   N/I     0x30C0     0x30C0   .absSeg138
+.abs_section_30c5                  1   N/I     0x30C5     0x30C5   .absSeg139
+.abs_section_30c8                  1   N/I     0x30C8     0x30C8   .absSeg140
+.abs_section_30cb                  1   N/I     0x30CB     0x30CB   .absSeg141
+.abs_section_30ce                  1   N/I     0x30CE     0x30CE   .absSeg142
+.abs_section_30d1                  1   N/I     0x30D1     0x30D1   .absSeg143
+.abs_section_30d4                  1   N/I     0x30D4     0x30D4   .absSeg144
+.abs_section_30d9                  1   N/I     0x30D9     0x30D9   .absSeg145
+.abs_section_30da                  1   N/I     0x30DA     0x30DA   .absSeg146
+.abs_section_30db                  1   N/I     0x30DB     0x30DB   .absSeg147
+.abs_section_30dc                  1   N/I     0x30DC     0x30DC   .absSeg148
+.abs_section_30dd                  1   N/I     0x30DD     0x30DD   .absSeg149
+.abs_section_30de                  1   N/I     0x30DE     0x30DE   .absSeg150
+.abs_section_30df                  1   N/I     0x30DF     0x30DF   .absSeg151
+.abs_section_30e0                  1   N/I     0x30E0     0x30E0   .absSeg152
+.abs_section_30e2                  1   N/I     0x30E2     0x30E2   .absSeg153
+.abs_section_30e3                  1   N/I     0x30E3     0x30E3   .absSeg154
+.abs_section_30e4                  1   N/I     0x30E4     0x30E4   .absSeg155
+.abs_section_30e5                  1   N/I     0x30E5     0x30E5   .absSeg156
+.abs_section_30e6                  1   N/I     0x30E6     0x30E6   .absSeg157
+.abs_section_30e7                  1   N/I     0x30E7     0x30E7   .absSeg158
+.abs_section_30e8                  1   N/I     0x30E8     0x30E8   .absSeg159
+.abs_section_30e9                  1   N/I     0x30E9     0x30E9   .absSeg160
+.abs_section_30ec                  1   N/I     0x30EC     0x30EC   .absSeg161
+.abs_section_30ed                  1   N/I     0x30ED     0x30ED   .absSeg162
+.abs_section_30ee                  1   N/I     0x30EE     0x30EE   .absSeg163
+.abs_section_30ef                  1   N/I     0x30EF     0x30EF   .absSeg164
+.abs_section_30f0                  1   N/I     0x30F0     0x30F0   .absSeg165
+.abs_section_30f1                  1   N/I     0x30F1     0x30F1   .absSeg166
+.abs_section_30f2                  1   N/I     0x30F2     0x30F2   .absSeg167
+.abs_section_30f3                  1   N/I     0x30F3     0x30F3   .absSeg168
+.abs_section_30f4                  1   N/I     0x30F4     0x30F4   .absSeg169
+.abs_section_30f8                  1   N/I     0x30F8     0x30F8   .absSeg170
+.abs_section_30f9                  1   N/I     0x30F9     0x30F9   .absSeg171
+.abs_section_30fa                  1   N/I     0x30FA     0x30FA   .absSeg172
+.abs_section_30fb                  1   N/I     0x30FB     0x30FB   .absSeg173
+.abs_section_30fc                  1   N/I     0x30FC     0x30FC   .absSeg174
+.abs_section_30fd                  1   N/I     0x30FD     0x30FD   .absSeg175
+.abs_section_30fe                  1   N/I     0x30FE     0x30FE   .absSeg176
+.abs_section_30ff                  1   N/I     0x30FF     0x30FF   .absSeg177
+.abs_section_e                     2   N/I        0xE        0xF   .absSeg178
+.abs_section_14                    2   N/I       0x14       0x15   .absSeg179
+.abs_section_16                    2   N/I       0x16       0x17   .absSeg180
+.abs_section_21                    2   N/I       0x21       0x22   .absSeg181
+.abs_section_23                    2   N/I       0x23       0x24   .absSeg182
+.abs_section_26                    2   N/I       0x26       0x27   .absSeg183
+.abs_section_29                    2   N/I       0x29       0x2A   .absSeg184
+.abs_section_3002                  2   N/I     0x3002     0x3003   .absSeg185
+.abs_section_302a                  2   N/I     0x302A     0x302B   .absSeg186
+.abs_section_3032                  2   N/I     0x3032     0x3033   .absSeg187
+.abs_section_3034                  2   N/I     0x3034     0x3035   .absSeg188
+.abs_section_3036                  2   N/I     0x3036     0x3037   .absSeg189
+.abs_section_3060                  2   N/I     0x3060     0x3061   .absSeg190
+.abs_section_3062                  2   N/I     0x3062     0x3063   .absSeg191
+.abs_section_3064                  2   N/I     0x3064     0x3065   .absSeg192
+.abs_section_3066                  2   N/I     0x3066     0x3067   .absSeg193
+.abs_section_306c                  2   N/I     0x306C     0x306D   .absSeg194
+.abs_section_306e                  2   N/I     0x306E     0x306F   .absSeg195
+.abs_section_307a                  2   N/I     0x307A     0x307B   .absSeg196
+.abs_section_3080                  2   N/I     0x3080     0x3081   .absSeg197
+.abs_section_3088                  2   N/I     0x3088     0x3089   .absSeg198
+.abs_section_30c1                  2   N/I     0x30C1     0x30C2   .absSeg199
+.abs_section_30c3                  2   N/I     0x30C3     0x30C4   .absSeg200
+.abs_section_30c6                  2   N/I     0x30C6     0x30C7   .absSeg201
+.abs_section_30c9                  2   N/I     0x30C9     0x30CA   .absSeg202
+.abs_section_30cc                  2   N/I     0x30CC     0x30CD   .absSeg203
+.abs_section_30cf                  2   N/I     0x30CF     0x30D0   .absSeg204
+.abs_section_30d2                  2   N/I     0x30D2     0x30D3   .absSeg205
+.abs_section_30d5                  2   N/I     0x30D5     0x30D6   .absSeg206
+.abs_section_30d7                  2   N/I     0x30D7     0x30D8   .absSeg207
+.bss                             884   R/W      0x144      0x4B7   RAM
+.common                            1   R/W      0x4B8      0x4B8   RAM
+.stack                           128   R/W      0x4B9      0x538   RAM
+.vectSeg208_vect                   2     R     0xFFFE     0xFFFF   .vectSeg208
+
+Summary of section sizes per section type:
+READ_ONLY (R):        185E (dec:     6238)
+READ_WRITE (R/W):      439 (dec:     1081)
+NO_INIT (N/I):          EA (dec:      234)
+
+*********************************************************************************************
+VECTOR-ALLOCATION SECTION
+    Address     InitValue   InitFunction
+---------------------------------------------------------------------------------------------
+     0xFFFE        0xC07B   _Startup
+
+*********************************************************************************************
+OBJECT-ALLOCATION SECTION
+     Name               Module                 Addr   hSize   dSize     Ref    Section   RLIB
+---------------------------------------------------------------------------------------------
+MODULE:                 -- ADC_c.obj --
+- PROCEDURES:
+     Init_ADC                                  C092      31      49       1   .text       
+     ADC_GetResult                             C0C3      3F      63       4   .text       
+     ADCWaitZeroPoint                          C102      39      57       1   .text       
+- VARIABLES:
+MODULE:                 -- CC_c.obj --
+- PROCEDURES:
+     CompleteCommand                           C13B      24      36       1   .text       
+     CC_BD_MCSendVertion                       C15F      28      40       1   .text       
+     CC_send_ReadyMC                           C187      95     149       2   .text       
+     CC_send_SynClock                          C21C      95     149       1   .text       
+     CC_C1_SyncClock                           C2B1      7E     126       1   .text       
+     CC_B4_ReadEEPROM                          C32F      FB     251       1   .text       
+     CC_B5_WriteEEPROM                         C42A     143     323       1   .text       
+     CC_B6_EraseEEPROM                         C56D      59      89       1   .text       
+     CC_B7_LedControlIrPir                     C5C6      64     100       1   .text       
+     CC_BE_SyncTime                            C62A      FD     253       7   .text       
+     xor_str                                   C727      31      49       1   .text       
+     CC_F0_PirSendData                         C758      7B     123       3   .text       
+     CC_E0_CCGetPirStatus                      C7D3       2       2       1   .text       
+     CC_E1_CCSendDataDone                      C7D5       1       1       1   .text       
+     CC_receiver_program                       C7D6     100     256       5   .text       
+     sci0rx                                    C8D6      9C     156       1   .text       
+- VARIABLES:
+     RTC_ratio                                  100       2       2       1   .data       
+     FirstTemp_ratio                            102       2       2       4   .data       
+     RTC_div                                    104       2       2       1   .data       
+     Packet_CNT                                 144       1       1       4   .bss        
+     Byte_Number                                145       1       1       3   .bss        
+     PacketData                                 146     348     840       6   .bss        
+     NextCMD_Number                             48E       1       1       4   .bss        
+     Length                                     48F      14      20       5   .bss        
+     CMD_Number                                 4A3       1       1       6   .bss        
+     CMD_Pos                                    4A4       1       1       9   .bss        
+     Sync_flag                                  4A5       1       1       6   .bss        
+     Temp_ratio                                 4A6       2       2       3   .bss        
+     Start_Sync_CNT_value                       4A8       2       2       8   .bss        
+     CC_ready_flag                              4AA       1       1       3   .bss        
+     _Vector_24                                FFCE       2       2       0   .abs_section_ffce
+MODULE:                 -- EEP_ROM_c.obj --
+- PROCEDURES:
+     EEPROM_Read                               C972       2       2       4   .text       
+     EEPROM_Write                              C974      41      65       3   .text       
+     EEPROM_EraseByteBurst                     C9B5      D4     212       2   .text       
+     FLASH_Read                                CA89       3       3       1   .text       
+- VARIABLES:
+MODULE:                 -- FTM_c.obj --
+- PROCEDURES:
+     Init_FLEX_TIMER                           CA8C      32      50       1   .text       
+     ResetTimer                                CABE      16      22       1   .text       
+- VARIABLES:
+MODULE:                 -- I2C_c.obj --
+- PROCEDURES:
+     I2C_Delay                                 CAD4       3       3      11   .text       
+     I2C_Start                                 CAD7      22      34       3   .text       
+     I2C_Stop                                  CAF9      22      34       2   .text       
+     i2c_checkack                              CB1B      33      51       3   .text       
+     i2c_MstAck                                CB4E      20      32       1   .text       
+     i2c_write                                 CB6E      3C      60       2   .text       
+     i2c_read                                  CBAA      3A      58       2   .text       
+     i2c_OPT3001_ReadId                        CBE4       5       5       1   .text       
+     i2c_OPT3001_get                           CBE9      3D      61       3   .text       
+     i2c_OPT3001_Write                         CC26      24      36       2   .text       
+     i2c_OPT3011_Config                        CC4A       D      13       1   .text       
+     shift                                     CC57      30      48       1   .text       
+     I2C_ReadLightValue                        CC87     109     265       4   .text       
+- VARIABLES:
+MODULE:                 -- Init_IO_c.obj --
+- PROCEDURES:
+     Init_IO                                   CD90      47      71       1   .text       
+     clock_config                              CDD7      36      54       1   .text       
+     system_config                             CE0D      1F      31       1   .text       
+- VARIABLES:
+MODULE:                 -- PIR_c.obj --
+- PROCEDURES:
+     CalcTimeOut                               CE2C      98     152       2   .text       
+     CalcLightVar                              CEC4      55      85       2   .text       
+     FTM2_ISR                                  CF19       A      10       1   .text       
+     FTMO_ISR                                  CF23      2B      43       1   .text       
+     ScanPIR                                   CF4E      83     131       1   .text       
+     PIR_Program                               CFD1      35      53       1   .text       
+     PirStartUp                                D006      59      89       1   .text       
+     MTIMO_ISR                                 D05F      67     103       1   .text       
+- VARIABLES:
+     TimeOutInScale                             106      1C      28       1   .data       
+     StepADC                                    122      1C      28       2   .data       
+     Pir_status                                 13E       1       1       6   .data       
+     Pir_Timeout                                4AB       2       2       3   .bss        
+     LastPIRStatus                              4AD       1       1       2   .bss        
+     FirstLoadFlag                              4AE       1       1       2   .bss        
+     ResetCnt                                   4AF       4       4       5   .bss        
+     ResetStep                                  4B3       1       1       2   .bss        
+     mtim_cnt                                   4B4       2       2       3   .bss        
+     _Vector_12                                FFE6       2       2       0   .abs_section_ffe6
+     _Vector_18                                FFDA       2       2       0   .abs_section_ffda
+     _Vector_19                                FFD8       2       2       0   .abs_section_ffd8
+     RlStatusFlag                               4B8       1       1       6   .common     
+MODULE:                 -- RTC_c.obj --
+- PROCEDURES:
+     Init_RTC                                  D0C6      24      36       1   .text       
+     ResetRTCTimer                             D0EA      16      22       1   .text       
+- VARIABLES:
+MODULE:                 -- RelayControl_c.obj --
+- PROCEDURES:
+     GetPwSource                               D100      35      53       1   .text       
+     WaitPWFallingEgle                         D135       5       5       2   .text       
+     RL_on                                     D13A      2D      45       1   .text       
+     RL_off                                    D167      2C      44       2   .text       
+- VARIABLES:
+     RL_on_delay                                13F       2       2       2   .data       
+     RL_off_delay                               141       2       2       2   .data       
+     OnStatusChangeFlag                         143       1       1       3   .data       
+     PowerType                                  4B6       1       1       3   .bss        
+     OffStatusChangeFlag                        4B7       1       1       3   .bss        
+MODULE:                 -- UART_c.obj --
+- PROCEDURES:
+     Init_UART0                                D193      31      49       1   .text       
+     UART0_putchar                             D1C4      10      16      55   .text       
+     UART0_putstr                              D1D4      2A      42       1   .text       
+     UART0_SendBurst                           D1FE      1D      29       1   .text       
+- VARIABLES:
+MODULE:                 -- delay_c.obj --
+- PROCEDURES:
+     __delay_ms                                D21B      21      33       9   .text       
+     __delay_us                                D23C      1C      28       4   .text       
+     __delay_x100us                            D258      21      33       2   .text       
+     __delay_x5us                              D279      67     103       1   .text       
+     abs2int                                   D2E0      28      40       2   .text       
+     max                                       D308       9       9       1   .text       
+- VARIABLES:
+MODULE:                 -- main_c.obj --
+- PROCEDURES:
+     main                                      D311      55      85       1   .text       
+- VARIABLES:
+MODULE:                 -- wdog_c.obj --
+- PROCEDURES:
+     wdog_disable                              D366      29      41       1   .text       
+     wdog_enable                               D38F      22      34       1   .text       
+     wdog_refreshing                           D3B1       F      15       2   .text       
+     wdog_reconfiguring                        D3C0      21      33       1   .text       
+     Reset_MCU                                 D3E1      24      36       1   .text       
+- VARIABLES:
+MODULE:                 -- start08_c.obj --
+- PROCEDURES:
+     loadByte                                  C000       E      14       5   .init       
+     Init                                      C00E      6D     109       1   .init       
+     _Startup                                  C07B       9       9       0   .init       
+- VARIABLES:
+     _startupData                              C084       6       6       4   .startData  
+- LABELS:
+     __SEG_END_SSTACK                           539       0       0       1               
+MODULE:                 -- mc9s08pt16_c.obj --
+- PROCEDURES:
+- VARIABLES:
+     _PORT_PTAD                                   0       1       1       5   .abs_section_0
+     _PORT_PTBD                                   1       1       1      26   .abs_section_1
+     _PORT_PTCD                                   2       1       1       3   .abs_section_2
+     _PORT_PTDD                                   3       1       1      18   .abs_section_3
+     _PORT_PTED                                   4       1       1       0   .abs_section_4
+     _TSI_CS0                                     8       1       1       0   .abs_section_8
+     _TSI_CS1                                     9       1       1       0   .abs_section_9
+     _TSI_CS2                                     A       1       1       0   .abs_section_a
+     _TSI_CS3                                     B       1       1       0   .abs_section_b
+     _TSI_PEN0                                    C       1       1       0   .abs_section_c
+     _TSI_PEN1                                    D       1       1       0   .abs_section_d
+     _ADC_SC1                                    10       1       1       4   .abs_section_10
+     _ADC_SC2                                    11       1       1       1   .abs_section_11
+     _ADC_SC3                                    12       1       1       7   .abs_section_12
+     _ADC_SC4                                    13       1       1       0   .abs_section_13
+     _MTIM0_SC                                   18       1       1       2   .abs_section_18
+     _MTIM0_CLK                                  19       1       1       0   .abs_section_19
+     _MTIM0_CNT                                  1A       1       1       0   .abs_section_1a
+     _MTIM0_MOD                                  1B       1       1       0   .abs_section_1b
+     _FTM0_SC                                    20       1       1       1   .abs_section_20
+     _FTM0_C0SC                                  25       1       1       0   .abs_section_25
+     _FTM0_C1SC                                  28       1       1       0   .abs_section_28
+     _ACMP_CS                                    2C       1       1       0   .abs_section_2c
+     _ACMP_C0                                    2D       1       1       0   .abs_section_2d
+     _ACMP_C1                                    2E       1       1       0   .abs_section_2e
+     _ACMP_C2                                    2F       1       1       0   .abs_section_2f
+     _IRQ_SC                                     3B       1       1       0   .abs_section_3b
+     _KBI0_SC                                    3C       1       1       0   .abs_section_3c
+     _IPC_SC                                     3E       1       1       0   .abs_section_3e
+     _IPC_IPMPS                                  3F       1       1       0   .abs_section_3f
+     _SYS_SRS                                  3000       1       1       1   .abs_section_3000
+     _SYS_SBDFR                                3001       1       1       0   .abs_section_3001
+     _SYS_SOPT1                                3004       1       1       1   .abs_section_3004
+     _SYS_SOPT2                                3005       1       1       0   .abs_section_3005
+     _SYS_SOPT3                                3006       1       1       0   .abs_section_3006
+     _SYS_SOPT4                                3007       1       1       0   .abs_section_3007
+     _SCG_C1                                   300C       1       1       0   .abs_section_300c
+     _SCG_C2                                   300D       1       1       0   .abs_section_300d
+     _SCG_C3                                   300E       1       1       0   .abs_section_300e
+     _SCG_C4                                   300F       1       1       0   .abs_section_300f
+     _DBG_CAH                                  3010       1       1       0   .abs_section_3010
+     _DBG_CAL                                  3011       1       1       0   .abs_section_3011
+     _DBG_CBH                                  3012       1       1       0   .abs_section_3012
+     _DBG_CBL                                  3013       1       1       0   .abs_section_3013
+     _DBG_CCH                                  3014       1       1       0   .abs_section_3014
+     _DBG_CCL                                  3015       1       1       0   .abs_section_3015
+     _DBG_FH                                   3016       1       1       0   .abs_section_3016
+     _DBG_FL                                   3017       1       1       0   .abs_section_3017
+     _DBG_CAX                                  3018       1       1       0   .abs_section_3018
+     _DBG_CBX                                  3019       1       1       0   .abs_section_3019
+     _DBG_CCX                                  301A       1       1       0   .abs_section_301a
+     _DBG_FX                                   301B       1       1       0   .abs_section_301b
+     _DBG_C                                    301C       1       1       0   .abs_section_301c
+     _DBG_T                                    301D       1       1       0   .abs_section_301d
+     _DBG_S                                    301E       1       1       0   .abs_section_301e
+     _DBG_CNT                                  301F       1       1       0   .abs_section_301f
+     _NVM_FCLKDIV                              3020       1       1       2   .abs_section_3020
+     _NVM_FSEC                                 3021       1       1       0   .abs_section_3021
+     _NVM_FCCOBIX                              3022       1       1       5   .abs_section_3022
+     _NVM_FCNFG                                3024       1       1       0   .abs_section_3024
+     _NVM_FERCNFG                              3025       1       1       0   .abs_section_3025
+     _NVM_FSTAT                                3026       1       1       6   .abs_section_3026
+     _NVM_FERSTAT                              3027       1       1       0   .abs_section_3027
+     _NVM_FPROT                                3028       1       1       0   .abs_section_3028
+     _NVM_EEPROT                               3029       1       1       0   .abs_section_3029
+     _NVM_FOPT                                 302C       1       1       0   .abs_section_302c
+     _WDOG_CS1                                 3030       1       1       4   .abs_section_3030
+     _WDOG_CS2                                 3031       1       1       4   .abs_section_3031
+     _ICS_C1                                   3038       1       1       1   .abs_section_3038
+     _ICS_C2                                   3039       1       1       2   .abs_section_3039
+     _ICS_C3                                   303A       1       1       1   .abs_section_303a
+     _ICS_C4                                   303B       1       1       0   .abs_section_303b
+     _ICS_S                                    303C       1       1       0   .abs_section_303c
+     _ICS_OSCSC                                303E       1       1       0   .abs_section_303e
+     _PMC_SPMSC1                               3040       1       1       2   .abs_section_3040
+     _PMC_SPMSC2                               3041       1       1       2   .abs_section_3041
+     _SYS_ILLAH                                304A       1       1       0   .abs_section_304a
+     _SYS_ILLAL                                304B       1       1       0   .abs_section_304b
+     _IPC_ILRS0                                3050       1       1       0   .abs_section_3050
+     _IPC_ILRS1                                3051       1       1       0   .abs_section_3051
+     _IPC_ILRS2                                3052       1       1       0   .abs_section_3052
+     _IPC_ILRS3                                3053       1       1       0   .abs_section_3053
+     _IPC_ILRS4                                3054       1       1       0   .abs_section_3054
+     _IPC_ILRS5                                3055       1       1       0   .abs_section_3055
+     _IPC_ILRS6                                3056       1       1       0   .abs_section_3056
+     _IPC_ILRS7                                3057       1       1       0   .abs_section_3057
+     _IPC_ILRS8                                3058       1       1       0   .abs_section_3058
+     _IPC_ILRS9                                3059       1       1       0   .abs_section_3059
+     _CRC_CTRL                                 3068       1       1       0   .abs_section_3068
+     _RTC_SC1                                  306A       1       1       1   .abs_section_306a
+     _RTC_SC2                                  306B       1       1       7   .abs_section_306b
+     _I2C_A1                                   3070       1       1       0   .abs_section_3070
+     _I2C_F                                    3071       1       1       0   .abs_section_3071
+     _I2C_C1                                   3072       1       1       0   .abs_section_3072
+     _I2C_S                                    3073       1       1       0   .abs_section_3073
+     _I2C_D                                    3074       1       1       0   .abs_section_3074
+     _I2C_C2                                   3075       1       1       0   .abs_section_3075
+     _I2C_FLT                                  3076       1       1       0   .abs_section_3076
+     _I2C_RA                                   3077       1       1       0   .abs_section_3077
+     _I2C_SMB                                  3078       1       1       0   .abs_section_3078
+     _I2C_A2                                   3079       1       1       0   .abs_section_3079
+     _KBI0_PE                                  307C       1       1       0   .abs_section_307c
+     _KBI0_ES                                  307D       1       1       0   .abs_section_307d
+     _SCI0_C1                                  3082       1       1       1   .abs_section_3082
+     _SCI0_C2                                  3083       1       1       3   .abs_section_3083
+     _SCI0_S1                                  3084       1       1       2   .abs_section_3084
+     _SCI0_S2                                  3085       1       1       0   .abs_section_3085
+     _SCI0_C3                                  3086       1       1       0   .abs_section_3086
+     _SCI0_D                                   3087       1       1       2   .abs_section_3087
+     _SCI1_C1                                  308A       1       1       0   .abs_section_308a
+     _SCI1_C2                                  308B       1       1       0   .abs_section_308b
+     _SCI1_S1                                  308C       1       1       1   .abs_section_308c
+     _SCI1_S2                                  308D       1       1       0   .abs_section_308d
+     _SCI1_C3                                  308E       1       1       0   .abs_section_308e
+     _SCI1_D                                   308F       1       1       0   .abs_section_308f
+     _SPI0_C1                                  3098       1       1       0   .abs_section_3098
+     _SPI0_C2                                  3099       1       1       0   .abs_section_3099
+     _SPI0_BR                                  309A       1       1       0   .abs_section_309a
+     _SPI0_S                                   309B       1       1       0   .abs_section_309b
+     _SPI0_D                                   309D       1       1       0   .abs_section_309d
+     _SPI0_M                                   309F       1       1       0   .abs_section_309f
+     _ADC_APCTL1                               30AC       1       1       1   .abs_section_30ac
+     _ADC_APCTL2                               30AD       1       1       1   .abs_section_30ad
+     _PORT_HDRVE                               30AF       1       1       0   .abs_section_30af
+     _PORT_PTAOE                               30B0       1       1       1   .abs_section_30b0
+     _PORT_PTBOE                               30B1       1       1       7   .abs_section_30b1
+     _PORT_PTCOE                               30B2       1       1       1   .abs_section_30b2
+     _PORT_PTDOE                               30B3       1       1       1   .abs_section_30b3
+     _PORT_PTEOE                               30B4       1       1       0   .abs_section_30b4
+     _PORT_PTAIE                               30B8       1       1       1   .abs_section_30b8
+     _PORT_PTBIE                               30B9       1       1       7   .abs_section_30b9
+     _PORT_PTCIE                               30BA       1       1       1   .abs_section_30ba
+     _PORT_PTDIE                               30BB       1       1       1   .abs_section_30bb
+     _PORT_PTEIE                               30BC       1       1       0   .abs_section_30bc
+     _FTM2_SC                                  30C0       1       1       6   .abs_section_30c0
+     _FTM2_C0SC                                30C5       1       1       0   .abs_section_30c5
+     _FTM2_C1SC                                30C8       1       1       0   .abs_section_30c8
+     _FTM2_C2SC                                30CB       1       1       0   .abs_section_30cb
+     _FTM2_C3SC                                30CE       1       1       0   .abs_section_30ce
+     _FTM2_C4SC                                30D1       1       1       0   .abs_section_30d1
+     _FTM2_C5SC                                30D4       1       1       0   .abs_section_30d4
+     _FTM2_STATUS                              30D9       1       1       0   .abs_section_30d9
+     _FTM2_MODE                                30DA       1       1       1   .abs_section_30da
+     _FTM2_SYNC                                30DB       1       1       0   .abs_section_30db
+     _FTM2_OUTINIT                             30DC       1       1       0   .abs_section_30dc
+     _FTM2_OUTMASK                             30DD       1       1       0   .abs_section_30dd
+     _FTM2_COMBINE0                            30DE       1       1       0   .abs_section_30de
+     _FTM2_COMBINE1                            30DF       1       1       0   .abs_section_30df
+     _FTM2_COMBINE2                            30E0       1       1       0   .abs_section_30e0
+     _FTM2_DEADTIME                            30E2       1       1       0   .abs_section_30e2
+     _FTM2_EXTTRIG                             30E3       1       1       0   .abs_section_30e3
+     _FTM2_POL                                 30E4       1       1       0   .abs_section_30e4
+     _FTM2_FMS                                 30E5       1       1       0   .abs_section_30e5
+     _FTM2_FILTER0                             30E6       1       1       0   .abs_section_30e6
+     _FTM2_FILTER1                             30E7       1       1       0   .abs_section_30e7
+     _FTM2_FLTFILTER                           30E8       1       1       0   .abs_section_30e8
+     _FTM2_FLTCTRL                             30E9       1       1       0   .abs_section_30e9
+     _PORT_IOFLT0                              30EC       1       1       0   .abs_section_30ec
+     _PORT_IOFLT1                              30ED       1       1       0   .abs_section_30ed
+     _PORT_IOFLT2                              30EE       1       1       0   .abs_section_30ee
+     _PORT_FCLKDIV                             30EF       1       1       0   .abs_section_30ef
+     _PORT_PTAPE                               30F0       1       1       1   .abs_section_30f0
+     _PORT_PTBPE                               30F1       1       1       1   .abs_section_30f1
+     _PORT_PTCPE                               30F2       1       1       1   .abs_section_30f2
+     _PORT_PTDPE                               30F3       1       1       1   .abs_section_30f3
+     _PORT_PTEPE                               30F4       1       1       0   .abs_section_30f4
+     _SYS_UUID1                                30F8       1       1       0   .abs_section_30f8
+     _SYS_UUID2                                30F9       1       1       0   .abs_section_30f9
+     _SYS_UUID3                                30FA       1       1       0   .abs_section_30fa
+     _SYS_UUID4                                30FB       1       1       0   .abs_section_30fb
+     _SYS_UUID5                                30FC       1       1       0   .abs_section_30fc
+     _SYS_UUID6                                30FD       1       1       0   .abs_section_30fd
+     _SYS_UUID7                                30FE       1       1       0   .abs_section_30fe
+     _SYS_UUID8                                30FF       1       1       0   .abs_section_30ff
+     _TSI_CNT                                     E       2       2       0   .abs_section_e
+     _ADC_R                                      14       2       2       2   .abs_section_14
+     _ADC_CV                                     16       2       2       0   .abs_section_16
+     _FTM0_CNT                                   21       2       2       0   .abs_section_21
+     _FTM0_MOD                                   23       2       2       0   .abs_section_23
+     _FTM0_C0V                                   26       2       2       0   .abs_section_26
+     _FTM0_C1V                                   29       2       2       0   .abs_section_29
+     _SYS_SDID                                 3002       2       2       0   .abs_section_3002
+     _NVM_FCCOB                                302A       2       2       7   .abs_section_302a
+     _WDOG_CNT                                 3032       2       2       7   .abs_section_3032
+     _WDOG_TOVAL                               3034       2       2       5   .abs_section_3034
+     _WDOG_WIN                                 3036       2       2       2   .abs_section_3036
+     _CRC_D0D1                                 3060       2       2       0   .abs_section_3060
+     _CRC_D2D3                                 3062       2       2       0   .abs_section_3062
+     _CRC_P0P1                                 3064       2       2       0   .abs_section_3064
+     _CRC_P2P3                                 3066       2       2       0   .abs_section_3066
+     _RTC_MOD                                  306C       2       2       1   .abs_section_306c
+     _RTC_CNT                                  306E       2       2       7   .abs_section_306e
+     _I2C_SLT                                  307A       2       2       0   .abs_section_307a
+     _SCI0_BD                                  3080       2       2       2   .abs_section_3080
+     _SCI1_BD                                  3088       2       2       0   .abs_section_3088
+     _FTM2_CNT                                 30C1       2       2       4   .abs_section_30c1
+     _FTM2_MOD                                 30C3       2       2       1   .abs_section_30c3
+     _FTM2_C0V                                 30C6       2       2       0   .abs_section_30c6
+     _FTM2_C1V                                 30C9       2       2       0   .abs_section_30c9
+     _FTM2_C2V                                 30CC       2       2       0   .abs_section_30cc
+     _FTM2_C3V                                 30CF       2       2       0   .abs_section_30cf
+     _FTM2_C4V                                 30D2       2       2       0   .abs_section_30d2
+     _FTM2_C5V                                 30D5       2       2       0   .abs_section_30d5
+     _FTM2_CNTIN                               30D7       2       2       1   .abs_section_30d7
+MODULE:                 -- rtshc08.o (ansiis.lib) --
+- PROCEDURES:
+     _PUSH_ARGS_L                              D405      20      32       3   .text       
+     _ENTER_UNARY_L                            D425      29      41       2   .text       
+     _ENTER_BINARY_L                           D44E      16      22       2   .text       
+     _ENTER_BINARY_L_RC                        D464      19      25       3   .text       
+     _ENTER_BINARY_L_LC                        D47D      1A      26       1   .text       
+     _IDIVMOD                                  D497      69     105       1   .text       
+     _SPLITSIGN                                D500      1C      28       1   .text       
+     _LADD_k_is_k_plus_j                       D51C      1F      31       1   .text       
+     _k_is_k_plus_j_l                          D53B      1E      30       2   .text       
+     _k_is_k_plus_j_i                          D559      12      18       3   .text       
+     _LMUL_k_is_k_mul_j                        D56B      81     129       1   .text       
+     _LDIVMOD                                  D5EC      A4     164       1   .text       
+     _LDIVU_k_is_k_div_j                       D690      17      23       2   .text       
+     _LCMP_k_rel_j                             D6A7      1F      31       2   .text       
+     _IMUL_STAR08                              D6C6      27      39       2   .text       
+     _IMODS_STAR08                             D6ED      25      37       1   .text       
+     _ILSR                                     D712       C      12       1   .text       
+     _ICMP                                     D71E      16      22       2   .text       
+     _LINC                                     D734      16      22       2   .text       
+     _LADD                                     D74A       6       6       1   .text       
+     _LMUL_RC                                  D750       6       6       3   .text       
+     _LDIVU_LC                                 D756       6       6       1   .text       
+     _LDIVU_RC                                 D75C       6       6       2   .text       
+     _LLSR                                     D762      16      22       1   .text       
+     _LCMP                                     D778       6       6       2   .text       
+     _LCMP_RC                                  D77E       6       6       1   .text       
+     _COPY                                     D784      30      48       1   .text       
+     _POP32                                    D7B4      1A      26       3   .text       
+     _Jump_Table_Offset                        D7CE      19      25       2   .text       
+     _Jump_Table_Header_Offset                 D7E7      24      36       2   .text       
+- VARIABLES:
+
+*********************************************************************************************
+MODULE STATISTIC
+  Name                                      Data   Code  Const
+---------------------------------------------------------------------------------------------
+  ADC_c.obj                                    0    169      0
+  CC_c.obj                                   877   2103      2
+  EEP_ROM_c.obj                                0    282      0
+  FTM_c.obj                                    0     72      0
+  I2C_c.obj                                    0    700      0
+  Init_IO_c.obj                                0    156      0
+  PIR_c.obj                                   69    666      6
+  RTC_c.obj                                    0     58      0
+  RelayControl_c.obj                           7    147      0
+  UART_c.obj                                   0    136      0
+  delay_c.obj                                  0    246      0
+  main_c.obj                                   0     85      0
+  wdog_c.obj                                   0    159      0
+  start08_c.obj                                0    132      0
+  mc9s08pt16_c.obj                           234      0      0
+  rtshc08.o (ansiis.lib)                       0   1030      0
+  other                                      128     16     73
+
+*********************************************************************************************
+SECTION USE IN OBJECT-ALLOCATION SECTION
+---------------------------------------------------------------------------------------------
+SECTION: ".text"
+  Init_ADC ADC_GetResult ADCWaitZeroPoint CompleteCommand CC_BD_MCSendVertion 
+  CC_send_ReadyMC CC_send_SynClock CC_C1_SyncClock CC_B4_ReadEEPROM 
+  CC_B5_WriteEEPROM CC_B6_EraseEEPROM CC_B7_LedControlIrPir CC_BE_SyncTime 
+  xor_str CC_F0_PirSendData CC_E0_CCGetPirStatus CC_E1_CCSendDataDone 
+  CC_receiver_program sci0rx EEPROM_Read EEPROM_Write EEPROM_EraseByteBurst 
+  FLASH_Read Init_FLEX_TIMER ResetTimer I2C_Delay I2C_Start I2C_Stop 
+  i2c_checkack i2c_MstAck i2c_write i2c_read i2c_OPT3001_ReadId i2c_OPT3001_get 
+  i2c_OPT3001_Write i2c_OPT3011_Config shift I2C_ReadLightValue Init_IO 
+  clock_config system_config CalcTimeOut CalcLightVar FTM2_ISR FTMO_ISR ScanPIR 
+  PIR_Program PirStartUp MTIMO_ISR Init_RTC ResetRTCTimer GetPwSource 
+  WaitPWFallingEgle RL_on RL_off Init_UART0 UART0_putchar UART0_putstr 
+  UART0_SendBurst __delay_ms __delay_us __delay_x100us __delay_x5us abs2int max 
+  main wdog_disable wdog_enable wdog_refreshing wdog_reconfiguring Reset_MCU 
+  _PUSH_ARGS_L _ENTER_UNARY_L _ENTER_BINARY_L _ENTER_BINARY_L_RC 
+  _ENTER_BINARY_L_LC _IDIVMOD _SPLITSIGN _LADD_k_is_k_plus_j _k_is_k_plus_j_l 
+  _k_is_k_plus_j_i _LMUL_k_is_k_mul_j _LDIVMOD _LDIVU_k_is_k_div_j 
+  _LCMP_k_rel_j _IMUL_STAR08 _IMODS_STAR08 _ILSR _ICMP _LINC _LADD _LMUL_RC 
+  _LDIVU_LC _LDIVU_RC _LLSR _LCMP _LCMP_RC _COPY _POP32 _Jump_Table_Offset 
+  _Jump_Table_Header_Offset 
+SECTION: ".data"
+  RTC_ratio FirstTemp_ratio RTC_div TimeOutInScale StepADC Pir_status 
+  RL_on_delay RL_off_delay OnStatusChangeFlag 
+SECTION: ".bss"
+  Packet_CNT Byte_Number PacketData NextCMD_Number Length CMD_Number CMD_Pos 
+  Sync_flag Temp_ratio Start_Sync_CNT_value CC_ready_flag Pir_Timeout 
+  LastPIRStatus FirstLoadFlag ResetCnt ResetStep mtim_cnt PowerType 
+  OffStatusChangeFlag 
+SECTION: ".init"
+  loadByte Init _Startup 
+SECTION: ".abs_section_ffce"
+  _Vector_24 
+SECTION: ".abs_section_ffe6"
+  _Vector_12 
+SECTION: ".abs_section_ffda"
+  _Vector_18 
+SECTION: ".abs_section_ffd8"
+  _Vector_19 
+SECTION: ".common"
+  RlStatusFlag 
+SECTION: ".abs_section_0"
+  _PORT_PTAD 
+SECTION: ".abs_section_1"
+  _PORT_PTBD 
+SECTION: ".abs_section_2"
+  _PORT_PTCD 
+SECTION: ".abs_section_3"
+  _PORT_PTDD 
+SECTION: ".abs_section_4"
+  _PORT_PTED 
+SECTION: ".abs_section_8"
+  _TSI_CS0 
+SECTION: ".abs_section_9"
+  _TSI_CS1 
+SECTION: ".abs_section_a"
+  _TSI_CS2 
+SECTION: ".abs_section_b"
+  _TSI_CS3 
+SECTION: ".abs_section_c"
+  _TSI_PEN0 
+SECTION: ".abs_section_d"
+  _TSI_PEN1 
+SECTION: ".abs_section_10"
+  _ADC_SC1 
+SECTION: ".abs_section_11"
+  _ADC_SC2 
+SECTION: ".abs_section_12"
+  _ADC_SC3 
+SECTION: ".abs_section_13"
+  _ADC_SC4 
+SECTION: ".abs_section_18"
+  _MTIM0_SC 
+SECTION: ".abs_section_19"
+  _MTIM0_CLK 
+SECTION: ".abs_section_1a"
+  _MTIM0_CNT 
+SECTION: ".abs_section_1b"
+  _MTIM0_MOD 
+SECTION: ".abs_section_20"
+  _FTM0_SC 
+SECTION: ".abs_section_25"
+  _FTM0_C0SC 
+SECTION: ".abs_section_28"
+  _FTM0_C1SC 
+SECTION: ".abs_section_2c"
+  _ACMP_CS 
+SECTION: ".abs_section_2d"
+  _ACMP_C0 
+SECTION: ".abs_section_2e"
+  _ACMP_C1 
+SECTION: ".abs_section_2f"
+  _ACMP_C2 
+SECTION: ".abs_section_3b"
+  _IRQ_SC 
+SECTION: ".abs_section_3c"
+  _KBI0_SC 
+SECTION: ".abs_section_3e"
+  _IPC_SC 
+SECTION: ".abs_section_3f"
+  _IPC_IPMPS 
+SECTION: ".abs_section_3000"
+  _SYS_SRS 
+SECTION: ".abs_section_3001"
+  _SYS_SBDFR 
+SECTION: ".abs_section_3004"
+  _SYS_SOPT1 
+SECTION: ".abs_section_3005"
+  _SYS_SOPT2 
+SECTION: ".abs_section_3006"
+  _SYS_SOPT3 
+SECTION: ".abs_section_3007"
+  _SYS_SOPT4 
+SECTION: ".abs_section_300c"
+  _SCG_C1 
+SECTION: ".abs_section_300d"
+  _SCG_C2 
+SECTION: ".abs_section_300e"
+  _SCG_C3 
+SECTION: ".abs_section_300f"
+  _SCG_C4 
+SECTION: ".abs_section_3010"
+  _DBG_CAH 
+SECTION: ".abs_section_3011"
+  _DBG_CAL 
+SECTION: ".abs_section_3012"
+  _DBG_CBH 
+SECTION: ".abs_section_3013"
+  _DBG_CBL 
+SECTION: ".abs_section_3014"
+  _DBG_CCH 
+SECTION: ".abs_section_3015"
+  _DBG_CCL 
+SECTION: ".abs_section_3016"
+  _DBG_FH 
+SECTION: ".abs_section_3017"
+  _DBG_FL 
+SECTION: ".abs_section_3018"
+  _DBG_CAX 
+SECTION: ".abs_section_3019"
+  _DBG_CBX 
+SECTION: ".abs_section_301a"
+  _DBG_CCX 
+SECTION: ".abs_section_301b"
+  _DBG_FX 
+SECTION: ".abs_section_301c"
+  _DBG_C 
+SECTION: ".abs_section_301d"
+  _DBG_T 
+SECTION: ".abs_section_301e"
+  _DBG_S 
+SECTION: ".abs_section_301f"
+  _DBG_CNT 
+SECTION: ".abs_section_3020"
+  _NVM_FCLKDIV 
+SECTION: ".abs_section_3021"
+  _NVM_FSEC 
+SECTION: ".abs_section_3022"
+  _NVM_FCCOBIX 
+SECTION: ".abs_section_3024"
+  _NVM_FCNFG 
+SECTION: ".abs_section_3025"
+  _NVM_FERCNFG 
+SECTION: ".abs_section_3026"
+  _NVM_FSTAT 
+SECTION: ".abs_section_3027"
+  _NVM_FERSTAT 
+SECTION: ".abs_section_3028"
+  _NVM_FPROT 
+SECTION: ".abs_section_3029"
+  _NVM_EEPROT 
+SECTION: ".abs_section_302c"
+  _NVM_FOPT 
+SECTION: ".abs_section_3030"
+  _WDOG_CS1 
+SECTION: ".abs_section_3031"
+  _WDOG_CS2 
+SECTION: ".abs_section_3038"
+  _ICS_C1 
+SECTION: ".abs_section_3039"
+  _ICS_C2 
+SECTION: ".abs_section_303a"
+  _ICS_C3 
+SECTION: ".abs_section_303b"
+  _ICS_C4 
+SECTION: ".abs_section_303c"
+  _ICS_S 
+SECTION: ".abs_section_303e"
+  _ICS_OSCSC 
+SECTION: ".abs_section_3040"
+  _PMC_SPMSC1 
+SECTION: ".abs_section_3041"
+  _PMC_SPMSC2 
+SECTION: ".abs_section_304a"
+  _SYS_ILLAH 
+SECTION: ".abs_section_304b"
+  _SYS_ILLAL 
+SECTION: ".abs_section_3050"
+  _IPC_ILRS0 
+SECTION: ".abs_section_3051"
+  _IPC_ILRS1 
+SECTION: ".abs_section_3052"
+  _IPC_ILRS2 
+SECTION: ".abs_section_3053"
+  _IPC_ILRS3 
+SECTION: ".abs_section_3054"
+  _IPC_ILRS4 
+SECTION: ".abs_section_3055"
+  _IPC_ILRS5 
+SECTION: ".abs_section_3056"
+  _IPC_ILRS6 
+SECTION: ".abs_section_3057"
+  _IPC_ILRS7 
+SECTION: ".abs_section_3058"
+  _IPC_ILRS8 
+SECTION: ".abs_section_3059"
+  _IPC_ILRS9 
+SECTION: ".abs_section_3068"
+  _CRC_CTRL 
+SECTION: ".abs_section_306a"
+  _RTC_SC1 
+SECTION: ".abs_section_306b"
+  _RTC_SC2 
+SECTION: ".abs_section_3070"
+  _I2C_A1 
+SECTION: ".abs_section_3071"
+  _I2C_F 
+SECTION: ".abs_section_3072"
+  _I2C_C1 
+SECTION: ".abs_section_3073"
+  _I2C_S 
+SECTION: ".abs_section_3074"
+  _I2C_D 
+SECTION: ".abs_section_3075"
+  _I2C_C2 
+SECTION: ".abs_section_3076"
+  _I2C_FLT 
+SECTION: ".abs_section_3077"
+  _I2C_RA 
+SECTION: ".abs_section_3078"
+  _I2C_SMB 
+SECTION: ".abs_section_3079"
+  _I2C_A2 
+SECTION: ".abs_section_307c"
+  _KBI0_PE 
+SECTION: ".abs_section_307d"
+  _KBI0_ES 
+SECTION: ".abs_section_3082"
+  _SCI0_C1 
+SECTION: ".abs_section_3083"
+  _SCI0_C2 
+SECTION: ".abs_section_3084"
+  _SCI0_S1 
+SECTION: ".abs_section_3085"
+  _SCI0_S2 
+SECTION: ".abs_section_3086"
+  _SCI0_C3 
+SECTION: ".abs_section_3087"
+  _SCI0_D 
+SECTION: ".abs_section_308a"
+  _SCI1_C1 
+SECTION: ".abs_section_308b"
+  _SCI1_C2 
+SECTION: ".abs_section_308c"
+  _SCI1_S1 
+SECTION: ".abs_section_308d"
+  _SCI1_S2 
+SECTION: ".abs_section_308e"
+  _SCI1_C3 
+SECTION: ".abs_section_308f"
+  _SCI1_D 
+SECTION: ".abs_section_3098"
+  _SPI0_C1 
+SECTION: ".abs_section_3099"
+  _SPI0_C2 
+SECTION: ".abs_section_309a"
+  _SPI0_BR 
+SECTION: ".abs_section_309b"
+  _SPI0_S 
+SECTION: ".abs_section_309d"
+  _SPI0_D 
+SECTION: ".abs_section_309f"
+  _SPI0_M 
+SECTION: ".abs_section_30ac"
+  _ADC_APCTL1 
+SECTION: ".abs_section_30ad"
+  _ADC_APCTL2 
+SECTION: ".abs_section_30af"
+  _PORT_HDRVE 
+SECTION: ".abs_section_30b0"
+  _PORT_PTAOE 
+SECTION: ".abs_section_30b1"
+  _PORT_PTBOE 
+SECTION: ".abs_section_30b2"
+  _PORT_PTCOE 
+SECTION: ".abs_section_30b3"
+  _PORT_PTDOE 
+SECTION: ".abs_section_30b4"
+  _PORT_PTEOE 
+SECTION: ".abs_section_30b8"
+  _PORT_PTAIE 
+SECTION: ".abs_section_30b9"
+  _PORT_PTBIE 
+SECTION: ".abs_section_30ba"
+  _PORT_PTCIE 
+SECTION: ".abs_section_30bb"
+  _PORT_PTDIE 
+SECTION: ".abs_section_30bc"
+  _PORT_PTEIE 
+SECTION: ".abs_section_30c0"
+  _FTM2_SC 
+SECTION: ".abs_section_30c5"
+  _FTM2_C0SC 
+SECTION: ".abs_section_30c8"
+  _FTM2_C1SC 
+SECTION: ".abs_section_30cb"
+  _FTM2_C2SC 
+SECTION: ".abs_section_30ce"
+  _FTM2_C3SC 
+SECTION: ".abs_section_30d1"
+  _FTM2_C4SC 
+SECTION: ".abs_section_30d4"
+  _FTM2_C5SC 
+SECTION: ".abs_section_30d9"
+  _FTM2_STATUS 
+SECTION: ".abs_section_30da"
+  _FTM2_MODE 
+SECTION: ".abs_section_30db"
+  _FTM2_SYNC 
+SECTION: ".abs_section_30dc"
+  _FTM2_OUTINIT 
+SECTION: ".abs_section_30dd"
+  _FTM2_OUTMASK 
+SECTION: ".abs_section_30de"
+  _FTM2_COMBINE0 
+SECTION: ".abs_section_30df"
+  _FTM2_COMBINE1 
+SECTION: ".abs_section_30e0"
+  _FTM2_COMBINE2 
+SECTION: ".abs_section_30e2"
+  _FTM2_DEADTIME 
+SECTION: ".abs_section_30e3"
+  _FTM2_EXTTRIG 
+SECTION: ".abs_section_30e4"
+  _FTM2_POL 
+SECTION: ".abs_section_30e5"
+  _FTM2_FMS 
+SECTION: ".abs_section_30e6"
+  _FTM2_FILTER0 
+SECTION: ".abs_section_30e7"
+  _FTM2_FILTER1 
+SECTION: ".abs_section_30e8"
+  _FTM2_FLTFILTER 
+SECTION: ".abs_section_30e9"
+  _FTM2_FLTCTRL 
+SECTION: ".abs_section_30ec"
+  _PORT_IOFLT0 
+SECTION: ".abs_section_30ed"
+  _PORT_IOFLT1 
+SECTION: ".abs_section_30ee"
+  _PORT_IOFLT2 
+SECTION: ".abs_section_30ef"
+  _PORT_FCLKDIV 
+SECTION: ".abs_section_30f0"
+  _PORT_PTAPE 
+SECTION: ".abs_section_30f1"
+  _PORT_PTBPE 
+SECTION: ".abs_section_30f2"
+  _PORT_PTCPE 
+SECTION: ".abs_section_30f3"
+  _PORT_PTDPE 
+SECTION: ".abs_section_30f4"
+  _PORT_PTEPE 
+SECTION: ".abs_section_30f8"
+  _SYS_UUID1 
+SECTION: ".abs_section_30f9"
+  _SYS_UUID2 
+SECTION: ".abs_section_30fa"
+  _SYS_UUID3 
+SECTION: ".abs_section_30fb"
+  _SYS_UUID4 
+SECTION: ".abs_section_30fc"
+  _SYS_UUID5 
+SECTION: ".abs_section_30fd"
+  _SYS_UUID6 
+SECTION: ".abs_section_30fe"
+  _SYS_UUID7 
+SECTION: ".abs_section_30ff"
+  _SYS_UUID8 
+SECTION: ".abs_section_e"
+  _TSI_CNT 
+SECTION: ".abs_section_14"
+  _ADC_R 
+SECTION: ".abs_section_16"
+  _ADC_CV 
+SECTION: ".abs_section_21"
+  _FTM0_CNT 
+SECTION: ".abs_section_23"
+  _FTM0_MOD 
+SECTION: ".abs_section_26"
+  _FTM0_C0V 
+SECTION: ".abs_section_29"
+  _FTM0_C1V 
+SECTION: ".abs_section_3002"
+  _SYS_SDID 
+SECTION: ".abs_section_302a"
+  _NVM_FCCOB 
+SECTION: ".abs_section_3032"
+  _WDOG_CNT 
+SECTION: ".abs_section_3034"
+  _WDOG_TOVAL 
+SECTION: ".abs_section_3036"
+  _WDOG_WIN 
+SECTION: ".abs_section_3060"
+  _CRC_D0D1 
+SECTION: ".abs_section_3062"
+  _CRC_D2D3 
+SECTION: ".abs_section_3064"
+  _CRC_P0P1 
+SECTION: ".abs_section_3066"
+  _CRC_P2P3 
+SECTION: ".abs_section_306c"
+  _RTC_MOD 
+SECTION: ".abs_section_306e"
+  _RTC_CNT 
+SECTION: ".abs_section_307a"
+  _I2C_SLT 
+SECTION: ".abs_section_3080"
+  _SCI0_BD 
+SECTION: ".abs_section_3088"
+  _SCI1_BD 
+SECTION: ".abs_section_30c1"
+  _FTM2_CNT 
+SECTION: ".abs_section_30c3"
+  _FTM2_MOD 
+SECTION: ".abs_section_30c6"
+  _FTM2_C0V 
+SECTION: ".abs_section_30c9"
+  _FTM2_C1V 
+SECTION: ".abs_section_30cc"
+  _FTM2_C2V 
+SECTION: ".abs_section_30cf"
+  _FTM2_C3V 
+SECTION: ".abs_section_30d2"
+  _FTM2_C4V 
+SECTION: ".abs_section_30d5"
+  _FTM2_C5V 
+SECTION: ".abs_section_30d7"
+  _FTM2_CNTIN 
+
+*********************************************************************************************
+OBJECT LIST SORTED BY ADDRESS
+     Name                                      Addr   hSize   dSize     Ref    Section   RLIB
+---------------------------------------------------------------------------------------------
+     _PORT_PTAD                                   0       1       1       5   .abs_section_0
+     _PORT_PTBD                                   1       1       1      26   .abs_section_1
+     _PORT_PTCD                                   2       1       1       3   .abs_section_2
+     _PORT_PTDD                                   3       1       1      18   .abs_section_3
+     _PORT_PTED                                   4       1       1       0   .abs_section_4
+     _TSI_CS0                                     8       1       1       0   .abs_section_8
+     _TSI_CS1                                     9       1       1       0   .abs_section_9
+     _TSI_CS2                                     A       1       1       0   .abs_section_a
+     _TSI_CS3                                     B       1       1       0   .abs_section_b
+     _TSI_PEN0                                    C       1       1       0   .abs_section_c
+     _TSI_PEN1                                    D       1       1       0   .abs_section_d
+     _TSI_CNT                                     E       2       2       0   .abs_section_e
+     _ADC_SC1                                    10       1       1       4   .abs_section_10
+     _ADC_SC2                                    11       1       1       1   .abs_section_11
+     _ADC_SC3                                    12       1       1       7   .abs_section_12
+     _ADC_SC4                                    13       1       1       0   .abs_section_13
+     _ADC_R                                      14       2       2       2   .abs_section_14
+     _ADC_CV                                     16       2       2       0   .abs_section_16
+     _MTIM0_SC                                   18       1       1       2   .abs_section_18
+     _MTIM0_CLK                                  19       1       1       0   .abs_section_19
+     _MTIM0_CNT                                  1A       1       1       0   .abs_section_1a
+     _MTIM0_MOD                                  1B       1       1       0   .abs_section_1b
+     _FTM0_SC                                    20       1       1       1   .abs_section_20
+     _FTM0_CNT                                   21       2       2       0   .abs_section_21
+     _FTM0_MOD                                   23       2       2       0   .abs_section_23
+     _FTM0_C0SC                                  25       1       1       0   .abs_section_25
+     _FTM0_C0V                                   26       2       2       0   .abs_section_26
+     _FTM0_C1SC                                  28       1       1       0   .abs_section_28
+     _FTM0_C1V                                   29       2       2       0   .abs_section_29
+     _ACMP_CS                                    2C       1       1       0   .abs_section_2c
+     _ACMP_C0                                    2D       1       1       0   .abs_section_2d
+     _ACMP_C1                                    2E       1       1       0   .abs_section_2e
+     _ACMP_C2                                    2F       1       1       0   .abs_section_2f
+     _IRQ_SC                                     3B       1       1       0   .abs_section_3b
+     _KBI0_SC                                    3C       1       1       0   .abs_section_3c
+     _IPC_SC                                     3E       1       1       0   .abs_section_3e
+     _IPC_IPMPS                                  3F       1       1       0   .abs_section_3f
+     RTC_ratio                                  100       2       2       1   .data       
+     FirstTemp_ratio                            102       2       2       4   .data       
+     RTC_div                                    104       2       2       1   .data       
+     TimeOutInScale                             106      1C      28       1   .data       
+     StepADC                                    122      1C      28       2   .data       
+     Pir_status                                 13E       1       1       6   .data       
+     RL_on_delay                                13F       2       2       2   .data       
+     RL_off_delay                               141       2       2       2   .data       
+     OnStatusChangeFlag                         143       1       1       3   .data       
+     Packet_CNT                                 144       1       1       4   .bss        
+     Byte_Number                                145       1       1       3   .bss        
+     PacketData                                 146     348     840       6   .bss        
+     NextCMD_Number                             48E       1       1       4   .bss        
+     Length                                     48F      14      20       5   .bss        
+     CMD_Number                                 4A3       1       1       6   .bss        
+     CMD_Pos                                    4A4       1       1       9   .bss        
+     Sync_flag                                  4A5       1       1       6   .bss        
+     Temp_ratio                                 4A6       2       2       3   .bss        
+     Start_Sync_CNT_value                       4A8       2       2       8   .bss        
+     CC_ready_flag                              4AA       1       1       3   .bss        
+     Pir_Timeout                                4AB       2       2       3   .bss        
+     LastPIRStatus                              4AD       1       1       2   .bss        
+     FirstLoadFlag                              4AE       1       1       2   .bss        
+     ResetCnt                                   4AF       4       4       5   .bss        
+     ResetStep                                  4B3       1       1       2   .bss        
+     mtim_cnt                                   4B4       2       2       3   .bss        
+     PowerType                                  4B6       1       1       3   .bss        
+     OffStatusChangeFlag                        4B7       1       1       3   .bss        
+     RlStatusFlag                               4B8       1       1       6   .common     
+     _SYS_SRS                                  3000       1       1       1   .abs_section_3000
+     _SYS_SBDFR                                3001       1       1       0   .abs_section_3001
+     _SYS_SDID                                 3002       2       2       0   .abs_section_3002
+     _SYS_SOPT1                                3004       1       1       1   .abs_section_3004
+     _SYS_SOPT2                                3005       1       1       0   .abs_section_3005
+     _SYS_SOPT3                                3006       1       1       0   .abs_section_3006
+     _SYS_SOPT4                                3007       1       1       0   .abs_section_3007
+     _SCG_C1                                   300C       1       1       0   .abs_section_300c
+     _SCG_C2                                   300D       1       1       0   .abs_section_300d
+     _SCG_C3                                   300E       1       1       0   .abs_section_300e
+     _SCG_C4                                   300F       1       1       0   .abs_section_300f
+     _DBG_CAH                                  3010       1       1       0   .abs_section_3010
+     _DBG_CAL                                  3011       1       1       0   .abs_section_3011
+     _DBG_CBH                                  3012       1       1       0   .abs_section_3012
+     _DBG_CBL                                  3013       1       1       0   .abs_section_3013
+     _DBG_CCH                                  3014       1       1       0   .abs_section_3014
+     _DBG_CCL                                  3015       1       1       0   .abs_section_3015
+     _DBG_FH                                   3016       1       1       0   .abs_section_3016
+     _DBG_FL                                   3017       1       1       0   .abs_section_3017
+     _DBG_CAX                                  3018       1       1       0   .abs_section_3018
+     _DBG_CBX                                  3019       1       1       0   .abs_section_3019
+     _DBG_CCX                                  301A       1       1       0   .abs_section_301a
+     _DBG_FX                                   301B       1       1       0   .abs_section_301b
+     _DBG_C                                    301C       1       1       0   .abs_section_301c
+     _DBG_T                                    301D       1       1       0   .abs_section_301d
+     _DBG_S                                    301E       1       1       0   .abs_section_301e
+     _DBG_CNT                                  301F       1       1       0   .abs_section_301f
+     _NVM_FCLKDIV                              3020       1       1       2   .abs_section_3020
+     _NVM_FSEC                                 3021       1       1       0   .abs_section_3021
+     _NVM_FCCOBIX                              3022       1       1       5   .abs_section_3022
+     _NVM_FCNFG                                3024       1       1       0   .abs_section_3024
+     _NVM_FERCNFG                              3025       1       1       0   .abs_section_3025
+     _NVM_FSTAT                                3026       1       1       6   .abs_section_3026
+     _NVM_FERSTAT                              3027       1       1       0   .abs_section_3027
+     _NVM_FPROT                                3028       1       1       0   .abs_section_3028
+     _NVM_EEPROT                               3029       1       1       0   .abs_section_3029
+     _NVM_FCCOB                                302A       2       2       7   .abs_section_302a
+     _NVM_FOPT                                 302C       1       1       0   .abs_section_302c
+     _WDOG_CS1                                 3030       1       1       4   .abs_section_3030
+     _WDOG_CS2                                 3031       1       1       4   .abs_section_3031
+     _WDOG_CNT                                 3032       2       2       7   .abs_section_3032
+     _WDOG_TOVAL                               3034       2       2       5   .abs_section_3034
+     _WDOG_WIN                                 3036       2       2       2   .abs_section_3036
+     _ICS_C1                                   3038       1       1       1   .abs_section_3038
+     _ICS_C2                                   3039       1       1       2   .abs_section_3039
+     _ICS_C3                                   303A       1       1       1   .abs_section_303a
+     _ICS_C4                                   303B       1       1       0   .abs_section_303b
+     _ICS_S                                    303C       1       1       0   .abs_section_303c
+     _ICS_OSCSC                                303E       1       1       0   .abs_section_303e
+     _PMC_SPMSC1                               3040       1       1       2   .abs_section_3040
+     _PMC_SPMSC2                               3041       1       1       2   .abs_section_3041
+     _SYS_ILLAH                                304A       1       1       0   .abs_section_304a
+     _SYS_ILLAL                                304B       1       1       0   .abs_section_304b
+     _IPC_ILRS0                                3050       1       1       0   .abs_section_3050
+     _IPC_ILRS1                                3051       1       1       0   .abs_section_3051
+     _IPC_ILRS2                                3052       1       1       0   .abs_section_3052
+     _IPC_ILRS3                                3053       1       1       0   .abs_section_3053
+     _IPC_ILRS4                                3054       1       1       0   .abs_section_3054
+     _IPC_ILRS5                                3055       1       1       0   .abs_section_3055
+     _IPC_ILRS6                                3056       1       1       0   .abs_section_3056
+     _IPC_ILRS7                                3057       1       1       0   .abs_section_3057
+     _IPC_ILRS8                                3058       1       1       0   .abs_section_3058
+     _IPC_ILRS9                                3059       1       1       0   .abs_section_3059
+     _CRC_D0D1                                 3060       2       2       0   .abs_section_3060
+     _CRC_D2D3                                 3062       2       2       0   .abs_section_3062
+     _CRC_P0P1                                 3064       2       2       0   .abs_section_3064
+     _CRC_P2P3                                 3066       2       2       0   .abs_section_3066
+     _CRC_CTRL                                 3068       1       1       0   .abs_section_3068
+     _RTC_SC1                                  306A       1       1       1   .abs_section_306a
+     _RTC_SC2                                  306B       1       1       7   .abs_section_306b
+     _RTC_MOD                                  306C       2       2       1   .abs_section_306c
+     _RTC_CNT                                  306E       2       2       7   .abs_section_306e
+     _I2C_A1                                   3070       1       1       0   .abs_section_3070
+     _I2C_F                                    3071       1       1       0   .abs_section_3071
+     _I2C_C1                                   3072       1       1       0   .abs_section_3072
+     _I2C_S                                    3073       1       1       0   .abs_section_3073
+     _I2C_D                                    3074       1       1       0   .abs_section_3074
+     _I2C_C2                                   3075       1       1       0   .abs_section_3075
+     _I2C_FLT                                  3076       1       1       0   .abs_section_3076
+     _I2C_RA                                   3077       1       1       0   .abs_section_3077
+     _I2C_SMB                                  3078       1       1       0   .abs_section_3078
+     _I2C_A2                                   3079       1       1       0   .abs_section_3079
+     _I2C_SLT                                  307A       2       2       0   .abs_section_307a
+     _KBI0_PE                                  307C       1       1       0   .abs_section_307c
+     _KBI0_ES                                  307D       1       1       0   .abs_section_307d
+     _SCI0_BD                                  3080       2       2       2   .abs_section_3080
+     _SCI0_C1                                  3082       1       1       1   .abs_section_3082
+     _SCI0_C2                                  3083       1       1       3   .abs_section_3083
+     _SCI0_S1                                  3084       1       1       2   .abs_section_3084
+     _SCI0_S2                                  3085       1       1       0   .abs_section_3085
+     _SCI0_C3                                  3086       1       1       0   .abs_section_3086
+     _SCI0_D                                   3087       1       1       2   .abs_section_3087
+     _SCI1_BD                                  3088       2       2       0   .abs_section_3088
+     _SCI1_C1                                  308A       1       1       0   .abs_section_308a
+     _SCI1_C2                                  308B       1       1       0   .abs_section_308b
+     _SCI1_S1                                  308C       1       1       1   .abs_section_308c
+     _SCI1_S2                                  308D       1       1       0   .abs_section_308d
+     _SCI1_C3                                  308E       1       1       0   .abs_section_308e
+     _SCI1_D                                   308F       1       1       0   .abs_section_308f
+     _SPI0_C1                                  3098       1       1       0   .abs_section_3098
+     _SPI0_C2                                  3099       1       1       0   .abs_section_3099
+     _SPI0_BR                                  309A       1       1       0   .abs_section_309a
+     _SPI0_S                                   309B       1       1       0   .abs_section_309b
+     _SPI0_D                                   309D       1       1       0   .abs_section_309d
+     _SPI0_M                                   309F       1       1       0   .abs_section_309f
+     _ADC_APCTL1                               30AC       1       1       1   .abs_section_30ac
+     _ADC_APCTL2                               30AD       1       1       1   .abs_section_30ad
+     _PORT_HDRVE                               30AF       1       1       0   .abs_section_30af
+     _PORT_PTAOE                               30B0       1       1       1   .abs_section_30b0
+     _PORT_PTBOE                               30B1       1       1       7   .abs_section_30b1
+     _PORT_PTCOE                               30B2       1       1       1   .abs_section_30b2
+     _PORT_PTDOE                               30B3       1       1       1   .abs_section_30b3
+     _PORT_PTEOE                               30B4       1       1       0   .abs_section_30b4
+     _PORT_PTAIE                               30B8       1       1       1   .abs_section_30b8
+     _PORT_PTBIE                               30B9       1       1       7   .abs_section_30b9
+     _PORT_PTCIE                               30BA       1       1       1   .abs_section_30ba
+     _PORT_PTDIE                               30BB       1       1       1   .abs_section_30bb
+     _PORT_PTEIE                               30BC       1       1       0   .abs_section_30bc
+     _FTM2_SC                                  30C0       1       1       6   .abs_section_30c0
+     _FTM2_CNT                                 30C1       2       2       4   .abs_section_30c1
+     _FTM2_MOD                                 30C3       2       2       1   .abs_section_30c3
+     _FTM2_C0SC                                30C5       1       1       0   .abs_section_30c5
+     _FTM2_C0V                                 30C6       2       2       0   .abs_section_30c6
+     _FTM2_C1SC                                30C8       1       1       0   .abs_section_30c8
+     _FTM2_C1V                                 30C9       2       2       0   .abs_section_30c9
+     _FTM2_C2SC                                30CB       1       1       0   .abs_section_30cb
+     _FTM2_C2V                                 30CC       2       2       0   .abs_section_30cc
+     _FTM2_C3SC                                30CE       1       1       0   .abs_section_30ce
+     _FTM2_C3V                                 30CF       2       2       0   .abs_section_30cf
+     _FTM2_C4SC                                30D1       1       1       0   .abs_section_30d1
+     _FTM2_C4V                                 30D2       2       2       0   .abs_section_30d2
+     _FTM2_C5SC                                30D4       1       1       0   .abs_section_30d4
+     _FTM2_C5V                                 30D5       2       2       0   .abs_section_30d5
+     _FTM2_CNTIN                               30D7       2       2       1   .abs_section_30d7
+     _FTM2_STATUS                              30D9       1       1       0   .abs_section_30d9
+     _FTM2_MODE                                30DA       1       1       1   .abs_section_30da
+     _FTM2_SYNC                                30DB       1       1       0   .abs_section_30db
+     _FTM2_OUTINIT                             30DC       1       1       0   .abs_section_30dc
+     _FTM2_OUTMASK                             30DD       1       1       0   .abs_section_30dd
+     _FTM2_COMBINE0                            30DE       1       1       0   .abs_section_30de
+     _FTM2_COMBINE1                            30DF       1       1       0   .abs_section_30df
+     _FTM2_COMBINE2                            30E0       1       1       0   .abs_section_30e0
+     _FTM2_DEADTIME                            30E2       1       1       0   .abs_section_30e2
+     _FTM2_EXTTRIG                             30E3       1       1       0   .abs_section_30e3
+     _FTM2_POL                                 30E4       1       1       0   .abs_section_30e4
+     _FTM2_FMS                                 30E5       1       1       0   .abs_section_30e5
+     _FTM2_FILTER0                             30E6       1       1       0   .abs_section_30e6
+     _FTM2_FILTER1                             30E7       1       1       0   .abs_section_30e7
+     _FTM2_FLTFILTER                           30E8       1       1       0   .abs_section_30e8
+     _FTM2_FLTCTRL                             30E9       1       1       0   .abs_section_30e9
+     _PORT_IOFLT0                              30EC       1       1       0   .abs_section_30ec
+     _PORT_IOFLT1                              30ED       1       1       0   .abs_section_30ed
+     _PORT_IOFLT2                              30EE       1       1       0   .abs_section_30ee
+     _PORT_FCLKDIV                             30EF       1       1       0   .abs_section_30ef
+     _PORT_PTAPE                               30F0       1       1       1   .abs_section_30f0
+     _PORT_PTBPE                               30F1       1       1       1   .abs_section_30f1
+     _PORT_PTCPE                               30F2       1       1       1   .abs_section_30f2
+     _PORT_PTDPE                               30F3       1       1       1   .abs_section_30f3
+     _PORT_PTEPE                               30F4       1       1       0   .abs_section_30f4
+     _SYS_UUID1                                30F8       1       1       0   .abs_section_30f8
+     _SYS_UUID2                                30F9       1       1       0   .abs_section_30f9
+     _SYS_UUID3                                30FA       1       1       0   .abs_section_30fa
+     _SYS_UUID4                                30FB       1       1       0   .abs_section_30fb
+     _SYS_UUID5                                30FC       1       1       0   .abs_section_30fc
+     _SYS_UUID6                                30FD       1       1       0   .abs_section_30fd
+     _SYS_UUID7                                30FE       1       1       0   .abs_section_30fe
+     _SYS_UUID8                                30FF       1       1       0   .abs_section_30ff
+     loadByte                                  C000       E      14       5   .init       
+     Init                                      C00E      6D     109       1   .init       
+     _Startup                                  C07B       9       9       0   .init       
+     Init_ADC                                  C092      31      49       1   .text       
+     ADC_GetResult                             C0C3      3F      63       4   .text       
+     ADCWaitZeroPoint                          C102      39      57       1   .text       
+     CompleteCommand                           C13B      24      36       1   .text       
+     CC_BD_MCSendVertion                       C15F      28      40       1   .text       
+     CC_send_ReadyMC                           C187      95     149       2   .text       
+     CC_send_SynClock                          C21C      95     149       1   .text       
+     CC_C1_SyncClock                           C2B1      7E     126       1   .text       
+     CC_B4_ReadEEPROM                          C32F      FB     251       1   .text       
+     CC_B5_WriteEEPROM                         C42A     143     323       1   .text       
+     CC_B6_EraseEEPROM                         C56D      59      89       1   .text       
+     CC_B7_LedControlIrPir                     C5C6      64     100       1   .text       
+     CC_BE_SyncTime                            C62A      FD     253       7   .text       
+     xor_str                                   C727      31      49       1   .text       
+     CC_F0_PirSendData                         C758      7B     123       3   .text       
+     CC_E0_CCGetPirStatus                      C7D3       2       2       1   .text       
+     CC_E1_CCSendDataDone                      C7D5       1       1       1   .text       
+     CC_receiver_program                       C7D6     100     256       5   .text       
+     sci0rx                                    C8D6      9C     156       1   .text       
+     EEPROM_Read                               C972       2       2       4   .text       
+     EEPROM_Write                              C974      41      65       3   .text       
+     EEPROM_EraseByteBurst                     C9B5      D4     212       2   .text       
+     FLASH_Read                                CA89       3       3       1   .text       
+     Init_FLEX_TIMER                           CA8C      32      50       1   .text       
+     ResetTimer                                CABE      16      22       1   .text       
+     I2C_Delay                                 CAD4       3       3      11   .text       
+     I2C_Start                                 CAD7      22      34       3   .text       
+     I2C_Stop                                  CAF9      22      34       2   .text       
+     i2c_checkack                              CB1B      33      51       3   .text       
+     i2c_MstAck                                CB4E      20      32       1   .text       
+     i2c_write                                 CB6E      3C      60       2   .text       
+     i2c_read                                  CBAA      3A      58       2   .text       
+     i2c_OPT3001_ReadId                        CBE4       5       5       1   .text       
+     i2c_OPT3001_get                           CBE9      3D      61       3   .text       
+     i2c_OPT3001_Write                         CC26      24      36       2   .text       
+     i2c_OPT3011_Config                        CC4A       D      13       1   .text       
+     shift                                     CC57      30      48       1   .text       
+     I2C_ReadLightValue                        CC87     109     265       4   .text       
+     Init_IO                                   CD90      47      71       1   .text       
+     clock_config                              CDD7      36      54       1   .text       
+     system_config                             CE0D      1F      31       1   .text       
+     CalcTimeOut                               CE2C      98     152       2   .text       
+     CalcLightVar                              CEC4      55      85       2   .text       
+     FTM2_ISR                                  CF19       A      10       1   .text       
+     FTMO_ISR                                  CF23      2B      43       1   .text       
+     ScanPIR                                   CF4E      83     131       1   .text       
+     PIR_Program                               CFD1      35      53       1   .text       
+     PirStartUp                                D006      59      89       1   .text       
+     MTIMO_ISR                                 D05F      67     103       1   .text       
+     Init_RTC                                  D0C6      24      36       1   .text       
+     ResetRTCTimer                             D0EA      16      22       1   .text       
+     GetPwSource                               D100      35      53       1   .text       
+     WaitPWFallingEgle                         D135       5       5       2   .text       
+     RL_on                                     D13A      2D      45       1   .text       
+     RL_off                                    D167      2C      44       2   .text       
+     Init_UART0                                D193      31      49       1   .text       
+     UART0_putchar                             D1C4      10      16      55   .text       
+     UART0_putstr                              D1D4      2A      42       1   .text       
+     UART0_SendBurst                           D1FE      1D      29       1   .text       
+     __delay_ms                                D21B      21      33       9   .text       
+     __delay_us                                D23C      1C      28       4   .text       
+     __delay_x100us                            D258      21      33       2   .text       
+     __delay_x5us                              D279      67     103       1   .text       
+     abs2int                                   D2E0      28      40       2   .text       
+     max                                       D308       9       9       1   .text       
+     main                                      D311      55      85       1   .text       
+     wdog_disable                              D366      29      41       1   .text       
+     wdog_enable                               D38F      22      34       1   .text       
+     wdog_refreshing                           D3B1       F      15       2   .text       
+     wdog_reconfiguring                        D3C0      21      33       1   .text       
+     Reset_MCU                                 D3E1      24      36       1   .text       
+     _PUSH_ARGS_L                              D405      20      32       3   .text       
+     _ENTER_UNARY_L                            D425      29      41       2   .text       
+     _ENTER_BINARY_L                           D44E      16      22       2   .text       
+     _ENTER_BINARY_L_RC                        D464      19      25       3   .text       
+     _ENTER_BINARY_L_LC                        D47D      1A      26       1   .text       
+     _IDIVMOD                                  D497      69     105       1   .text       
+     _SPLITSIGN                                D500      1C      28       1   .text       
+     _LADD_k_is_k_plus_j                       D51C      1F      31       1   .text       
+     _k_is_k_plus_j_l                          D53B      1E      30       2   .text       
+     _k_is_k_plus_j_i                          D559      12      18       3   .text       
+     _LMUL_k_is_k_mul_j                        D56B      81     129       1   .text       
+     _LDIVMOD                                  D5EC      A4     164       1   .text       
+     _LDIVU_k_is_k_div_j                       D690      17      23       2   .text       
+     _LCMP_k_rel_j                             D6A7      1F      31       2   .text       
+     _IMUL_STAR08                              D6C6      27      39       2   .text       
+     _IMODS_STAR08                             D6ED      25      37       1   .text       
+     _ILSR                                     D712       C      12       1   .text       
+     _ICMP                                     D71E      16      22       2   .text       
+     _LINC                                     D734      16      22       2   .text       
+     _LADD                                     D74A       6       6       1   .text       
+     _LMUL_RC                                  D750       6       6       3   .text       
+     _LDIVU_LC                                 D756       6       6       1   .text       
+     _LDIVU_RC                                 D75C       6       6       2   .text       
+     _LLSR                                     D762      16      22       1   .text       
+     _LCMP                                     D778       6       6       2   .text       
+     _LCMP_RC                                  D77E       6       6       1   .text       
+     _COPY                                     D784      30      48       1   .text       
+     _POP32                                    D7B4      1A      26       3   .text       
+     _Jump_Table_Offset                        D7CE      19      25       2   .text       
+     _Jump_Table_Header_Offset                 D7E7      24      36       2   .text       
+     _Vector_24                                FFCE       2       2       0   .abs_section_ffce
+     _Vector_19                                FFD8       2       2       0   .abs_section_ffd8
+     _Vector_18                                FFDA       2       2       0   .abs_section_ffda
+     _Vector_12                                FFE6       2       2       0   .abs_section_ffe6
+
+*********************************************************************************************
+UNUSED-OBJECTS SECTION
+---------------------------------------------------------------------------------------------
+NOT USED PROCEDURES
+CC_c.obj:
+  xor_int 
+EEP_ROM_c.obj:
+  EEPROM_ReadBurst EEPROM_Read_int EEPROM_Write_int EEPROM_WriteBurst 
+  EEPROM_EraseByte EEPROM_EraseBlock EEPROM_EraseVerifyByteBurst 
+  EEPROM_EraseAll FLASH_ReadBurst FLASH_Write FLASH_EraseByte FLASH_EraseALL 
+  EraseAll 
+FTM_c.obj:
+  Init_PWM Init_FTM0 disable_FTM0 reset_FTM0 
+I2C_c.obj:
+  i2c_init i2c_SI7021_get i2c_SI7021_Write i2c_SI7021_Config 
+  i2c_SI7021_ReadFirmwave 
+RTC_c.obj:
+  RTC_polling 
+UART_c.obj:
+  TurnOffUART TurnOnUART UART0_getchar UART0_puts ui2s s2i UART0_puti 
+delay_c.obj:
+  __delay_s 
+rtshc08.o (ansiis.lib):
+  _PUSH_ARGS_D _ENTER_UNARY_L64 _ENTER_UNARY_L64_4 _ENTER_BINARY_L64 
+  _ENTER_BINARY_L64_LC _ENTER_BINARY_L64_RC _LSUB_k_is_k_minus_j 
+  _LAND_k_is_k_and_j _LOR_k_is_k_or_j _LXOR_k_is_k_xor_j _NEG_L_HX _ABS_L_HX 
+  _SPLITSIGN_L _LMODU_k_is_k_mod_j _LMODS_k_is_k_mod_j _LDIVS_k_is_k_div_j 
+  _CMP24_k_rel_j _BMULS _BDIVS _BMODS _IDIVS_STAR08 _IDIVU_STAR08 _IMODU_STAR08 
+  _IDIVU_8 _IMODU_8 _IASR _ILSL _LDEC _LNEG _LNOT _LADD_RC _LSUB _LSUB_LC 
+  _LSUB_RC _LAND _LAND_RC _LOR _LOR_RC _LXOR _LXOR_RC _LMUL _LDIVS _LDIVS_LC 
+  _LDIVS_RC _LDIVU _LMODS _LMODS_LC _LMODS_RC _LMODU _LMODU_LC _LMODU_RC _LASR 
+  _LLSL _PUSH_ARGS_24 _ENTER_BINARY_24_RC _ENTER_BINARY_24 _CMP24 _CMP24_RC 
+  _COPY_L _POP64 _STORE32 _STORE64 _SEXT8_32 _SEXT16_32 _CALL_STAR08 
+  _CALL_STAR08_FAR _Jump_Table_Addr _Jump_Table_Header_Addr 
+  _Search_Table_16_Addr _Search_Table_16_Offset _Search_Table_8_Addr 
+  _Search_Table_8_Offset _PUSH_CC _POP_CC _CONV_FAR_TO_NEAR _CONV_FAR_TO_LINEAR 
+  _CONV_LINEAR_TO_FAR 
+NOT USED VARIABLES
+CC_c.obj:
+  PirNwkStatus 
+PIR_c.obj:
+  ResetFlag TimeBefore StartTime LastTime DetectStatus Off_RTC_cnt FTM2_P_CNT 
+main_c.obj:
+  HumidityData TemperatureData tempstatus 
+rtshc08.o (ansiis.lib):
+  _PowOfTwo_8 _PowOfTwo_16 _PowOfTwo_32 errno 
+
+*********************************************************************************************
+COPYDOWN SECTION
+---------------------------------------------------------------------------------------------
+------- ROM-ADDRESS: 0xD80B ---- SIZE       4 ---
+Filling bytes inserted
+ 00430101
+------- ROM-ADDRESS: 0xD80F ---- RAM-ADDRESS: 0x101 ---- SIZE       1 ---
+Name of initialized Object : RTC_ratio:1
+ 64
+------- ROM-ADDRESS: 0xD810 ---- SIZE       1 ---
+Filling bytes inserted
+ 00
+------- ROM-ADDRESS: 0xD811 ---- RAM-ADDRESS: 0x103 ---- SIZE       1 ---
+Name of initialized Object : FirstTemp_ratio:1
+ 64
+------- ROM-ADDRESS: 0xD812 ---- SIZE       1 ---
+Filling bytes inserted
+ 00
+------- ROM-ADDRESS: 0xD813 ---- RAM-ADDRESS: 0x105 ---- SIZE       1 ---
+Name of initialized Object : RTC_div:1
+ 64
+------- ROM-ADDRESS: 0xD814 ---- SIZE       3 ---
+Filling bytes inserted
+ 000000
+------- ROM-ADDRESS: 0xD817 ---- RAM-ADDRESS: 0x109 ---- SIZE      25 ---
+Name of initialized Object : TimeOutInScale:3
+ 32012C0258 038404B007 0809600BB8
+ 1194177023 282EE04650
+------- ROM-ADDRESS: 0xD830 ---- SIZE       3 ---
+Filling bytes inserted
+ 000000
+------- ROM-ADDRESS: 0xD833 ---- RAM-ADDRESS: 0x125 ---- SIZE      25 ---
+Name of initialized Object : StepADC:3
+ 010007000F 0014001900 1E00230028
+ 002D003200 37003C0041
+------- ROM-ADDRESS: 0xD84C ---- RAM-ADDRESS: 0x13E ---- SIZE       1 ---
+Name of initialized Object : Pir_status
+ 01
+------- ROM-ADDRESS: 0xD84D ---- SIZE       1 ---
+Filling bytes inserted
+ 00
+------- ROM-ADDRESS: 0xD84E ---- RAM-ADDRESS: 0x140 ---- SIZE       1 ---
+Name of initialized Object : RL_on_delay:1
+ 32
+------- ROM-ADDRESS: 0xD84F ---- SIZE       1 ---
+Filling bytes inserted
+ 00
+------- ROM-ADDRESS: 0xD850 ---- RAM-ADDRESS: 0x142 ---- SIZE       1 ---
+Name of initialized Object : RL_off_delay:1
+ 32
+------- ROM-ADDRESS: 0xD851 ---- RAM-ADDRESS: 0x143 ---- SIZE       1 ---
+Name of initialized Object : OnStatusChangeFlag
+ 01
+------- ROM-ADDRESS: 0xD852 ---- SIZE       2 ---
+Filling bytes inserted
+ 0000
+
+*********************************************************************************************
+OBJECT-DEPENDENCIES SECTION
+---------------------------------------------------------------------------------------------
+Init                      USES _startupData loadByte 
+_Startup                  USES __SEG_END_SSTACK Init main 
+Init_ADC                  USES _ADC_APCTL1 _ADC_APCTL2 _ADC_SC1 _ADC_SC2 
+                                _ADC_SC3 
+ADC_GetResult             USES _ADC_SC1 _ADC_R 
+ADCWaitZeroPoint          USES ADC_GetResult _ADC_SC1 
+CompleteCommand           USES _SCI0_C2 CMD_Number CMD_Pos NextCMD_Number 
+CC_BD_MCSendVertion       USES UART0_putchar 
+CC_send_ReadyMC           USES UART0_putchar 
+CC_send_SynClock          USES UART0_putchar 
+CC_C1_SyncClock           USES CC_ready_flag CC_send_ReadyMC 
+CC_B4_ReadEEPROM          USES EEPROM_Read UART0_putchar UART0_SendBurst 
+CC_B5_WriteEEPROM         USES EEPROM_EraseByteBurst EEPROM_Write EEPROM_Read 
+                                UART0_putchar 
+CC_B6_EraseEEPROM         USES EEPROM_EraseByteBurst UART0_putchar 
+CC_B7_LedControlIrPir     USES _Jump_Table_Header_Offset _PORT_PTDD __delay_ms 
+CC_BE_SyncTime            USES Sync_flag CC_BE_SyncTime Start_Sync_CNT_value 
+                                _RTC_CNT FirstTemp_ratio Temp_ratio abs2int RTC_div 
+                                RTC_ratio 
+CC_F0_PirSendData         USES Pir_status I2C_ReadLightValue _IMUL_STAR08 
+                                CalcLightVar CalcTimeOut xor_str UART0_putchar UART0_putstr 
+CC_E0_CCGetPirStatus      USES CC_F0_PirSendData 
+CC_receiver_program       USES CMD_Number CC_receiver_program NextCMD_Number 
+                                Length PacketData _ICMP _Jump_Table_Offset 
+                                CC_B4_ReadEEPROM CC_B5_WriteEEPROM CC_B6_EraseEEPROM 
+                                CC_B7_LedControlIrPir CC_BD_MCSendVertion CC_BE_SyncTime 
+                                CC_send_ReadyMC CC_C1_SyncClock CC_E0_CCGetPirStatus 
+                                CC_E1_CCSendDataDone CompleteCommand 
+sci0rx                    USES _SCI0_S1 _SCI0_D Byte_Number 
+                                _Jump_Table_Header_Offset CMD_Pos Length Packet_CNT PacketData 
+                                CMD_Number _SCI0_C2 
+EEPROM_Write              USES _NVM_FCLKDIV _NVM_FSTAT _NVM_FCCOBIX _NVM_FCCOB 
+EEPROM_EraseByteBurst     USES _IMODS_STAR08 EEPROM_Read _NVM_FCLKDIV 
+                                _NVM_FSTAT _NVM_FCCOBIX _NVM_FCCOB _ICMP EEPROM_Write 
+Init_FLEX_TIMER           USES _FTM2_MODE _FTM2_CNTIN _FTM2_CNT _FTM2_MOD 
+                                _FTM2_SC 
+ResetTimer                USES _FTM2_SC _FTM2_CNT 
+I2C_Delay                 USES __delay_us 
+I2C_Start                 USES _PORT_PTBIE _PORT_PTBOE _PORT_PTBD I2C_Delay 
+I2C_Stop                  USES _PORT_PTBIE _PORT_PTBOE _PORT_PTBD I2C_Delay 
+i2c_checkack              USES _PORT_PTBIE _PORT_PTBOE _PORT_PTBD I2C_Delay 
+i2c_MstAck                USES _PORT_PTBIE _PORT_PTBOE _PORT_PTBD I2C_Delay 
+i2c_write                 USES _PORT_PTBIE _PORT_PTBOE _PORT_PTBD I2C_Delay 
+i2c_read                  USES _PORT_PTBD _PORT_PTBIE _PORT_PTBOE I2C_Delay 
+i2c_OPT3001_ReadId        USES i2c_OPT3001_get 
+i2c_OPT3001_get           USES I2C_Start _PORT_PTBD i2c_read i2c_MstAck 
+                                __delay_us i2c_checkack I2C_Stop i2c_write 
+i2c_OPT3001_Write         USES I2C_Start I2C_Stop i2c_write i2c_checkack 
+i2c_OPT3011_Config        USES i2c_OPT3001_Write __delay_ms 
+shift                     USES _COPY 
+I2C_ReadLightValue        USES i2c_OPT3001_Write i2c_OPT3001_get _LINC _POP32 
+                                _LCMP_RC I2C_ReadLightValue _ILSR shift _LDIVU_RC 
+                                __delay_ms abs2int _LADD _LLSR max 
+Init_IO                   USES _PORT_PTAIE _PORT_PTAOE _PORT_PTAPE _PORT_PTAD 
+                                _PORT_PTBIE _PORT_PTBOE _PORT_PTBPE _PORT_PTBD _PORT_PTCIE 
+                                _PORT_PTCOE _PORT_PTCPE _PORT_PTCD _PORT_PTDIE _PORT_PTDOE 
+                                _PORT_PTDPE _PORT_PTDD 
+clock_config              USES FLASH_Read _ICS_C2 _ICS_C1 _ICS_C3 
+system_config             USES _SYS_SRS _SYS_SOPT1 _PMC_SPMSC1 _PMC_SPMSC2 
+CalcTimeOut               USES ADC_GetResult StepADC _LMUL_RC _LCMP 
+                                TimeOutInScale 
+CalcLightVar              USES ADC_GetResult _LMUL_RC _LDIVU_RC 
+FTM2_ISR                  USES _FTM2_SC 
+FTMO_ISR                  USES _FTM0_SC ResetStep ResetCnt _LINC _POP32 
+ScanPIR                   USES _PORT_PTAD LastPIRStatus FirstLoadFlag 
+                                ResetTimer _FTM2_CNT _PORT_PTDD Pir_status 
+                                CC_F0_PirSendData CalcTimeOut Pir_Timeout RlStatusFlag 
+                                __delay_ms CalcLightVar I2C_ReadLightValue RL_on _RTC_SC2 
+                                ResetRTCTimer 
+PIR_Program               USES Pir_status RlStatusFlag Pir_Timeout _RTC_CNT 
+                                RL_off _RTC_SC2 CC_F0_PirSendData CC_receiver_program 
+PirStartUp                USES RL_off _PORT_PTDD RlStatusFlag GetPwSource 
+                                _RTC_SC2 i2c_OPT3011_Config i2c_OPT3001_ReadId 
+                                CC_send_SynClock __delay_ms CC_receiver_program Reset_MCU 
+                                CC_ready_flag 
+MTIMO_ISR                 USES _MTIM0_SC mtim_cnt UART0_putchar _PORT_PTAD 
+Init_RTC                  USES _RTC_SC2 _RTC_MOD _RTC_SC1 
+ResetRTCTimer             USES _RTC_SC2 _RTC_CNT 
+GetPwSource               USES _PORT_PTBD __delay_us PowerType 
+WaitPWFallingEgle         USES ADCWaitZeroPoint 
+RL_on                     USES OnStatusChangeFlag _PORT_PTDD PowerType 
+                                WaitPWFallingEgle RL_on_delay __delay_x100us _PORT_PTCD 
+                                RlStatusFlag OffStatusChangeFlag 
+RL_off                    USES OffStatusChangeFlag _PORT_PTDD PowerType 
+                                WaitPWFallingEgle RL_off_delay __delay_x100us _PORT_PTCD 
+                                RlStatusFlag OnStatusChangeFlag 
+Init_UART0                USES _SCI0_BD _LDIVU_LC _SCI0_C1 _SCI0_C2 
+UART0_putchar             USES _SCI0_S1 _SCI1_S1 _SCI0_D 
+UART0_putstr              USES UART0_putchar 
+UART0_SendBurst           USES UART0_putchar 
+__delay_ms                USES __delay_us 
+__delay_x100us            USES __delay_x5us 
+main                      USES wdog_disable clock_config system_config Init_IO 
+                                _PORT_PTDD __delay_ms Init_RTC Init_UART0 Init_FLEX_TIMER 
+                                Init_ADC PirStartUp wdog_enable wdog_reconfiguring 
+                                wdog_refreshing PIR_Program ScanPIR _WDOG_CNT 
+wdog_disable              USES _WDOG_CS1 _WDOG_CS2 _WDOG_TOVAL _WDOG_WIN 
+wdog_enable               USES _WDOG_CS1 _WDOG_CS2 _WDOG_TOVAL 
+wdog_refreshing           USES _WDOG_CNT 
+wdog_reconfiguring        USES _WDOG_CNT _WDOG_TOVAL _WDOG_CS2 _WDOG_CS1 
+Reset_MCU                 USES _WDOG_CNT _WDOG_TOVAL _WDOG_CS2 _WDOG_CS1 
+                                __delay_ms 
+_ENTER_BINARY_L           USES _PUSH_ARGS_L 
+_ENTER_BINARY_L_RC        USES _PUSH_ARGS_L 
+_ENTER_BINARY_L_LC        USES _PUSH_ARGS_L 
+_SPLITSIGN                USES _IDIVMOD 
+_LMUL_k_is_k_mul_j        USES _k_is_k_plus_j_l _k_is_k_plus_j_i 
+_LDIVU_k_is_k_div_j       USES _LDIVMOD 
+_IMODS_STAR08             USES _SPLITSIGN 
+_LINC                     USES _ENTER_UNARY_L 
+_LADD                     USES _ENTER_BINARY_L _LADD_k_is_k_plus_j 
+_LMUL_RC                  USES _ENTER_BINARY_L_RC _LMUL_k_is_k_mul_j 
+_LDIVU_LC                 USES _ENTER_BINARY_L_LC _LDIVU_k_is_k_div_j 
+_LDIVU_RC                 USES _ENTER_BINARY_L_RC _LDIVU_k_is_k_div_j 
+_LLSR                     USES _ENTER_UNARY_L 
+_LCMP                     USES _ENTER_BINARY_L _LCMP_k_rel_j 
+_LCMP_RC                  USES _ENTER_BINARY_L_RC _LCMP_k_rel_j 
+_Vector_24                USES sci0rx 
+_Vector_19                USES MTIMO_ISR 
+_Vector_18                USES FTMO_ISR 
+_Vector_12                USES FTM2_ISR 
+
+*********************************************************************************************
+DEPENDENCY TREE
+*********************************************************************************************
+ main and _Startup Group
+ | 
+ +- main                
+ |  | 
+ |  +- wdog_disable        
+ |  |    
+ |  +- clock_config        
+ |  |  | 
+ |  |  +- FLASH_Read          
+ |  |       
+ |  +- system_config       
+ |  |    
+ |  +- Init_IO             
+ |  |    
+ |  +- __delay_ms          
+ |  |  | 
+ |  |  +- __delay_us          
+ |  |       
+ |  +- Init_RTC            
+ |  |    
+ |  +- Init_UART0          
+ |  |  | 
+ |  |  +- _LDIVU_LC           
+ |  |     | 
+ |  |     +- _ENTER_BINARY_L_LC  
+ |  |     |  | 
+ |  |     |  +- _PUSH_ARGS_L        
+ |  |     |       
+ |  |     +- _LDIVU_k_is_k_div_j 
+ |  |        | 
+ |  |        +- _LDIVMOD            
+ |  |             
+ |  +- Init_FLEX_TIMER     
+ |  |    
+ |  +- Init_ADC            
+ |  |    
+ |  +- PirStartUp          
+ |  |  | 
+ |  |  +- RL_off              
+ |  |  |  | 
+ |  |  |  +- WaitPWFallingEgle   
+ |  |  |  |  | 
+ |  |  |  |  +- ADCWaitZeroPoint    
+ |  |  |  |     | 
+ |  |  |  |     +- ADC_GetResult       
+ |  |  |  |          
+ |  |  |  +- __delay_x100us      
+ |  |  |     | 
+ |  |  |     +- __delay_x5us        
+ |  |  |          
+ |  |  +- GetPwSource         
+ |  |  |  | 
+ |  |  |  +- __delay_us           (see above)
+ |  |  |     
+ |  |  +- i2c_OPT3011_Config  
+ |  |  |  | 
+ |  |  |  +- i2c_OPT3001_Write   
+ |  |  |  |  | 
+ |  |  |  |  +- I2C_Start           
+ |  |  |  |  |  | 
+ |  |  |  |  |  +- I2C_Delay           
+ |  |  |  |  |     | 
+ |  |  |  |  |     +- __delay_us           (see above)
+ |  |  |  |  |        
+ |  |  |  |  +- I2C_Stop            
+ |  |  |  |  |  | 
+ |  |  |  |  |  +- I2C_Delay            (see above)
+ |  |  |  |  |     
+ |  |  |  |  +- i2c_write           
+ |  |  |  |  |  | 
+ |  |  |  |  |  +- I2C_Delay            (see above)
+ |  |  |  |  |     
+ |  |  |  |  +- i2c_checkack        
+ |  |  |  |     | 
+ |  |  |  |     +- I2C_Delay            (see above)
+ |  |  |  |        
+ |  |  |  +- __delay_ms           (see above)
+ |  |  |     
+ |  |  +- i2c_OPT3001_ReadId  
+ |  |  |  | 
+ |  |  |  +- i2c_OPT3001_get     
+ |  |  |     | 
+ |  |  |     +- I2C_Start            (see above)
+ |  |  |     |  
+ |  |  |     +- i2c_read            
+ |  |  |     |  | 
+ |  |  |     |  +- I2C_Delay            (see above)
+ |  |  |     |     
+ |  |  |     +- i2c_MstAck          
+ |  |  |     |  | 
+ |  |  |     |  +- I2C_Delay            (see above)
+ |  |  |     |     
+ |  |  |     +- __delay_us           (see above)
+ |  |  |     |  
+ |  |  |     +- i2c_checkack         (see above)
+ |  |  |     |  
+ |  |  |     +- I2C_Stop             (see above)
+ |  |  |     |  
+ |  |  |     +- i2c_write            (see above)
+ |  |  |        
+ |  |  +- CC_send_SynClock    
+ |  |  |  | 
+ |  |  |  +- UART0_putchar       
+ |  |  |       
+ |  |  +- __delay_ms           (see above)
+ |  |  |  
+ |  |  +- CC_receiver_program 
+ |  |  |  | 
+ |  |  |  +- _ICMP               
+ |  |  |  |    
+ |  |  |  +- _Jump_Table_Offset  
+ |  |  |  |    
+ |  |  |  +- CC_B4_ReadEEPROM    
+ |  |  |  |  | 
+ |  |  |  |  +- EEPROM_Read         
+ |  |  |  |  |    
+ |  |  |  |  +- UART0_putchar        (see above)
+ |  |  |  |  |  
+ |  |  |  |  +- UART0_SendBurst     
+ |  |  |  |     | 
+ |  |  |  |     +- UART0_putchar        (see above)
+ |  |  |  |        
+ |  |  |  +- CC_B5_WriteEEPROM   
+ |  |  |  |  | 
+ |  |  |  |  +- EEPROM_EraseByteBurst
+ |  |  |  |  |  | 
+ |  |  |  |  |  +- _IMODS_STAR08       
+ |  |  |  |  |  |  | 
+ |  |  |  |  |  |  +- _SPLITSIGN          
+ |  |  |  |  |  |     | 
+ |  |  |  |  |  |     +- _IDIVMOD            
+ |  |  |  |  |  |          
+ |  |  |  |  |  +- EEPROM_Read          (see above)
+ |  |  |  |  |  |  
+ |  |  |  |  |  +- _ICMP                (see above)
+ |  |  |  |  |  |  
+ |  |  |  |  |  +- EEPROM_Write        
+ |  |  |  |  |       
+ |  |  |  |  +- EEPROM_Write         (see above)
+ |  |  |  |  |  
+ |  |  |  |  +- EEPROM_Read          (see above)
+ |  |  |  |  |  
+ |  |  |  |  +- UART0_putchar        (see above)
+ |  |  |  |     
+ |  |  |  +- CC_B6_EraseEEPROM   
+ |  |  |  |  | 
+ |  |  |  |  +- EEPROM_EraseByteBurst (see above)
+ |  |  |  |  |  
+ |  |  |  |  +- UART0_putchar        (see above)
+ |  |  |  |     
+ |  |  |  +- CC_B7_LedControlIrPir
+ |  |  |  |  | 
+ |  |  |  |  +- _Jump_Table_Header_Offset
+ |  |  |  |  |    
+ |  |  |  |  +- __delay_ms           (see above)
+ |  |  |  |     
+ |  |  |  +- CC_BD_MCSendVertion 
+ |  |  |  |  | 
+ |  |  |  |  +- UART0_putchar        (see above)
+ |  |  |  |     
+ |  |  |  +- CC_BE_SyncTime      
+ |  |  |  |  | 
+ |  |  |  |  +- abs2int             
+ |  |  |  |       
+ |  |  |  +- CC_send_ReadyMC     
+ |  |  |  |  | 
+ |  |  |  |  +- UART0_putchar        (see above)
+ |  |  |  |     
+ |  |  |  +- CC_C1_SyncClock     
+ |  |  |  |  | 
+ |  |  |  |  +- CC_send_ReadyMC      (see above)
+ |  |  |  |     
+ |  |  |  +- CC_E0_CCGetPirStatus
+ |  |  |  |  | 
+ |  |  |  |  +- CC_F0_PirSendData   
+ |  |  |  |     | 
+ |  |  |  |     +- I2C_ReadLightValue  
+ |  |  |  |     |  | 
+ |  |  |  |     |  +- i2c_OPT3001_Write    (see above)
+ |  |  |  |     |  |  
+ |  |  |  |     |  +- i2c_OPT3001_get      (see above)
+ |  |  |  |     |  |  
+ |  |  |  |     |  +- _LINC               
+ |  |  |  |     |  |  | 
+ |  |  |  |     |  |  +- _ENTER_UNARY_L      
+ |  |  |  |     |  |       
+ |  |  |  |     |  +- _POP32              
+ |  |  |  |     |  |    
+ |  |  |  |     |  +- _LCMP_RC            
+ |  |  |  |     |  |  | 
+ |  |  |  |     |  |  +- _ENTER_BINARY_L_RC  
+ |  |  |  |     |  |  |  | 
+ |  |  |  |     |  |  |  +- _PUSH_ARGS_L         (see above)
+ |  |  |  |     |  |  |     
+ |  |  |  |     |  |  +- _LCMP_k_rel_j       
+ |  |  |  |     |  |       
+ |  |  |  |     |  +- _ILSR               
+ |  |  |  |     |  |    
+ |  |  |  |     |  +- shift               
+ |  |  |  |     |  |  | 
+ |  |  |  |     |  |  +- _COPY               
+ |  |  |  |     |  |       
+ |  |  |  |     |  +- _LDIVU_RC           
+ |  |  |  |     |  |  | 
+ |  |  |  |     |  |  +- _ENTER_BINARY_L_RC   (see above)
+ |  |  |  |     |  |  |  
+ |  |  |  |     |  |  +- _LDIVU_k_is_k_div_j  (see above)
+ |  |  |  |     |  |     
+ |  |  |  |     |  +- __delay_ms           (see above)
+ |  |  |  |     |  |  
+ |  |  |  |     |  +- abs2int              (see above)
+ |  |  |  |     |  |  
+ |  |  |  |     |  +- _LADD               
+ |  |  |  |     |  |  | 
+ |  |  |  |     |  |  +- _ENTER_BINARY_L     
+ |  |  |  |     |  |  |  | 
+ |  |  |  |     |  |  |  +- _PUSH_ARGS_L         (see above)
+ |  |  |  |     |  |  |     
+ |  |  |  |     |  |  +- _LADD_k_is_k_plus_j 
+ |  |  |  |     |  |       
+ |  |  |  |     |  +- _LLSR               
+ |  |  |  |     |  |  | 
+ |  |  |  |     |  |  +- _ENTER_UNARY_L       (see above)
+ |  |  |  |     |  |     
+ |  |  |  |     |  +- max                 
+ |  |  |  |     |       
+ |  |  |  |     +- _IMUL_STAR08        
+ |  |  |  |     |    
+ |  |  |  |     +- CalcLightVar        
+ |  |  |  |     |  | 
+ |  |  |  |     |  +- ADC_GetResult        (see above)
+ |  |  |  |     |  |  
+ |  |  |  |     |  +- _LMUL_RC            
+ |  |  |  |     |  |  | 
+ |  |  |  |     |  |  +- _ENTER_BINARY_L_RC   (see above)
+ |  |  |  |     |  |  |  
+ |  |  |  |     |  |  +- _LMUL_k_is_k_mul_j  
+ |  |  |  |     |  |     | 
+ |  |  |  |     |  |     +- _k_is_k_plus_j_l    
+ |  |  |  |     |  |     |    
+ |  |  |  |     |  |     +- _k_is_k_plus_j_i    
+ |  |  |  |     |  |          
+ |  |  |  |     |  +- _LDIVU_RC            (see above)
+ |  |  |  |     |     
+ |  |  |  |     +- CalcTimeOut         
+ |  |  |  |     |  | 
+ |  |  |  |     |  +- ADC_GetResult        (see above)
+ |  |  |  |     |  |  
+ |  |  |  |     |  +- _LMUL_RC             (see above)
+ |  |  |  |     |  |  
+ |  |  |  |     |  +- _LCMP               
+ |  |  |  |     |     | 
+ |  |  |  |     |     +- _ENTER_BINARY_L      (see above)
+ |  |  |  |     |     |  
+ |  |  |  |     |     +- _LCMP_k_rel_j        (see above)
+ |  |  |  |     |        
+ |  |  |  |     +- xor_str             
+ |  |  |  |     |    
+ |  |  |  |     +- UART0_putchar        (see above)
+ |  |  |  |     |  
+ |  |  |  |     +- UART0_putstr        
+ |  |  |  |        | 
+ |  |  |  |        +- UART0_putchar        (see above)
+ |  |  |  |           
+ |  |  |  +- CC_E1_CCSendDataDone
+ |  |  |  |    
+ |  |  |  +- CompleteCommand     
+ |  |  |       
+ |  |  +- Reset_MCU           
+ |  |     | 
+ |  |     +- __delay_ms           (see above)
+ |  |        
+ |  +- wdog_enable         
+ |  |    
+ |  +- wdog_reconfiguring  
+ |  |    
+ |  +- wdog_refreshing     
+ |  |    
+ |  +- PIR_Program         
+ |  |  | 
+ |  |  +- RL_off               (see above)
+ |  |  |  
+ |  |  +- CC_F0_PirSendData    (see above)
+ |  |  |  
+ |  |  +- CC_receiver_program  (see above)
+ |  |     
+ |  +- ScanPIR             
+ |     | 
+ |     +- ResetTimer          
+ |     |    
+ |     +- CC_F0_PirSendData    (see above)
+ |     |  
+ |     +- CalcTimeOut          (see above)
+ |     |  
+ |     +- __delay_ms           (see above)
+ |     |  
+ |     +- CalcLightVar         (see above)
+ |     |  
+ |     +- I2C_ReadLightValue   (see above)
+ |     |  
+ |     +- RL_on               
+ |     |  | 
+ |     |  +- WaitPWFallingEgle    (see above)
+ |     |  |  
+ |     |  +- __delay_x100us       (see above)
+ |     |     
+ |     +- ResetRTCTimer       
+ |          
+ +- _Startup            
+    | 
+    +- Init                
+    |  | 
+    |  +- loadByte            
+    |       
+    +- main                 (see above)
+       
+ _Vector_24          
+ | 
+ +- sci0rx              
+    | 
+    +- _Jump_Table_Header_Offset (see above)
+       
+ _Vector_12          
+ | 
+ +- FTM2_ISR            
+      
+ _Vector_18          
+ | 
+ +- FTMO_ISR            
+    | 
+    +- _LINC                (see above)
+    |  
+    +- _POP32               (see above)
+       
+ _Vector_19          
+ | 
+ +- MTIMO_ISR           
+    | 
+    +- UART0_putchar        (see above)
+       
+*********************************************************************************************
+STATISTIC SECTION
+---------------------------------------------------------------------------------------------
+
+ExeFile:
+--------
+Number of blocks to be downloaded: 8
+Total size of all blocks to be downloaded: 6238
+

@@ -1,0 +1,23 @@
+"$(ProjDirPath)/Project_Settings/Linker_Files/Project.prm"
+-M
+-ViewHidden
+-WmsgFob"%f%e:%l:%k:%d %m\n"
+-WmsgSd1100
+-WmsgSd1912 
+-Add("$(ProjDirPath)/output/IR/Sources/CC_c.obj"
+"$(ProjDirPath)/output/IR/Sources/EEP_ROM_c.obj"
+"$(ProjDirPath)/output/IR/Sources/FTM_c.obj"
+"$(ProjDirPath)/output/IR/Sources/I2C_c.obj"
+"$(ProjDirPath)/output/IR/Sources/IR_c.obj"
+"$(ProjDirPath)/output/IR/Sources/Init_IO_c.obj"
+"$(ProjDirPath)/output/IR/Sources/KBI_c.obj"
+"$(ProjDirPath)/output/IR/Sources/MTIM_c.obj"
+"$(ProjDirPath)/output/IR/Sources/RTC_c.obj"
+"$(ProjDirPath)/output/IR/Sources/SPI_c.obj"
+"$(ProjDirPath)/output/IR/Sources/UART_c.obj"
+"$(ProjDirPath)/output/IR/Sources/delay_c.obj"
+"$(ProjDirPath)/output/IR/Sources/main_c.obj"
+"$(ProjDirPath)/output/IR/Sources/wdog_c.obj"
+"$(ProjDirPath)/output/IR/Project_Settings/Startup_Code/start08_c.obj"
+"$(ProjDirPath)/output/IR/Lib/mc9s08pt16_c.obj"
+"$(MCUToolsBaseDirEnv)/lib/hc08c/lib/ansiis.lib" )

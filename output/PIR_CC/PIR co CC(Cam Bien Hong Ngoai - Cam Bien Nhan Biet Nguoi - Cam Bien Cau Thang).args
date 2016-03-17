@@ -1,0 +1,24 @@
+"$(ProjDirPath)/Project_Settings/Linker_Files/Project.prm"
+-M
+-ViewHidden
+-WmsgFob"%f%e:%l:%k:%d %m\n"
+-WmsgSd1100
+-WmsgSd1912 
+-Add("$(ProjDirPath)/output/PIR_CC/Sources/ADC_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Sources/CC_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Sources/EEP_ROM_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Sources/FTM_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Sources/I2C_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Sources/Init_IO_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Sources/KBI_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Sources/MTIM_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Sources/PIR_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Sources/RTC_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Sources/RelayControl_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Sources/UART_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Sources/delay_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Sources/main_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Sources/wdog_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Project_Settings/Startup_Code/start08_c.obj"
+"$(ProjDirPath)/output/PIR_CC/Lib/mc9s08pt16_c.obj"
+"$(MCUToolsBaseDirEnv)/lib/hc08c/lib/ansiis.lib" )
