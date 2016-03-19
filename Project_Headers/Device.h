@@ -20,9 +20,9 @@
 #include "delay.h"
 
 
-//#define IR_DEBUG
-//#undef IR
-//#undef PIR_CC
+#define IR_DEBUG
+#undef IR
+#undef PIR_CC
 
 //#define PIR_No_CC
 //#undef IR

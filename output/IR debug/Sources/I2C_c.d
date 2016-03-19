@@ -1,5 +1,4 @@
 
-
 Sources/I2C_c.obj: \
 	C:/Users/hp8460p/Desktop/Fresscale_workspace/PIR_IR/Sources/I2C.c \
 	C:/Users/hp8460p/Desktop/Fresscale_workspace/PIR_IR/Project_Headers/Device.h \

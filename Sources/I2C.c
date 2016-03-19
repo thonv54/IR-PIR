@@ -309,9 +309,9 @@ unsigned int I2C_ReadLightValue(void) {
 		dataE = tempLightData.b.E;
 		dataR = tempLightData.b.R;
 		templux[i] = shift(dataR, dataE) / 100;
-		__delay_ms(100);
+		__delay_ms(50);
 	}
-	if (abs2int(templux[0], templux[1]) < 20) {
+	if (abs2int((unsigned int)templux[0], (unsigned int)templux[1]) < 20) {
 		lux = (unsigned int) ((templux[0] + templux[1]) >> 1);
 		return lux;
 	}

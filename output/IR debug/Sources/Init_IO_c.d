@@ -1,5 +1,4 @@
 
-
 Sources/Init_IO_c.obj: \
 	C:/Users/hp8460p/Desktop/Fresscale_workspace/PIR_IR/Sources/Init_IO.c \
 	C:/Users/hp8460p/Desktop/Fresscale_workspace/PIR_IR/Project_Headers/Init_IO.h \

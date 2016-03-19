@@ -16,6 +16,7 @@ RM := "$(GNU_Make_Install_DirEnv)/rm" -f
 -include subdir.mk
 -include output/PIR_No_CC/Sources/subdir.mk
 -include output/PIR_No_CC/Project_Settings/Startup_Code/subdir.mk
+-include output/PIR_No_CC/subdir.mk
 -include output/PIR_No_CC/Lib/subdir.mk
 -include output/PIR_CC/Sources/subdir.mk
 -include output/PIR_CC/Project_Settings/Startup_Code/subdir.mk

@@ -1,4 +1,5 @@
 
+
 Sources/main_c.obj: \
 	C:/Users/hp8460p/Desktop/Fresscale_workspace/PIR_IR/Sources/main.c \
 	C:/Users/hp8460p/Desktop/Fresscale_workspace/PIR_IR/Project_Headers/Device.h \

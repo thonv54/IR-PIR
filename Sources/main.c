@@ -18,7 +18,6 @@
 #include "PIR.h"
 #include "FTM.h"
 #include "ADC.h"
-
 #endif
 
 unsigned int HumidityData = 0;
@@ -96,14 +95,10 @@ void main(void) {
 	while (1) {
 #ifdef IR
 		IR_Program();
-
 #endif	
 #ifdef PIR
 		PIR_Program();
 		ScanPIR();
-		
-		
-		
 #endif
 		
 #ifndef Debug

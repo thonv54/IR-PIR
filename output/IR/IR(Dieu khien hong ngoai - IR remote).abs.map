@@ -37,8 +37,8 @@ Entry point: 0xC07B (_Startup)
 _startupData is allocated at 0xC084 and uses 6 Bytes
 extern struct _tagStartup {
   unsigned nofZeroOut     1
-  _Range   pZeroOut       0x100     934
-  _Copy    *toCopyDownBeg 0xE99D
+  _Range   pZeroOut       0x100     1034
+  _Copy    *toCopyDownBeg 0xE82B
 } _startupData;
 
 *********************************************************************************************
@@ -49,9 +49,9 @@ Section Name                    Size  Type     From       To       Segment
 .init                            132     R     0xC000     0xC083   ROM
 .startData                        14     R     0xC084     0xC091   ROM
 .rodata                          116     R     0xC092     0xC105   ROM
-.rodata1                         145     R     0xC106     0xC196   ROM
-.text                          10246     R     0xC197     0xE99C   ROM
-.copy                             12     R     0xE99D     0xE9A8   ROM
+.rodata1                         155     R     0xC106     0xC1A0   ROM
+.text                           9866     R     0xC1A1     0xE82A   ROM
+.copy                             12     R     0xE82B     0xE836   ROM
 .abs_section_ffce                  2     R     0xFFCE     0xFFCF   .absSeg0
 .abs_section_ffd8                  2     R     0xFFD8     0xFFD9   .absSeg1
 .abs_section_ffb4                  2     R     0xFFB4     0xFFB5   .absSeg2
@@ -260,13 +260,13 @@ Section Name                    Size  Type     From       To       Segment
 .abs_section_30d5                  2   N/I     0x30D5     0x30D6   .absSeg205
 .abs_section_30d7                  2   N/I     0x30D7     0x30D8   .absSeg206
 .bss                             881   R/W      0x107      0x477   RAM
-.common                           46   R/W      0x478      0x4A5   RAM
-.stack                           128   R/W      0x4A6      0x525   RAM
+.common                          146   R/W      0x478      0x509   RAM
+.stack                           128   R/W      0x50A      0x589   RAM
 .vectSeg207_vect                   2     R     0xFFFE     0xFFFF   .vectSeg207
 
 Summary of section sizes per section type:
-READ_ONLY (R):        29B1 (dec:    10673)
-READ_WRITE (R/W):      426 (dec:     1062)
+READ_ONLY (R):        283F (dec:    10303)
+READ_WRITE (R/W):      48A (dec:     1162)
 NO_INIT (N/I):          EA (dec:      234)
 
 *********************************************************************************************
@@ -281,34 +281,33 @@ OBJECT-ALLOCATION SECTION
 ---------------------------------------------------------------------------------------------
 MODULE:                 -- CC_c.obj --
 - PROCEDURES:
-     CompleteCommand                           C197      24      36       1   .text       
-     CC_BD_MCSendVertion                       C1BB      2B      43       1   .text       
-     CC_send_ReadyMC                           C1E6      95     149       2   .text       
-     CC_send_SynClock                          C27B      95     149       1   .text       
-     CC_C1_SyncClock                           C310      7E     126       1   .text       
-     CC_B4_ReadEEPROM                          C38E      FB     251       1   .text       
-     CC_B5_WriteEEPROM                         C489     143     323       1   .text       
-     CC_B6_EraseEEPROM                         C5CC      59      89       1   .text       
-     CC_B7_LedControlIrPir                     C625      64     100       1   .text       
-     CC_BE_SyncTime                            C689      FD     253       7   .text       
-     xor_int                                   C786       8       8       6   .text       
-     xor_str                                   C78E      31      49       2   .text       
-     CC_D3_SendIrStatus                        C7BF      60      96       9   .text       
-     CC_D5_SendIrCmdInfo                       C81F      61      97       1   .text       
-     CC_D7_SendIrTotalCmd                      C880     22C     556       4   .text       
-     CC_DA_SendMaxIdRemote                     CAAC      A0     160       1   .text       
-     CC_C3_LearnIRCmd                          CB4C      BF     191       1   .text       
-     CC_C4_EraserIRCmd                         CC0B      70     112       1   .text       
-     CC_C5_ReadIRCmd                           CC7B      14      20       1   .text       
-     CC_C6_SetIRCmd                            CC8F      B0     176       1   .text       
-     CC_C7_ReadIRCmdNumber                     CD3F       3       3       1   .text       
-     CC_C8_StopLearnIRCmd                      CD42       6       6       1   .text       
-     CC_C9_AddIrCmdInfo                        CD48     24B     587       6   .text       
-     CC_CA_FindMaxIdRemote                     CF93       3       3       1   .text       
-     CC_CB_EraseIdRemote                       CF96      92     146       1   .text       
-     CC_SendAllIrFlashStore                    D028     161     353      10   .text       
-     CC_receiver_program                       D189     160     352       9   .text       
-     sci0rx                                    D2E9      9C     156       1   .text       
+     CompleteCommand                           C1A1      24      36       1   .text       
+     CC_BD_MCSendVertion                       C1C5      2B      43       1   .text       
+     CC_send_ReadyMC                           C1F0      95     149       2   .text       
+     CC_C1_SyncClock                           C285      7E     126       1   .text       
+     CC_B4_ReadEEPROM                          C303      FB     251       1   .text       
+     CC_B5_WriteEEPROM                         C3FE     143     323       1   .text       
+     CC_B6_EraseEEPROM                         C541      59      89       1   .text       
+     CC_B7_LedControlIrPir                     C59A      64     100       1   .text       
+     CC_BE_SyncTime                            C5FE      FD     253       7   .text       
+     xor_int                                   C6FB       8       8       6   .text       
+     xor_str                                   C703      31      49       2   .text       
+     CC_D3_SendIrStatus                        C734      60      96       9   .text       
+     CC_D5_SendIrCmdInfo                       C794      61      97       1   .text       
+     CC_D7_SendIrTotalCmd                      C7F5     22C     556       4   .text       
+     CC_DA_SendMaxIdRemote                     CA21      A0     160       1   .text       
+     CC_C3_LearnIRCmd                          CAC1      BF     191       1   .text       
+     CC_C4_EraserIRCmd                         CB80      70     112       1   .text       
+     CC_C5_ReadIRCmd                           CBF0      14      20       1   .text       
+     CC_C6_SetIRCmd                            CC04      B0     176       1   .text       
+     CC_C7_ReadIRCmdNumber                     CCB4       3       3       1   .text       
+     CC_C8_StopLearnIRCmd                      CCB7       6       6       1   .text       
+     CC_C9_AddIrCmdInfo                        CCBD     24B     587       6   .text       
+     CC_CA_FindMaxIdRemote                     CF08       3       3       1   .text       
+     CC_CB_EraseIdRemote                       CF0B      92     146       1   .text       
+     CC_SendAllIrFlashStore                    CF9D     161     353      10   .text       
+     CC_receiver_program                       D0FE     160     352       8   .text       
+     sci0rx                                    D25E      9C     156       1   .text       
 - VARIABLES:
      STRING.Header.no..u.....1                 C106      11      17       1   .rodata1    
      STRING.remote.ID..u.....2                 C117      11      17       1   .rodata1    
@@ -332,35 +331,33 @@ MODULE:                 -- CC_c.obj --
      Sync_flag                                  468       1       1       6   .bss        
      Temp_ratio                                 469       2       2       3   .bss        
      Start_Sync_CNT_value                       46B       2       2       8   .bss        
-     CC_ready_flag                              46D       1       1       3   .bss        
+     CC_ready_flag                              46D       1       1       2   .bss        
      _Vector_24                                FFCE       2       2       0   .abs_section_ffce
 MODULE:                 -- EEP_ROM_c.obj --
 - PROCEDURES:
-     EEPROM_Read                               D385       2       2       6   .text       
-     EEPROM_Read_int                           D387      24      36       1   .text       
-     EEPROM_Write_int                          D3AB      19      25       1   .text       
-     EEPROM_Write                              D3C4      41      65       5   .text       
-     EEPROM_EraseByteBurst                     D405      D4     212       2   .text       
-     FLASH_Read                                D4D9       3       3       1   .text       
+     EEPROM_Read                               D2FA       2       2       4   .text       
+     EEPROM_Write                              D2FC      41      65       3   .text       
+     EEPROM_EraseByteBurst                     D33D      D4     212       2   .text       
+     FLASH_Read                                D411       3       3       1   .text       
 - VARIABLES:
 MODULE:                 -- FTM_c.obj --
 - PROCEDURES:
-     Init_FLEX_TIMER                           D4DC      34      52       1   .text       
-     ResetTimer                                D510      16      22       3   .text       
+     Init_FLEX_TIMER                           D414      34      52       1   .text       
+     ResetTimer                                D448      16      22       3   .text       
 - VARIABLES:
 MODULE:                 -- IR_c.obj --
 - PROCEDURES:
-     WaitHighPull                              D526      12      18       1   .text       
-     WaitLowPull                               D538      12      18       1   .text       
-     CheckIrDataStore                          D54A      FB     251       2   .text       
-     IrSendCmd                                 D645      7D     125       1   .text       
-     IR_Program                                D6C2      FA     250       4   .text       
-     EraserFlashFirst                          D7BC      2C      44       1   .text       
-     CheckFlashConection                       D7E8      25      37       1   .text       
-     IrStartUp                                 D80D      52      82       1   .text       
-     MTIMO_ISR                                 D85F      23      35       1   .text       
-     KBI0_ISR                                  D882      C7     199       4   .text       
+     WaitHighPull                              D45E      12      18       1   .text       
+     WaitLowPull                               D470      12      18       1   .text       
+     CheckIrDataStore                          D482     124     292       4   .text       
+     IrSendCmd                                 D5A6      7D     125       1   .text       
+     IR_Program                                D623      FA     250       4   .text       
+     CheckFlashConection                       D71D      25      37       1   .text       
+     IrStartUp                                 D742      2E      46       1   .text       
+     MTIMO_ISR                                 D770      23      35       1   .text       
+     KBI0_ISR                                  D793      C7     199       4   .text       
 - VARIABLES:
+     STRING..4u..4u...1                        C197       A      10       1   .rodata1    
      IR_event                                   106       1       1       8   .data       
      GetIR_flag                                 46E       1       1       7   .bss        
      IrCmdDataFlag                              46F       1       1       3   .bss        
@@ -369,64 +366,61 @@ MODULE:                 -- IR_c.obj --
      _Vector_19                                FFD8       2       2       0   .abs_section_ffd8
      _Vector_37                                FFB4       2       2       0   .abs_section_ffb4
      NewIrHeader                                478      2E      46      19   .common     
+     tempstr                                    4A6      64     100       2   .common     
 MODULE:                 -- Init_IO_c.obj --
 - PROCEDURES:
-     Init_IO                                   D949      47      71       1   .text       
-     clock_config                              D990      36      54       1   .text       
-     system_config                             D9C6      1F      31       1   .text       
+     Init_IO                                   D85A      47      71       1   .text       
+     clock_config                              D8A1      36      54       1   .text       
+     system_config                             D8D7      1F      31       1   .text       
 - VARIABLES:
 MODULE:                 -- KBI_c.obj --
 - PROCEDURES:
-     Init_KBI                                  D9E5      17      23       1   .text       
+     Init_KBI                                  D8F6      17      23       1   .text       
 - VARIABLES:
 MODULE:                 -- MTIM_c.obj --
 - PROCEDURES:
-     Init_MTIM0                                D9FC      1A      26       1   .text       
+     Init_MTIM0                                D90D      1A      26       1   .text       
 - VARIABLES:
 MODULE:                 -- RTC_c.obj --
 - PROCEDURES:
-     Init_RTC                                  DA16      24      36       1   .text       
-     ResetRTCTimer                             DA3A      16      22       1   .text       
+     Init_RTC                                  D927      24      36       1   .text       
+     ResetRTCTimer                             D94B      16      22       1   .text       
 - VARIABLES:
 MODULE:                 -- SPI_c.obj --
 - PROCEDURES:
-     SPI0_Init                                 DA50      4F      79       1   .text       
-     spi_rw                                    DA9F      17      23       8   .text       
-     flash_cmd                                 DAB6      4F      79       8   .text       
-     flash_WIP_poll                            DB05      20      32       5   .text       
-     flash_read                                DB25      37      55      14   .text       
-     flash_sector_erase                        DB5C      22      34       8   .text       
-     flash_erase                               DB7E      18      24       1   .text       
-     flash_page_program                        DB96      42      66       6   .text       
-     flash_read_id                             DBD8      2E      46       2   .text       
+     SPI0_Init                                 D961      4F      79       1   .text       
+     spi_rw                                    D9B0      17      23       8   .text       
+     flash_cmd                                 D9C7      4F      79       7   .text       
+     flash_WIP_poll                            DA16      20      32       4   .text       
+     flash_read                                DA36      37      55      14   .text       
+     flash_sector_erase                        DA6D      22      34       8   .text       
+     flash_page_program                        DA8F      42      66       6   .text       
+     flash_read_id                             DAD1      2E      46       2   .text       
 - VARIABLES:
 MODULE:                 -- UART_c.obj --
 - PROCEDURES:
-     Init_UART0                                DC06      31      49       1   .text       
-     UART0_putchar                             DC37      10      16      67   .text       
-     UART0_puts                                DC47      18      24       4   .text       
-     UART0_putstr                              DC5F      2A      42       5   .text       
-     UART0_SendBurst                           DC89      1D      29       1   .text       
-     ui2s                                      DCA6      FB     251       3   .text       
-     UART0_puti                                DDA1      13      19       1   .text       
+     Init_UART0                                DAFF      31      49       1   .text       
+     UART0_putchar                             DB30      10      16      61   .text       
+     UART0_puts                                DB40      18      24       5   .text       
+     UART0_putstr                              DB58      2A      42       5   .text       
+     UART0_SendBurst                           DB82      1D      29       1   .text       
+     ui2s                                      DB9F      FB     251       3   .text       
+     UART0_puti                                DC9A      13      19       1   .text       
 - VARIABLES:
 MODULE:                 -- delay_c.obj --
 - PROCEDURES:
-     __delay_ms                                DDB4      21      33      10   .text       
-     __delay_us                                DDD5      1C      28       1   .text       
-     abs2int                                   DDF1      28      40       1   .text       
+     __delay_ms                                DCAD      21      33       9   .text       
+     __delay_us                                DCCE      1C      28       1   .text       
+     abs2int                                   DCEA      28      40       1   .text       
 - VARIABLES:
 MODULE:                 -- main_c.obj --
 - PROCEDURES:
-     main                                      DE19      5C      92       1   .text       
+     main                                      DD12      43      67       1   .text       
 - VARIABLES:
 MODULE:                 -- wdog_c.obj --
 - PROCEDURES:
-     wdog_disable                              DE75      29      41       1   .text       
-     wdog_enable                               DE9E      22      34       1   .text       
-     wdog_refreshing                           DEC0       F      15       2   .text       
-     wdog_reconfiguring                        DECF      21      33       1   .text       
-     Reset_MCU                                 DEF0      24      36       1   .text       
+     wdog_disable                              DD55      29      41       1   .text       
+     Reset_MCU                                 DD7E      24      36       1   .text       
 - VARIABLES:
 MODULE:                 -- start08_c.obj --
 - PROCEDURES:
@@ -436,14 +430,14 @@ MODULE:                 -- start08_c.obj --
 - VARIABLES:
      _startupData                              C084       6       6       4   .startData  
 - LABELS:
-     __SEG_END_SSTACK                           526       0       0       1               
+     __SEG_END_SSTACK                           58A       0       0       1               
 MODULE:                 -- mc9s08pt16_c.obj --
 - PROCEDURES:
 - VARIABLES:
      _PORT_PTAD                                   0       1       1       8   .abs_section_0
      _PORT_PTBD                                   1       1       1       8   .abs_section_1
      _PORT_PTCD                                   2       1       1       1   .abs_section_2
-     _PORT_PTDD                                   3       1       1      26   .abs_section_3
+     _PORT_PTDD                                   3       1       1      24   .abs_section_3
      _PORT_PTED                                   4       1       1       0   .abs_section_4
      _TSI_CS0                                     8       1       1       0   .abs_section_8
      _TSI_CS1                                     9       1       1       0   .abs_section_9
@@ -506,8 +500,8 @@ MODULE:                 -- mc9s08pt16_c.obj --
      _NVM_FPROT                                3028       1       1       0   .abs_section_3028
      _NVM_EEPROT                               3029       1       1       0   .abs_section_3029
      _NVM_FOPT                                 302C       1       1       0   .abs_section_302c
-     _WDOG_CS1                                 3030       1       1       4   .abs_section_3030
-     _WDOG_CS2                                 3031       1       1       4   .abs_section_3031
+     _WDOG_CS1                                 3030       1       1       2   .abs_section_3030
+     _WDOG_CS2                                 3031       1       1       2   .abs_section_3031
      _ICS_C1                                   3038       1       1       1   .abs_section_3038
      _ICS_C2                                   3039       1       1       2   .abs_section_3039
      _ICS_C3                                   303A       1       1       1   .abs_section_303a
@@ -623,8 +617,8 @@ MODULE:                 -- mc9s08pt16_c.obj --
      _FTM0_C1V                                   29       2       2       0   .abs_section_29
      _SYS_SDID                                 3002       2       2       0   .abs_section_3002
      _NVM_FCCOB                                302A       2       2       7   .abs_section_302a
-     _WDOG_CNT                                 3032       2       2       7   .abs_section_3032
-     _WDOG_TOVAL                               3034       2       2       5   .abs_section_3034
+     _WDOG_CNT                                 3032       2       2       2   .abs_section_3032
+     _WDOG_TOVAL                               3034       2       2       3   .abs_section_3034
      _WDOG_WIN                                 3036       2       2       2   .abs_section_3036
      _CRC_D0D1                                 3060       2       2       0   .abs_section_3060
      _CRC_D2D3                                 3062       2       2       0   .abs_section_3062
@@ -646,10 +640,10 @@ MODULE:                 -- mc9s08pt16_c.obj --
      _FTM2_CNTIN                               30D7       2       2       1   .abs_section_30d7
 MODULE:                 -- printf.o (ansiis.lib) --
 - PROCEDURES:
-     vprintf                                   DF14     60B    1547      39   .text       
-     _out                                      E51F       D      13       9   .text       
-     deposit_char                              E52C      15      21       1   .text       
-     sprintf                                   E541      3B      59       7   .text       
+     vprintf                                   DDA2     60B    1547      39   .text       
+     _out                                      E3AD       D      13       9   .text       
+     deposit_char                              E3BA      15      21       1   .text       
+     sprintf                                   E3CF      3B      59       8   .text       
 - VARIABLES:
      pow10                                     C092      28      40       4   .rodata     
      pow16                                     C0BA      20      32       4   .rodata     
@@ -657,60 +651,60 @@ MODULE:                 -- printf.o (ansiis.lib) --
      pbuf                                       472       6       6      14   .bss        
 MODULE:                 -- rtshc08.o (ansiis.lib) --
 - PROCEDURES:
-     _PUSH_ARGS_L                              E57C      20      32       3   .text       
-     _ENTER_UNARY_L                            E59C      29      41       2   .text       
-     _ENTER_BINARY_L                           E5C5      16      22       3   .text       
-     _ENTER_BINARY_L_RC                        E5DB      19      25       2   .text       
-     _ENTER_BINARY_L_LC                        E5F4      1A      26       1   .text       
-     _IDIVMOD                                  E60E      69     105       3   .text       
-     _SPLITSIGN                                E677      1C      28       2   .text       
-     _LADD_k_is_k_plus_j                       E693      1F      31       2   .text       
-     _LSUB_k_is_k_minus_j                      E6B2      1F      31       1   .text       
-     _LDIVMOD                                  E6D1      A4     164       1   .text       
-     _LDIVU_k_is_k_div_j                       E775      17      23       1   .text       
-     _LCMP_k_rel_j                             E78C      1F      31       2   .text       
-     _IMUL_STAR08                              E7AB      27      39       2   .text       
-     _IDIVS_STAR08                             E7D2      1B      27       1   .text       
-     _IDIVU_STAR08                             E7ED       D      13       1   .text       
-     _IMODS_STAR08                             E7FA      25      37       1   .text       
-     _IMODU_STAR08                             E81F      10      16       1   .text       
-     _IMODU_8                                  E82F      12      18       1   .text       
-     _ICMP                                     E841      16      22       2   .text       
-     _LNEG                                     E857      1C      28       1   .text       
-     _LADD                                     E873       6       6       7   .text       
-     _LADD_RC                                  E879       6       6       8   .text       
-     _LSUB                                     E87F       6       6       1   .text       
-     _LDIVU_LC                                 E885       6       6       1   .text       
-     _LLSL                                     E88B      16      22      24   .text       
-     _LCMP                                     E8A1       6       6       5   .text       
-     _LCMP_RC                                  E8A7       6       6       1   .text       
-     _COPY                                     E8AD      30      48      10   .text       
-     _POP32                                    E8DD      1A      26       5   .text       
-     _SEXT16_32                                E8F7       D      13       2   .text       
-     _Jump_Table_Addr                          E904      16      22       1   .text       
-     _Jump_Table_Offset                        E91A      19      25       2   .text       
-     _Jump_Table_Header_Offset                 E933      24      36       3   .text       
-     _Search_Table_8_Addr                      E957      21      33       1   .text       
-     _Search_Table_8_Offset                    E978      25      37       2   .text       
+     _PUSH_ARGS_L                              E40A      20      32       3   .text       
+     _ENTER_UNARY_L                            E42A      29      41       2   .text       
+     _ENTER_BINARY_L                           E453      16      22       3   .text       
+     _ENTER_BINARY_L_RC                        E469      19      25       2   .text       
+     _ENTER_BINARY_L_LC                        E482      1A      26       1   .text       
+     _IDIVMOD                                  E49C      69     105       3   .text       
+     _SPLITSIGN                                E505      1C      28       2   .text       
+     _LADD_k_is_k_plus_j                       E521      1F      31       2   .text       
+     _LSUB_k_is_k_minus_j                      E540      1F      31       1   .text       
+     _LDIVMOD                                  E55F      A4     164       1   .text       
+     _LDIVU_k_is_k_div_j                       E603      17      23       1   .text       
+     _LCMP_k_rel_j                             E61A      1F      31       2   .text       
+     _IMUL_STAR08                              E639      27      39       2   .text       
+     _IDIVS_STAR08                             E660      1B      27       1   .text       
+     _IDIVU_STAR08                             E67B       D      13       1   .text       
+     _IMODS_STAR08                             E688      25      37       1   .text       
+     _IMODU_STAR08                             E6AD      10      16       1   .text       
+     _IMODU_8                                  E6BD      12      18       1   .text       
+     _ICMP                                     E6CF      16      22       2   .text       
+     _LNEG                                     E6E5      1C      28       1   .text       
+     _LADD                                     E701       6       6       7   .text       
+     _LADD_RC                                  E707       6       6       8   .text       
+     _LSUB                                     E70D       6       6       1   .text       
+     _LDIVU_LC                                 E713       6       6       1   .text       
+     _LLSL                                     E719      16      22      24   .text       
+     _LCMP                                     E72F       6       6       5   .text       
+     _LCMP_RC                                  E735       6       6       1   .text       
+     _COPY                                     E73B      30      48      10   .text       
+     _POP32                                    E76B      1A      26       5   .text       
+     _SEXT16_32                                E785       D      13       2   .text       
+     _Jump_Table_Addr                          E792      16      22       1   .text       
+     _Jump_Table_Offset                        E7A8      19      25       2   .text       
+     _Jump_Table_Header_Offset                 E7C1      24      36       3   .text       
+     _Search_Table_8_Addr                      E7E5      21      33       1   .text       
+     _Search_Table_8_Offset                    E806      25      37       2   .text       
 - VARIABLES:
 
 *********************************************************************************************
 MODULE STATISTIC
   Name                                      Data   Code  Const
 ---------------------------------------------------------------------------------------------
-  CC_c.obj                                   877   4590    147
-  EEP_ROM_c.obj                                0    343      0
+  CC_c.obj                                   877   4441    147
+  EEP_ROM_c.obj                                0    282      0
   FTM_c.obj                                    0     74      0
-  IR_c.obj                                    51   1059      4
+  IR_c.obj                                   151   1020     14
   Init_IO_c.obj                                0    156      0
   KBI_c.obj                                    0     23      0
   MTIM_c.obj                                   0     26      0
   RTC_c.obj                                    0     58      0
-  SPI_c.obj                                    0    438      0
+  SPI_c.obj                                    0    414      0
   UART_c.obj                                   0    430      0
   delay_c.obj                                  0    101      0
-  main_c.obj                                   0     92      0
-  wdog_c.obj                                   0    159      0
+  main_c.obj                                   0     67      0
+  wdog_c.obj                                   0     77      0
   start08_c.obj                                0    132      0
   mc9s08pt16_c.obj                           234      0      0
   printf.o (ansiis.lib)                        6   1640    116
@@ -721,29 +715,27 @@ MODULE STATISTIC
 SECTION USE IN OBJECT-ALLOCATION SECTION
 ---------------------------------------------------------------------------------------------
 SECTION: ".text"
-  CompleteCommand CC_BD_MCSendVertion CC_send_ReadyMC CC_send_SynClock 
-  CC_C1_SyncClock CC_B4_ReadEEPROM CC_B5_WriteEEPROM CC_B6_EraseEEPROM 
-  CC_B7_LedControlIrPir CC_BE_SyncTime xor_int xor_str CC_D3_SendIrStatus 
-  CC_D5_SendIrCmdInfo CC_D7_SendIrTotalCmd CC_DA_SendMaxIdRemote 
-  CC_C3_LearnIRCmd CC_C4_EraserIRCmd CC_C5_ReadIRCmd CC_C6_SetIRCmd 
-  CC_C7_ReadIRCmdNumber CC_C8_StopLearnIRCmd CC_C9_AddIrCmdInfo 
-  CC_CA_FindMaxIdRemote CC_CB_EraseIdRemote CC_SendAllIrFlashStore 
-  CC_receiver_program sci0rx EEPROM_Read EEPROM_Read_int EEPROM_Write_int 
-  EEPROM_Write EEPROM_EraseByteBurst FLASH_Read Init_FLEX_TIMER ResetTimer 
-  WaitHighPull WaitLowPull CheckIrDataStore IrSendCmd IR_Program 
-  EraserFlashFirst CheckFlashConection IrStartUp MTIMO_ISR KBI0_ISR Init_IO 
-  clock_config system_config Init_KBI Init_MTIM0 Init_RTC ResetRTCTimer 
-  SPI0_Init spi_rw flash_cmd flash_WIP_poll flash_read flash_sector_erase 
-  flash_erase flash_page_program flash_read_id Init_UART0 UART0_putchar 
-  UART0_puts UART0_putstr UART0_SendBurst ui2s UART0_puti __delay_ms __delay_us 
-  abs2int main wdog_disable wdog_enable wdog_refreshing wdog_reconfiguring 
-  Reset_MCU vprintf _out deposit_char sprintf _PUSH_ARGS_L _ENTER_UNARY_L 
-  _ENTER_BINARY_L _ENTER_BINARY_L_RC _ENTER_BINARY_L_LC _IDIVMOD _SPLITSIGN 
-  _LADD_k_is_k_plus_j _LSUB_k_is_k_minus_j _LDIVMOD _LDIVU_k_is_k_div_j 
-  _LCMP_k_rel_j _IMUL_STAR08 _IDIVS_STAR08 _IDIVU_STAR08 _IMODS_STAR08 
-  _IMODU_STAR08 _IMODU_8 _ICMP _LNEG _LADD _LADD_RC _LSUB _LDIVU_LC _LLSL _LCMP 
-  _LCMP_RC _COPY _POP32 _SEXT16_32 _Jump_Table_Addr _Jump_Table_Offset 
-  _Jump_Table_Header_Offset _Search_Table_8_Addr _Search_Table_8_Offset 
+  CompleteCommand CC_BD_MCSendVertion CC_send_ReadyMC CC_C1_SyncClock 
+  CC_B4_ReadEEPROM CC_B5_WriteEEPROM CC_B6_EraseEEPROM CC_B7_LedControlIrPir 
+  CC_BE_SyncTime xor_int xor_str CC_D3_SendIrStatus CC_D5_SendIrCmdInfo 
+  CC_D7_SendIrTotalCmd CC_DA_SendMaxIdRemote CC_C3_LearnIRCmd CC_C4_EraserIRCmd 
+  CC_C5_ReadIRCmd CC_C6_SetIRCmd CC_C7_ReadIRCmdNumber CC_C8_StopLearnIRCmd 
+  CC_C9_AddIrCmdInfo CC_CA_FindMaxIdRemote CC_CB_EraseIdRemote 
+  CC_SendAllIrFlashStore CC_receiver_program sci0rx EEPROM_Read EEPROM_Write 
+  EEPROM_EraseByteBurst FLASH_Read Init_FLEX_TIMER ResetTimer WaitHighPull 
+  WaitLowPull CheckIrDataStore IrSendCmd IR_Program CheckFlashConection 
+  IrStartUp MTIMO_ISR KBI0_ISR Init_IO clock_config system_config Init_KBI 
+  Init_MTIM0 Init_RTC ResetRTCTimer SPI0_Init spi_rw flash_cmd flash_WIP_poll 
+  flash_read flash_sector_erase flash_page_program flash_read_id Init_UART0 
+  UART0_putchar UART0_puts UART0_putstr UART0_SendBurst ui2s UART0_puti 
+  __delay_ms __delay_us abs2int main wdog_disable Reset_MCU vprintf _out 
+  deposit_char sprintf _PUSH_ARGS_L _ENTER_UNARY_L _ENTER_BINARY_L 
+  _ENTER_BINARY_L_RC _ENTER_BINARY_L_LC _IDIVMOD _SPLITSIGN _LADD_k_is_k_plus_j 
+  _LSUB_k_is_k_minus_j _LDIVMOD _LDIVU_k_is_k_div_j _LCMP_k_rel_j _IMUL_STAR08 
+  _IDIVS_STAR08 _IDIVU_STAR08 _IMODS_STAR08 _IMODU_STAR08 _IMODU_8 _ICMP _LNEG 
+  _LADD _LADD_RC _LSUB _LDIVU_LC _LLSL _LCMP _LCMP_RC _COPY _POP32 _SEXT16_32 
+  _Jump_Table_Addr _Jump_Table_Offset _Jump_Table_Header_Offset 
+  _Search_Table_8_Addr _Search_Table_8_Offset 
 SECTION: ".data"
   RTC_ratio FirstTemp_ratio RTC_div IR_event 
 SECTION: ".bss"
@@ -758,7 +750,7 @@ SECTION: ".rodata1"
   STRING.Header.no..u.....1 STRING.remote.ID..u.....2 
   STRING.remote.type..u.....3 STRING.Cmd.Remote.Position..4 
   STRING.Cmd.Length..u.....5 STRING.Cmd.Name..s.....6 
-  STRING.remote.type..s.....7 STRING.Cmd.Data.8 STRING....9 
+  STRING.remote.type..s.....7 STRING.Cmd.Data.8 STRING....9 STRING..4u..4u...1 
 SECTION: ".abs_section_ffce"
   _Vector_24 
 SECTION: ".abs_section_ffd8"
@@ -766,7 +758,7 @@ SECTION: ".abs_section_ffd8"
 SECTION: ".abs_section_ffb4"
   _Vector_37 
 SECTION: ".common"
-  NewIrHeader 
+  NewIrHeader tempstr 
 SECTION: ".abs_section_0"
   _PORT_PTAD 
 SECTION: ".abs_section_1"
@@ -1183,7 +1175,7 @@ OBJECT LIST SORTED BY ADDRESS
      _PORT_PTAD                                   0       1       1       8   .abs_section_0
      _PORT_PTBD                                   1       1       1       8   .abs_section_1
      _PORT_PTCD                                   2       1       1       1   .abs_section_2
-     _PORT_PTDD                                   3       1       1      26   .abs_section_3
+     _PORT_PTDD                                   3       1       1      24   .abs_section_3
      _PORT_PTED                                   4       1       1       0   .abs_section_4
      _TSI_CS0                                     8       1       1       0   .abs_section_8
      _TSI_CS1                                     9       1       1       0   .abs_section_9
@@ -1231,13 +1223,14 @@ OBJECT LIST SORTED BY ADDRESS
      Sync_flag                                  468       1       1       6   .bss        
      Temp_ratio                                 469       2       2       3   .bss        
      Start_Sync_CNT_value                       46B       2       2       8   .bss        
-     CC_ready_flag                              46D       1       1       3   .bss        
+     CC_ready_flag                              46D       1       1       2   .bss        
      GetIR_flag                                 46E       1       1       7   .bss        
      IrCmdDataFlag                              46F       1       1       3   .bss        
      ChangeStateEvent                           470       1       1       3   .bss        
      Mtim_cnt                                   471       1       1       4   .bss        
      pbuf                                       472       6       6      14   .bss        
      NewIrHeader                                478      2E      46      19   .common     
+     tempstr                                    4A6      64     100       2   .common     
      _SYS_SRS                                  3000       1       1       1   .abs_section_3000
      _SYS_SBDFR                                3001       1       1       0   .abs_section_3001
      _SYS_SDID                                 3002       2       2       0   .abs_section_3002
@@ -1276,10 +1269,10 @@ OBJECT LIST SORTED BY ADDRESS
      _NVM_EEPROT                               3029       1       1       0   .abs_section_3029
      _NVM_FCCOB                                302A       2       2       7   .abs_section_302a
      _NVM_FOPT                                 302C       1       1       0   .abs_section_302c
-     _WDOG_CS1                                 3030       1       1       4   .abs_section_3030
-     _WDOG_CS2                                 3031       1       1       4   .abs_section_3031
-     _WDOG_CNT                                 3032       2       2       7   .abs_section_3032
-     _WDOG_TOVAL                               3034       2       2       5   .abs_section_3034
+     _WDOG_CS1                                 3030       1       1       2   .abs_section_3030
+     _WDOG_CS2                                 3031       1       1       2   .abs_section_3031
+     _WDOG_CNT                                 3032       2       2       2   .abs_section_3032
+     _WDOG_TOVAL                               3034       2       2       3   .abs_section_3034
      _WDOG_WIN                                 3036       2       2       2   .abs_section_3036
      _ICS_C1                                   3038       1       1       1   .abs_section_3038
      _ICS_C2                                   3039       1       1       2   .abs_section_3039
@@ -1420,123 +1413,116 @@ OBJECT LIST SORTED BY ADDRESS
      STRING.remote.type..s.....7               C178      13      19       1   .rodata1    
      STRING.Cmd.Data.8                         C18B       9       9       1   .rodata1    
      STRING....9                               C194       3       3       1   .rodata1    
-     CompleteCommand                           C197      24      36       1   .text       
-     CC_BD_MCSendVertion                       C1BB      2B      43       1   .text       
-     CC_send_ReadyMC                           C1E6      95     149       2   .text       
-     CC_send_SynClock                          C27B      95     149       1   .text       
-     CC_C1_SyncClock                           C310      7E     126       1   .text       
-     CC_B4_ReadEEPROM                          C38E      FB     251       1   .text       
-     CC_B5_WriteEEPROM                         C489     143     323       1   .text       
-     CC_B6_EraseEEPROM                         C5CC      59      89       1   .text       
-     CC_B7_LedControlIrPir                     C625      64     100       1   .text       
-     CC_BE_SyncTime                            C689      FD     253       7   .text       
-     xor_int                                   C786       8       8       6   .text       
-     xor_str                                   C78E      31      49       2   .text       
-     CC_D3_SendIrStatus                        C7BF      60      96       9   .text       
-     CC_D5_SendIrCmdInfo                       C81F      61      97       1   .text       
-     CC_D7_SendIrTotalCmd                      C880     22C     556       4   .text       
-     CC_DA_SendMaxIdRemote                     CAAC      A0     160       1   .text       
-     CC_C3_LearnIRCmd                          CB4C      BF     191       1   .text       
-     CC_C4_EraserIRCmd                         CC0B      70     112       1   .text       
-     CC_C5_ReadIRCmd                           CC7B      14      20       1   .text       
-     CC_C6_SetIRCmd                            CC8F      B0     176       1   .text       
-     CC_C7_ReadIRCmdNumber                     CD3F       3       3       1   .text       
-     CC_C8_StopLearnIRCmd                      CD42       6       6       1   .text       
-     CC_C9_AddIrCmdInfo                        CD48     24B     587       6   .text       
-     CC_CA_FindMaxIdRemote                     CF93       3       3       1   .text       
-     CC_CB_EraseIdRemote                       CF96      92     146       1   .text       
-     CC_SendAllIrFlashStore                    D028     161     353      10   .text       
-     CC_receiver_program                       D189     160     352       9   .text       
-     sci0rx                                    D2E9      9C     156       1   .text       
-     EEPROM_Read                               D385       2       2       6   .text       
-     EEPROM_Read_int                           D387      24      36       1   .text       
-     EEPROM_Write_int                          D3AB      19      25       1   .text       
-     EEPROM_Write                              D3C4      41      65       5   .text       
-     EEPROM_EraseByteBurst                     D405      D4     212       2   .text       
-     FLASH_Read                                D4D9       3       3       1   .text       
-     Init_FLEX_TIMER                           D4DC      34      52       1   .text       
-     ResetTimer                                D510      16      22       3   .text       
-     WaitHighPull                              D526      12      18       1   .text       
-     WaitLowPull                               D538      12      18       1   .text       
-     CheckIrDataStore                          D54A      FB     251       2   .text       
-     IrSendCmd                                 D645      7D     125       1   .text       
-     IR_Program                                D6C2      FA     250       4   .text       
-     EraserFlashFirst                          D7BC      2C      44       1   .text       
-     CheckFlashConection                       D7E8      25      37       1   .text       
-     IrStartUp                                 D80D      52      82       1   .text       
-     MTIMO_ISR                                 D85F      23      35       1   .text       
-     KBI0_ISR                                  D882      C7     199       4   .text       
-     Init_IO                                   D949      47      71       1   .text       
-     clock_config                              D990      36      54       1   .text       
-     system_config                             D9C6      1F      31       1   .text       
-     Init_KBI                                  D9E5      17      23       1   .text       
-     Init_MTIM0                                D9FC      1A      26       1   .text       
-     Init_RTC                                  DA16      24      36       1   .text       
-     ResetRTCTimer                             DA3A      16      22       1   .text       
-     SPI0_Init                                 DA50      4F      79       1   .text       
-     spi_rw                                    DA9F      17      23       8   .text       
-     flash_cmd                                 DAB6      4F      79       8   .text       
-     flash_WIP_poll                            DB05      20      32       5   .text       
-     flash_read                                DB25      37      55      14   .text       
-     flash_sector_erase                        DB5C      22      34       8   .text       
-     flash_erase                               DB7E      18      24       1   .text       
-     flash_page_program                        DB96      42      66       6   .text       
-     flash_read_id                             DBD8      2E      46       2   .text       
-     Init_UART0                                DC06      31      49       1   .text       
-     UART0_putchar                             DC37      10      16      67   .text       
-     UART0_puts                                DC47      18      24       4   .text       
-     UART0_putstr                              DC5F      2A      42       5   .text       
-     UART0_SendBurst                           DC89      1D      29       1   .text       
-     ui2s                                      DCA6      FB     251       3   .text       
-     UART0_puti                                DDA1      13      19       1   .text       
-     __delay_ms                                DDB4      21      33      10   .text       
-     __delay_us                                DDD5      1C      28       1   .text       
-     abs2int                                   DDF1      28      40       1   .text       
-     main                                      DE19      5C      92       1   .text       
-     wdog_disable                              DE75      29      41       1   .text       
-     wdog_enable                               DE9E      22      34       1   .text       
-     wdog_refreshing                           DEC0       F      15       2   .text       
-     wdog_reconfiguring                        DECF      21      33       1   .text       
-     Reset_MCU                                 DEF0      24      36       1   .text       
-     vprintf                                   DF14     60B    1547      39   .text       
-     _out                                      E51F       D      13       9   .text       
-     deposit_char                              E52C      15      21       1   .text       
-     sprintf                                   E541      3B      59       7   .text       
-     _PUSH_ARGS_L                              E57C      20      32       3   .text       
-     _ENTER_UNARY_L                            E59C      29      41       2   .text       
-     _ENTER_BINARY_L                           E5C5      16      22       3   .text       
-     _ENTER_BINARY_L_RC                        E5DB      19      25       2   .text       
-     _ENTER_BINARY_L_LC                        E5F4      1A      26       1   .text       
-     _IDIVMOD                                  E60E      69     105       3   .text       
-     _SPLITSIGN                                E677      1C      28       2   .text       
-     _LADD_k_is_k_plus_j                       E693      1F      31       2   .text       
-     _LSUB_k_is_k_minus_j                      E6B2      1F      31       1   .text       
-     _LDIVMOD                                  E6D1      A4     164       1   .text       
-     _LDIVU_k_is_k_div_j                       E775      17      23       1   .text       
-     _LCMP_k_rel_j                             E78C      1F      31       2   .text       
-     _IMUL_STAR08                              E7AB      27      39       2   .text       
-     _IDIVS_STAR08                             E7D2      1B      27       1   .text       
-     _IDIVU_STAR08                             E7ED       D      13       1   .text       
-     _IMODS_STAR08                             E7FA      25      37       1   .text       
-     _IMODU_STAR08                             E81F      10      16       1   .text       
-     _IMODU_8                                  E82F      12      18       1   .text       
-     _ICMP                                     E841      16      22       2   .text       
-     _LNEG                                     E857      1C      28       1   .text       
-     _LADD                                     E873       6       6       7   .text       
-     _LADD_RC                                  E879       6       6       8   .text       
-     _LSUB                                     E87F       6       6       1   .text       
-     _LDIVU_LC                                 E885       6       6       1   .text       
-     _LLSL                                     E88B      16      22      24   .text       
-     _LCMP                                     E8A1       6       6       5   .text       
-     _LCMP_RC                                  E8A7       6       6       1   .text       
-     _COPY                                     E8AD      30      48      10   .text       
-     _POP32                                    E8DD      1A      26       5   .text       
-     _SEXT16_32                                E8F7       D      13       2   .text       
-     _Jump_Table_Addr                          E904      16      22       1   .text       
-     _Jump_Table_Offset                        E91A      19      25       2   .text       
-     _Jump_Table_Header_Offset                 E933      24      36       3   .text       
-     _Search_Table_8_Addr                      E957      21      33       1   .text       
-     _Search_Table_8_Offset                    E978      25      37       2   .text       
+     STRING..4u..4u...1                        C197       A      10       1   .rodata1    
+     CompleteCommand                           C1A1      24      36       1   .text       
+     CC_BD_MCSendVertion                       C1C5      2B      43       1   .text       
+     CC_send_ReadyMC                           C1F0      95     149       2   .text       
+     CC_C1_SyncClock                           C285      7E     126       1   .text       
+     CC_B4_ReadEEPROM                          C303      FB     251       1   .text       
+     CC_B5_WriteEEPROM                         C3FE     143     323       1   .text       
+     CC_B6_EraseEEPROM                         C541      59      89       1   .text       
+     CC_B7_LedControlIrPir                     C59A      64     100       1   .text       
+     CC_BE_SyncTime                            C5FE      FD     253       7   .text       
+     xor_int                                   C6FB       8       8       6   .text       
+     xor_str                                   C703      31      49       2   .text       
+     CC_D3_SendIrStatus                        C734      60      96       9   .text       
+     CC_D5_SendIrCmdInfo                       C794      61      97       1   .text       
+     CC_D7_SendIrTotalCmd                      C7F5     22C     556       4   .text       
+     CC_DA_SendMaxIdRemote                     CA21      A0     160       1   .text       
+     CC_C3_LearnIRCmd                          CAC1      BF     191       1   .text       
+     CC_C4_EraserIRCmd                         CB80      70     112       1   .text       
+     CC_C5_ReadIRCmd                           CBF0      14      20       1   .text       
+     CC_C6_SetIRCmd                            CC04      B0     176       1   .text       
+     CC_C7_ReadIRCmdNumber                     CCB4       3       3       1   .text       
+     CC_C8_StopLearnIRCmd                      CCB7       6       6       1   .text       
+     CC_C9_AddIrCmdInfo                        CCBD     24B     587       6   .text       
+     CC_CA_FindMaxIdRemote                     CF08       3       3       1   .text       
+     CC_CB_EraseIdRemote                       CF0B      92     146       1   .text       
+     CC_SendAllIrFlashStore                    CF9D     161     353      10   .text       
+     CC_receiver_program                       D0FE     160     352       8   .text       
+     sci0rx                                    D25E      9C     156       1   .text       
+     EEPROM_Read                               D2FA       2       2       4   .text       
+     EEPROM_Write                              D2FC      41      65       3   .text       
+     EEPROM_EraseByteBurst                     D33D      D4     212       2   .text       
+     FLASH_Read                                D411       3       3       1   .text       
+     Init_FLEX_TIMER                           D414      34      52       1   .text       
+     ResetTimer                                D448      16      22       3   .text       
+     WaitHighPull                              D45E      12      18       1   .text       
+     WaitLowPull                               D470      12      18       1   .text       
+     CheckIrDataStore                          D482     124     292       4   .text       
+     IrSendCmd                                 D5A6      7D     125       1   .text       
+     IR_Program                                D623      FA     250       4   .text       
+     CheckFlashConection                       D71D      25      37       1   .text       
+     IrStartUp                                 D742      2E      46       1   .text       
+     MTIMO_ISR                                 D770      23      35       1   .text       
+     KBI0_ISR                                  D793      C7     199       4   .text       
+     Init_IO                                   D85A      47      71       1   .text       
+     clock_config                              D8A1      36      54       1   .text       
+     system_config                             D8D7      1F      31       1   .text       
+     Init_KBI                                  D8F6      17      23       1   .text       
+     Init_MTIM0                                D90D      1A      26       1   .text       
+     Init_RTC                                  D927      24      36       1   .text       
+     ResetRTCTimer                             D94B      16      22       1   .text       
+     SPI0_Init                                 D961      4F      79       1   .text       
+     spi_rw                                    D9B0      17      23       8   .text       
+     flash_cmd                                 D9C7      4F      79       7   .text       
+     flash_WIP_poll                            DA16      20      32       4   .text       
+     flash_read                                DA36      37      55      14   .text       
+     flash_sector_erase                        DA6D      22      34       8   .text       
+     flash_page_program                        DA8F      42      66       6   .text       
+     flash_read_id                             DAD1      2E      46       2   .text       
+     Init_UART0                                DAFF      31      49       1   .text       
+     UART0_putchar                             DB30      10      16      61   .text       
+     UART0_puts                                DB40      18      24       5   .text       
+     UART0_putstr                              DB58      2A      42       5   .text       
+     UART0_SendBurst                           DB82      1D      29       1   .text       
+     ui2s                                      DB9F      FB     251       3   .text       
+     UART0_puti                                DC9A      13      19       1   .text       
+     __delay_ms                                DCAD      21      33       9   .text       
+     __delay_us                                DCCE      1C      28       1   .text       
+     abs2int                                   DCEA      28      40       1   .text       
+     main                                      DD12      43      67       1   .text       
+     wdog_disable                              DD55      29      41       1   .text       
+     Reset_MCU                                 DD7E      24      36       1   .text       
+     vprintf                                   DDA2     60B    1547      39   .text       
+     _out                                      E3AD       D      13       9   .text       
+     deposit_char                              E3BA      15      21       1   .text       
+     sprintf                                   E3CF      3B      59       8   .text       
+     _PUSH_ARGS_L                              E40A      20      32       3   .text       
+     _ENTER_UNARY_L                            E42A      29      41       2   .text       
+     _ENTER_BINARY_L                           E453      16      22       3   .text       
+     _ENTER_BINARY_L_RC                        E469      19      25       2   .text       
+     _ENTER_BINARY_L_LC                        E482      1A      26       1   .text       
+     _IDIVMOD                                  E49C      69     105       3   .text       
+     _SPLITSIGN                                E505      1C      28       2   .text       
+     _LADD_k_is_k_plus_j                       E521      1F      31       2   .text       
+     _LSUB_k_is_k_minus_j                      E540      1F      31       1   .text       
+     _LDIVMOD                                  E55F      A4     164       1   .text       
+     _LDIVU_k_is_k_div_j                       E603      17      23       1   .text       
+     _LCMP_k_rel_j                             E61A      1F      31       2   .text       
+     _IMUL_STAR08                              E639      27      39       2   .text       
+     _IDIVS_STAR08                             E660      1B      27       1   .text       
+     _IDIVU_STAR08                             E67B       D      13       1   .text       
+     _IMODS_STAR08                             E688      25      37       1   .text       
+     _IMODU_STAR08                             E6AD      10      16       1   .text       
+     _IMODU_8                                  E6BD      12      18       1   .text       
+     _ICMP                                     E6CF      16      22       2   .text       
+     _LNEG                                     E6E5      1C      28       1   .text       
+     _LADD                                     E701       6       6       7   .text       
+     _LADD_RC                                  E707       6       6       8   .text       
+     _LSUB                                     E70D       6       6       1   .text       
+     _LDIVU_LC                                 E713       6       6       1   .text       
+     _LLSL                                     E719      16      22      24   .text       
+     _LCMP                                     E72F       6       6       5   .text       
+     _LCMP_RC                                  E735       6       6       1   .text       
+     _COPY                                     E73B      30      48      10   .text       
+     _POP32                                    E76B      1A      26       5   .text       
+     _SEXT16_32                                E785       D      13       2   .text       
+     _Jump_Table_Addr                          E792      16      22       1   .text       
+     _Jump_Table_Offset                        E7A8      19      25       2   .text       
+     _Jump_Table_Header_Offset                 E7C1      24      36       3   .text       
+     _Search_Table_8_Addr                      E7E5      21      33       1   .text       
+     _Search_Table_8_Offset                    E806      25      37       2   .text       
      _Vector_37                                FFB4       2       2       0   .abs_section_ffb4
      _Vector_24                                FFCE       2       2       0   .abs_section_ffce
      _Vector_19                                FFD8       2       2       0   .abs_section_ffd8
@@ -1545,23 +1531,28 @@ OBJECT LIST SORTED BY ADDRESS
 UNUSED-OBJECTS SECTION
 ---------------------------------------------------------------------------------------------
 NOT USED PROCEDURES
+CC_c.obj:
+  CC_send_SynClock 
 EEP_ROM_c.obj:
-  EEPROM_ReadBurst EEPROM_WriteBurst EEPROM_EraseByte EEPROM_EraseBlock 
-  EEPROM_EraseVerifyByteBurst EEPROM_EraseAll FLASH_ReadBurst FLASH_Write 
-  FLASH_EraseByte FLASH_EraseALL EraseAll 
+  EEPROM_ReadBurst EEPROM_Read_int EEPROM_Write_int EEPROM_WriteBurst 
+  EEPROM_EraseByte EEPROM_EraseBlock EEPROM_EraseVerifyByteBurst 
+  EEPROM_EraseAll FLASH_ReadBurst FLASH_Write FLASH_EraseByte FLASH_EraseALL 
+  EraseAll 
 FTM_c.obj:
   Init_PWM Init_FTM0 disable_FTM0 reset_FTM0 
 IR_c.obj:
-  CopyIrDataToCharArray uint2uchar uchar2uint 
+  CopyIrDataToCharArray uint2uchar uchar2uint EraserFlashFirst 
 RTC_c.obj:
   RTC_polling 
 SPI_c.obj:
   SPI0_RdWrByte flash_write_enable flash_write_disable flash_read_stat 
-  flash_block_erase TestFlash 
+  flash_block_erase flash_erase TestFlash 
 UART_c.obj:
   TurnOffUART TurnOnUART UART0_getchar s2i 
 delay_c.obj:
   __delay_s __delay_x100us __delay_x5us max 
+wdog_c.obj:
+  wdog_enable wdog_refreshing wdog_reconfiguring 
 printf.o (ansiis.lib):
   set_printf vsprintf 
 rtshc08.o (ansiis.lib):
@@ -1579,7 +1570,7 @@ rtshc08.o (ansiis.lib):
   _CONV_FAR_TO_NEAR _CONV_FAR_TO_LINEAR _CONV_LINEAR_TO_FAR 
 NOT USED VARIABLES
 IR_c.obj:
-  IrDataLength OldIrHeader tempstr 
+  IrDataLength OldIrHeader 
 main_c.obj:
   HumidityData TemperatureData tempstatus 
 rtshc08.o (ansiis.lib):
@@ -1588,28 +1579,28 @@ rtshc08.o (ansiis.lib):
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0xE99D ---- SIZE       4 ---
+------- ROM-ADDRESS: 0xE82B ---- SIZE       4 ---
 Filling bytes inserted
  00060101
-------- ROM-ADDRESS: 0xE9A1 ---- RAM-ADDRESS: 0x101 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0xE82F ---- RAM-ADDRESS: 0x101 ---- SIZE       1 ---
 Name of initialized Object : RTC_ratio:1
  64
-------- ROM-ADDRESS: 0xE9A2 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0xE830 ---- SIZE       1 ---
 Filling bytes inserted
  00
-------- ROM-ADDRESS: 0xE9A3 ---- RAM-ADDRESS: 0x103 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0xE831 ---- RAM-ADDRESS: 0x103 ---- SIZE       1 ---
 Name of initialized Object : FirstTemp_ratio:1
  64
-------- ROM-ADDRESS: 0xE9A4 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0xE832 ---- SIZE       1 ---
 Filling bytes inserted
  00
-------- ROM-ADDRESS: 0xE9A5 ---- RAM-ADDRESS: 0x105 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0xE833 ---- RAM-ADDRESS: 0x105 ---- SIZE       1 ---
 Name of initialized Object : RTC_div:1
  64
-------- ROM-ADDRESS: 0xE9A6 ---- RAM-ADDRESS: 0x106 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0xE834 ---- RAM-ADDRESS: 0x106 ---- SIZE       1 ---
 Name of initialized Object : IR_event
  01
-------- ROM-ADDRESS: 0xE9A7 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0xE835 ---- SIZE       2 ---
 Filling bytes inserted
  0000
 
@@ -1621,7 +1612,6 @@ _Startup                  USES __SEG_END_SSTACK Init main
 CompleteCommand           USES _SCI0_C2 CMD_Number CMD_Pos NextCMD_Number 
 CC_BD_MCSendVertion       USES UART0_putchar 
 CC_send_ReadyMC           USES UART0_putchar 
-CC_send_SynClock          USES UART0_putchar 
 CC_C1_SyncClock           USES CC_ready_flag CC_send_ReadyMC 
 CC_B4_ReadEEPROM          USES EEPROM_Read UART0_putchar UART0_SendBurst 
 CC_B5_WriteEEPROM         USES EEPROM_EraseByteBurst EEPROM_Write EEPROM_Read 
@@ -1671,8 +1661,6 @@ CC_receiver_program       USES CMD_Number CC_receiver_program NextCMD_Number
 sci0rx                    USES _SCI0_S1 _SCI0_D Byte_Number 
                                 _Jump_Table_Header_Offset CMD_Pos Length Packet_CNT PacketData 
                                 CMD_Number _SCI0_C2 
-EEPROM_Read_int           USES EEPROM_Read 
-EEPROM_Write_int          USES EEPROM_Write 
 EEPROM_Write              USES _NVM_FCLKDIV _NVM_FSTAT _NVM_FCCOBIX _NVM_FCCOB 
 EEPROM_EraseByteBurst     USES _IMODS_STAR08 EEPROM_Read _NVM_FCLKDIV 
                                 _NVM_FSTAT _NVM_FCCOBIX _NVM_FCCOB _ICMP EEPROM_Write 
@@ -1682,7 +1670,8 @@ ResetTimer                USES _FTM2_SC _FTM2_CNT
 WaitHighPull              USES _FTM2_CNT _PORT_PTAD 
 WaitLowPull               USES _FTM2_CNT _PORT_PTAD 
 CheckIrDataStore          USES _LLSL flash_sector_erase CheckIrDataStore 
-                                _LADD_RC _LADD flash_read _POP32 _LCMP_RC 
+                                _LADD_RC _LADD flash_read _POP32 STRING..4u..4u...1 
+                                tempstr sprintf UART0_puts __delay_ms _LCMP_RC 
 IrSendCmd                 USES ResetTimer _MTIM0_SC _PORT_PTAD _LADD 
                                 flash_read _FTM2_CNT _LCMP 
 IR_Program                USES IR_event _Jump_Table_Header_Offset 
@@ -1690,13 +1679,9 @@ IR_Program                USES IR_event _Jump_Table_Header_Offset
                                 CC_D3_SendIrStatus _KBI0_SC GetIR_flag CC_receiver_program 
                                 IrCmdDataFlag NewIrHeader _LLSL flash_page_program _RTC_CNT 
                                 flash_sector_erase _COPY __delay_ms 
-EraserFlashFirst          USES EEPROM_Read_int EEPROM_Write_int flash_erase 
-                                _PORT_PTDD __delay_ms 
 CheckFlashConection       USES flash_read_id 
-IrStartUp                 USES CheckFlashConection _PORT_PTDD CC_send_SynClock 
-                                __delay_ms CC_receiver_program Reset_MCU CC_ready_flag 
-                                _KBI0_SC GetIR_flag NewIrHeader IR_event 
-                                EraserFlashFirst 
+IrStartUp                 USES CheckFlashConection _PORT_PTDD Reset_MCU 
+                                _KBI0_SC GetIR_flag NewIrHeader IR_event __delay_ms 
 MTIMO_ISR                 USES _MTIM0_SC Mtim_cnt _PORT_PTAD 
 KBI0_ISR                  USES _KBI0_SC GetIR_flag KBI0_ISR NewIrHeader 
                                 ResetTimer WaitHighPull WaitLowPull IrCmdDataFlag 
@@ -1719,7 +1704,6 @@ flash_cmd                 USES _PORT_PTBD spi_rw _Jump_Table_Offset
 flash_WIP_poll            USES flash_cmd spi_rw _PORT_PTBD 
 flash_read                USES flash_WIP_poll flash_cmd spi_rw _PORT_PTBD 
 flash_sector_erase        USES flash_WIP_poll flash_cmd 
-flash_erase               USES flash_WIP_poll flash_cmd 
 flash_page_program        USES flash_WIP_poll flash_cmd spi_rw _PORT_PTBD 
 flash_read_id             USES flash_WIP_poll flash_cmd spi_rw _PORT_PTBD 
 Init_UART0                USES _SCI0_BD _LDIVU_LC _SCI0_C1 _SCI0_C2 
@@ -1733,12 +1717,8 @@ __delay_ms                USES __delay_us
 main                      USES wdog_disable clock_config system_config Init_IO 
                                 _PORT_PTDD __delay_ms Init_RTC Init_UART0 Init_FLEX_TIMER 
                                 SPI0_Init Init_MTIM0 _MTIM0_SC _PORT_PTAD IrStartUp 
-                                Init_KBI wdog_enable wdog_reconfiguring wdog_refreshing 
-                                IR_Program _WDOG_CNT 
+                                Init_KBI IR_Program 
 wdog_disable              USES _WDOG_CS1 _WDOG_CS2 _WDOG_TOVAL _WDOG_WIN 
-wdog_enable               USES _WDOG_CS1 _WDOG_CS2 _WDOG_TOVAL 
-wdog_refreshing           USES _WDOG_CNT 
-wdog_reconfiguring        USES _WDOG_CNT _WDOG_TOVAL _WDOG_CS2 _WDOG_CS1 
 Reset_MCU                 USES _WDOG_CNT _WDOG_TOVAL _WDOG_CS2 _WDOG_CS1 
                                 __delay_ms 
 vprintf                   USES _out vprintf _Search_Table_8_Offset 
@@ -1835,374 +1815,350 @@ DEPENDENCY TREE
  |  |  |  | 
  |  |  |  +- flash_read_id        (see above)
  |  |  |     
- |  |  +- CC_send_SynClock    
- |  |  |  | 
- |  |  |  +- UART0_putchar       
- |  |  |       
- |  |  +- __delay_ms           (see above)
- |  |  |  
- |  |  +- CC_receiver_program 
- |  |  |  | 
- |  |  |  +- _ICMP               
- |  |  |  |    
- |  |  |  +- _Jump_Table_Offset   (see above)
- |  |  |  |  
- |  |  |  +- CC_B4_ReadEEPROM    
- |  |  |  |  | 
- |  |  |  |  +- EEPROM_Read         
- |  |  |  |  |    
- |  |  |  |  +- UART0_putchar        (see above)
- |  |  |  |  |  
- |  |  |  |  +- UART0_SendBurst     
- |  |  |  |     | 
- |  |  |  |     +- UART0_putchar        (see above)
- |  |  |  |        
- |  |  |  +- CC_B5_WriteEEPROM   
- |  |  |  |  | 
- |  |  |  |  +- EEPROM_EraseByteBurst
- |  |  |  |  |  | 
- |  |  |  |  |  +- _IMODS_STAR08       
- |  |  |  |  |  |  | 
- |  |  |  |  |  |  +- _SPLITSIGN          
- |  |  |  |  |  |     | 
- |  |  |  |  |  |     +- _IDIVMOD            
- |  |  |  |  |  |          
- |  |  |  |  |  +- EEPROM_Read          (see above)
- |  |  |  |  |  |  
- |  |  |  |  |  +- _ICMP                (see above)
- |  |  |  |  |  |  
- |  |  |  |  |  +- EEPROM_Write        
- |  |  |  |  |       
- |  |  |  |  +- EEPROM_Write         (see above)
- |  |  |  |  |  
- |  |  |  |  +- EEPROM_Read          (see above)
- |  |  |  |  |  
- |  |  |  |  +- UART0_putchar        (see above)
- |  |  |  |     
- |  |  |  +- CC_B6_EraseEEPROM   
- |  |  |  |  | 
- |  |  |  |  +- EEPROM_EraseByteBurst (see above)
- |  |  |  |  |  
- |  |  |  |  +- UART0_putchar        (see above)
- |  |  |  |     
- |  |  |  +- CC_B7_LedControlIrPir
- |  |  |  |  | 
- |  |  |  |  +- _Jump_Table_Header_Offset
- |  |  |  |  |    
- |  |  |  |  +- __delay_ms           (see above)
- |  |  |  |     
- |  |  |  +- CC_BD_MCSendVertion 
- |  |  |  |  | 
- |  |  |  |  +- UART0_putchar        (see above)
- |  |  |  |     
- |  |  |  +- CC_BE_SyncTime      
- |  |  |  |  | 
- |  |  |  |  +- abs2int             
- |  |  |  |       
- |  |  |  +- CC_send_ReadyMC     
- |  |  |  |  | 
- |  |  |  |  +- UART0_putchar        (see above)
- |  |  |  |     
- |  |  |  +- CC_C1_SyncClock     
- |  |  |  |  | 
- |  |  |  |  +- CC_send_ReadyMC      (see above)
- |  |  |  |     
- |  |  |  +- CC_C3_LearnIRCmd    
- |  |  |  |  | 
- |  |  |  |  +- _LLSL               
- |  |  |  |  |  | 
- |  |  |  |  |  +- _ENTER_UNARY_L      
- |  |  |  |  |       
- |  |  |  |  +- flash_read          
- |  |  |  |  |  | 
- |  |  |  |  |  +- flash_WIP_poll       (see above)
- |  |  |  |  |  |  
- |  |  |  |  |  +- flash_cmd            (see above)
- |  |  |  |  |  |  
- |  |  |  |  |  +- spi_rw               (see above)
- |  |  |  |  |     
- |  |  |  |  +- _COPY               
- |  |  |  |  |    
- |  |  |  |  +- CC_D3_SendIrStatus  
- |  |  |  |  |  | 
- |  |  |  |  |  +- xor_int             
- |  |  |  |  |  |    
- |  |  |  |  |  +- UART0_putchar        (see above)
- |  |  |  |  |  |  
- |  |  |  |  |  +- UART0_putstr        
- |  |  |  |  |     | 
- |  |  |  |  |     +- UART0_putchar        (see above)
- |  |  |  |  |        
- |  |  |  |  +- flash_sector_erase  
- |  |  |  |     | 
- |  |  |  |     +- flash_WIP_poll       (see above)
- |  |  |  |     |  
- |  |  |  |     +- flash_cmd            (see above)
- |  |  |  |        
- |  |  |  +- CC_C4_EraserIRCmd   
- |  |  |  |  | 
- |  |  |  |  +- _LLSL                (see above)
- |  |  |  |  |  
- |  |  |  |  +- flash_read           (see above)
- |  |  |  |  |  
- |  |  |  |  +- _COPY                (see above)
- |  |  |  |  |  
- |  |  |  |  +- CC_D3_SendIrStatus   (see above)
- |  |  |  |  |  
- |  |  |  |  +- flash_sector_erase   (see above)
- |  |  |  |     
- |  |  |  +- CC_C5_ReadIRCmd     
- |  |  |  |  | 
- |  |  |  |  +- CC_D5_SendIrCmdInfo 
- |  |  |  |     | 
- |  |  |  |     +- _LLSL                (see above)
- |  |  |  |     |  
- |  |  |  |     +- flash_read           (see above)
- |  |  |  |     |  
- |  |  |  |     +- xor_str             
- |  |  |  |     |    
- |  |  |  |     +- UART0_putchar        (see above)
- |  |  |  |     |  
- |  |  |  |     +- UART0_putstr         (see above)
- |  |  |  |        
- |  |  |  +- CC_C6_SetIRCmd      
- |  |  |  |  | 
- |  |  |  |  +- _LLSL                (see above)
- |  |  |  |  |  
- |  |  |  |  +- flash_read           (see above)
- |  |  |  |  |  
- |  |  |  |  +- _COPY                (see above)
- |  |  |  |  |  
- |  |  |  |  +- CheckIrDataStore    
- |  |  |  |  |  | 
- |  |  |  |  |  +- _LLSL                (see above)
- |  |  |  |  |  |  
- |  |  |  |  |  +- flash_sector_erase   (see above)
- |  |  |  |  |  |  
- |  |  |  |  |  +- _LADD_RC            
- |  |  |  |  |  |  | 
- |  |  |  |  |  |  +- _ENTER_BINARY_L_RC  
- |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  +- _PUSH_ARGS_L         (see above)
- |  |  |  |  |  |  |     
- |  |  |  |  |  |  +- _LADD_k_is_k_plus_j 
- |  |  |  |  |  |       
- |  |  |  |  |  +- _LADD               
- |  |  |  |  |  |  | 
- |  |  |  |  |  |  +- _ENTER_BINARY_L     
- |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  +- _PUSH_ARGS_L         (see above)
- |  |  |  |  |  |  |     
- |  |  |  |  |  |  +- _LADD_k_is_k_plus_j  (see above)
- |  |  |  |  |  |     
- |  |  |  |  |  +- flash_read           (see above)
- |  |  |  |  |  |  
- |  |  |  |  |  +- _POP32              
- |  |  |  |  |  |    
- |  |  |  |  |  +- _LCMP_RC            
- |  |  |  |  |     | 
- |  |  |  |  |     +- _ENTER_BINARY_L_RC   (see above)
- |  |  |  |  |     |  
- |  |  |  |  |     +- _LCMP_k_rel_j       
- |  |  |  |  |          
- |  |  |  |  +- CC_D3_SendIrStatus   (see above)
- |  |  |  |  |  
- |  |  |  |  +- _LADD_RC             (see above)
- |  |  |  |  |  
- |  |  |  |  +- IrSendCmd           
- |  |  |  |     | 
- |  |  |  |     +- ResetTimer          
- |  |  |  |     |    
- |  |  |  |     +- _LADD                (see above)
- |  |  |  |     |  
- |  |  |  |     +- flash_read           (see above)
- |  |  |  |     |  
- |  |  |  |     +- _LCMP               
- |  |  |  |        | 
- |  |  |  |        +- _ENTER_BINARY_L      (see above)
- |  |  |  |        |  
- |  |  |  |        +- _LCMP_k_rel_j        (see above)
- |  |  |  |           
- |  |  |  +- CC_C7_ReadIRCmdNumber
- |  |  |  |  | 
- |  |  |  |  +- CC_D7_SendIrTotalCmd
- |  |  |  |     | 
- |  |  |  |     +- _LLSL                (see above)
- |  |  |  |     |  
- |  |  |  |     +- flash_read           (see above)
- |  |  |  |     |  
- |  |  |  |     +- xor_int              (see above)
- |  |  |  |     |  
- |  |  |  |     +- xor_str              (see above)
- |  |  |  |     |  
- |  |  |  |     +- UART0_putchar        (see above)
- |  |  |  |     |  
- |  |  |  |     +- UART0_putstr         (see above)
- |  |  |  |        
- |  |  |  +- CC_C8_StopLearnIRCmd
- |  |  |  |    
- |  |  |  +- CC_C9_AddIrCmdInfo  
- |  |  |  |  | 
- |  |  |  |  +- _LLSL                (see above)
- |  |  |  |  |  
- |  |  |  |  +- flash_read           (see above)
- |  |  |  |  |  
- |  |  |  |  +- flash_sector_erase   (see above)
- |  |  |  |  |  
- |  |  |  |  +- flash_page_program  
- |  |  |  |  |  | 
- |  |  |  |  |  +- flash_WIP_poll       (see above)
- |  |  |  |  |  |  
- |  |  |  |  |  +- flash_cmd            (see above)
- |  |  |  |  |  |  
- |  |  |  |  |  +- spi_rw               (see above)
- |  |  |  |  |     
- |  |  |  |  +- _LADD_RC             (see above)
- |  |  |  |  |  
- |  |  |  |  +- _LADD                (see above)
- |  |  |  |  |  
- |  |  |  |  +- _COPY                (see above)
- |  |  |  |  |  
- |  |  |  |  +- CC_D3_SendIrStatus   (see above)
- |  |  |  |     
- |  |  |  +- CC_CA_FindMaxIdRemote
- |  |  |  |  | 
- |  |  |  |  +- CC_DA_SendMaxIdRemote
- |  |  |  |     | 
- |  |  |  |     +- _LLSL                (see above)
- |  |  |  |     |  
- |  |  |  |     +- flash_read           (see above)
- |  |  |  |     |  
- |  |  |  |     +- xor_int              (see above)
- |  |  |  |     |  
- |  |  |  |     +- UART0_putchar        (see above)
- |  |  |  |     |  
- |  |  |  |     +- UART0_putstr         (see above)
- |  |  |  |        
- |  |  |  +- CC_CB_EraseIdRemote 
- |  |  |  |  | 
- |  |  |  |  +- _LLSL                (see above)
- |  |  |  |  |  
- |  |  |  |  +- flash_read           (see above)
- |  |  |  |  |  
- |  |  |  |  +- flash_sector_erase   (see above)
- |  |  |  |  |  
- |  |  |  |  +- _COPY                (see above)
- |  |  |  |  |  
- |  |  |  |  +- CC_D3_SendIrStatus   (see above)
- |  |  |  |     
- |  |  |  +- CC_SendAllIrFlashStore
- |  |  |  |  | 
- |  |  |  |  +- _LLSL                (see above)
- |  |  |  |  |  
- |  |  |  |  +- flash_read           (see above)
- |  |  |  |  |  
- |  |  |  |  +- sprintf             
- |  |  |  |  |  | 
- |  |  |  |  |  +- deposit_char        
- |  |  |  |  |  |    
- |  |  |  |  |  +- vprintf             
- |  |  |  |  |     | 
- |  |  |  |  |     +- _out                
- |  |  |  |  |     |    
- |  |  |  |  |     +- _Search_Table_8_Offset (see above)
- |  |  |  |  |     |  
- |  |  |  |  |     +- _IMUL_STAR08        
- |  |  |  |  |     |    
- |  |  |  |  |     +- _Jump_Table_Addr    
- |  |  |  |  |     |    
- |  |  |  |  |     +- _Search_Table_8_Addr
- |  |  |  |  |     |    
- |  |  |  |  |     +- _SEXT16_32          
- |  |  |  |  |     |    
- |  |  |  |  |     +- _POP32               (see above)
- |  |  |  |  |     |  
- |  |  |  |  |     +- _LNEG               
- |  |  |  |  |     |  | 
- |  |  |  |  |     |  +- _ENTER_UNARY_L       (see above)
- |  |  |  |  |     |     
- |  |  |  |  |     +- _LCMP                (see above)
- |  |  |  |  |     |  
- |  |  |  |  |     +- _COPY                (see above)
- |  |  |  |  |     |  
- |  |  |  |  |     +- _LSUB               
- |  |  |  |  |        | 
- |  |  |  |  |        +- _ENTER_BINARY_L      (see above)
- |  |  |  |  |        |  
- |  |  |  |  |        +- _LSUB_k_is_k_minus_j
- |  |  |  |  |             
- |  |  |  |  +- UART0_puts          
- |  |  |  |  |  | 
- |  |  |  |  |  +- UART0_putchar        (see above)
- |  |  |  |  |     
- |  |  |  |  +- _LADD_RC             (see above)
- |  |  |  |  |  
- |  |  |  |  +- _LADD                (see above)
- |  |  |  |  |  
- |  |  |  |  +- UART0_puti          
- |  |  |  |     | 
- |  |  |  |     +- ui2s                
- |  |  |  |     |  | 
- |  |  |  |     |  +- _IMODU_8            
- |  |  |  |     |  |  | 
- |  |  |  |     |  |  +- _IMODU_STAR08       
- |  |  |  |     |  |     | 
- |  |  |  |     |  |     +- _IDIVMOD             (see above)
- |  |  |  |     |  |        
- |  |  |  |     |  +- _IDIVU_STAR08       
- |  |  |  |     |  |  | 
- |  |  |  |     |  |  +- _IDIVMOD             (see above)
- |  |  |  |     |  |     
- |  |  |  |     |  +- _IDIVS_STAR08       
- |  |  |  |     |     | 
- |  |  |  |     |     +- _SPLITSIGN           (see above)
- |  |  |  |     |        
- |  |  |  |     +- UART0_puts           (see above)
- |  |  |  |        
- |  |  |  +- CompleteCommand     
- |  |  |  |    
- |  |  |  +- __delay_ms           (see above)
- |  |  |     
  |  |  +- Reset_MCU           
  |  |  |  | 
  |  |  |  +- __delay_ms           (see above)
  |  |  |     
- |  |  +- EraserFlashFirst    
- |  |     | 
- |  |     +- EEPROM_Read_int     
- |  |     |  | 
- |  |     |  +- EEPROM_Read          (see above)
- |  |     |     
- |  |     +- EEPROM_Write_int    
- |  |     |  | 
- |  |     |  +- EEPROM_Write         (see above)
- |  |     |     
- |  |     +- flash_erase         
- |  |     |  | 
- |  |     |  +- flash_WIP_poll       (see above)
- |  |     |  |  
- |  |     |  +- flash_cmd            (see above)
- |  |     |     
- |  |     +- __delay_ms           (see above)
- |  |        
+ |  |  +- __delay_ms           (see above)
+ |  |     
  |  +- Init_KBI            
- |  |    
- |  +- wdog_enable         
- |  |    
- |  +- wdog_reconfiguring  
- |  |    
- |  +- wdog_refreshing     
  |  |    
  |  +- IR_Program          
  |     | 
- |     +- _Jump_Table_Header_Offset (see above)
- |     |  
+ |     +- _Jump_Table_Header_Offset
+ |     |    
  |     +- ResetRTCTimer       
  |     |    
- |     +- CC_D3_SendIrStatus   (see above)
- |     |  
- |     +- CC_receiver_program  (see above)
- |     |  
+ |     +- CC_D3_SendIrStatus  
+ |     |  | 
+ |     |  +- xor_int             
+ |     |  |    
+ |     |  +- UART0_putchar       
+ |     |  |    
+ |     |  +- UART0_putstr        
+ |     |     | 
+ |     |     +- UART0_putchar        (see above)
+ |     |        
+ |     +- CC_receiver_program 
+ |     |  | 
+ |     |  +- _ICMP               
+ |     |  |    
+ |     |  +- _Jump_Table_Offset   (see above)
+ |     |  |  
+ |     |  +- CC_B4_ReadEEPROM    
+ |     |  |  | 
+ |     |  |  +- EEPROM_Read         
+ |     |  |  |    
+ |     |  |  +- UART0_putchar        (see above)
+ |     |  |  |  
+ |     |  |  +- UART0_SendBurst     
+ |     |  |     | 
+ |     |  |     +- UART0_putchar        (see above)
+ |     |  |        
+ |     |  +- CC_B5_WriteEEPROM   
+ |     |  |  | 
+ |     |  |  +- EEPROM_EraseByteBurst
+ |     |  |  |  | 
+ |     |  |  |  +- _IMODS_STAR08       
+ |     |  |  |  |  | 
+ |     |  |  |  |  +- _SPLITSIGN          
+ |     |  |  |  |     | 
+ |     |  |  |  |     +- _IDIVMOD            
+ |     |  |  |  |          
+ |     |  |  |  +- EEPROM_Read          (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- _ICMP                (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- EEPROM_Write        
+ |     |  |  |       
+ |     |  |  +- EEPROM_Write         (see above)
+ |     |  |  |  
+ |     |  |  +- EEPROM_Read          (see above)
+ |     |  |  |  
+ |     |  |  +- UART0_putchar        (see above)
+ |     |  |     
+ |     |  +- CC_B6_EraseEEPROM   
+ |     |  |  | 
+ |     |  |  +- EEPROM_EraseByteBurst (see above)
+ |     |  |  |  
+ |     |  |  +- UART0_putchar        (see above)
+ |     |  |     
+ |     |  +- CC_B7_LedControlIrPir
+ |     |  |  | 
+ |     |  |  +- _Jump_Table_Header_Offset (see above)
+ |     |  |  |  
+ |     |  |  +- __delay_ms           (see above)
+ |     |  |     
+ |     |  +- CC_BD_MCSendVertion 
+ |     |  |  | 
+ |     |  |  +- UART0_putchar        (see above)
+ |     |  |     
+ |     |  +- CC_BE_SyncTime      
+ |     |  |  | 
+ |     |  |  +- abs2int             
+ |     |  |       
+ |     |  +- CC_send_ReadyMC     
+ |     |  |  | 
+ |     |  |  +- UART0_putchar        (see above)
+ |     |  |     
+ |     |  +- CC_C1_SyncClock     
+ |     |  |  | 
+ |     |  |  +- CC_send_ReadyMC      (see above)
+ |     |  |     
+ |     |  +- CC_C3_LearnIRCmd    
+ |     |  |  | 
+ |     |  |  +- _LLSL               
+ |     |  |  |  | 
+ |     |  |  |  +- _ENTER_UNARY_L      
+ |     |  |  |       
+ |     |  |  +- flash_read          
+ |     |  |  |  | 
+ |     |  |  |  +- flash_WIP_poll       (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- flash_cmd            (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- spi_rw               (see above)
+ |     |  |  |     
+ |     |  |  +- _COPY               
+ |     |  |  |    
+ |     |  |  +- CC_D3_SendIrStatus   (see above)
+ |     |  |  |  
+ |     |  |  +- flash_sector_erase  
+ |     |  |     | 
+ |     |  |     +- flash_WIP_poll       (see above)
+ |     |  |     |  
+ |     |  |     +- flash_cmd            (see above)
+ |     |  |        
+ |     |  +- CC_C4_EraserIRCmd   
+ |     |  |  | 
+ |     |  |  +- _LLSL                (see above)
+ |     |  |  |  
+ |     |  |  +- flash_read           (see above)
+ |     |  |  |  
+ |     |  |  +- _COPY                (see above)
+ |     |  |  |  
+ |     |  |  +- CC_D3_SendIrStatus   (see above)
+ |     |  |  |  
+ |     |  |  +- flash_sector_erase   (see above)
+ |     |  |     
+ |     |  +- CC_C5_ReadIRCmd     
+ |     |  |  | 
+ |     |  |  +- CC_D5_SendIrCmdInfo 
+ |     |  |     | 
+ |     |  |     +- _LLSL                (see above)
+ |     |  |     |  
+ |     |  |     +- flash_read           (see above)
+ |     |  |     |  
+ |     |  |     +- xor_str             
+ |     |  |     |    
+ |     |  |     +- UART0_putchar        (see above)
+ |     |  |     |  
+ |     |  |     +- UART0_putstr         (see above)
+ |     |  |        
+ |     |  +- CC_C6_SetIRCmd      
+ |     |  |  | 
+ |     |  |  +- _LLSL                (see above)
+ |     |  |  |  
+ |     |  |  +- flash_read           (see above)
+ |     |  |  |  
+ |     |  |  +- _COPY                (see above)
+ |     |  |  |  
+ |     |  |  +- CheckIrDataStore    
+ |     |  |  |  | 
+ |     |  |  |  +- _LLSL                (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- flash_sector_erase   (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- _LADD_RC            
+ |     |  |  |  |  | 
+ |     |  |  |  |  +- _ENTER_BINARY_L_RC  
+ |     |  |  |  |  |  | 
+ |     |  |  |  |  |  +- _PUSH_ARGS_L         (see above)
+ |     |  |  |  |  |     
+ |     |  |  |  |  +- _LADD_k_is_k_plus_j 
+ |     |  |  |  |       
+ |     |  |  |  +- _LADD               
+ |     |  |  |  |  | 
+ |     |  |  |  |  +- _ENTER_BINARY_L     
+ |     |  |  |  |  |  | 
+ |     |  |  |  |  |  +- _PUSH_ARGS_L         (see above)
+ |     |  |  |  |  |     
+ |     |  |  |  |  +- _LADD_k_is_k_plus_j  (see above)
+ |     |  |  |  |     
+ |     |  |  |  +- flash_read           (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- _POP32              
+ |     |  |  |  |    
+ |     |  |  |  +- sprintf             
+ |     |  |  |  |  | 
+ |     |  |  |  |  +- deposit_char        
+ |     |  |  |  |  |    
+ |     |  |  |  |  +- vprintf             
+ |     |  |  |  |     | 
+ |     |  |  |  |     +- _out                
+ |     |  |  |  |     |    
+ |     |  |  |  |     +- _Search_Table_8_Offset (see above)
+ |     |  |  |  |     |  
+ |     |  |  |  |     +- _IMUL_STAR08        
+ |     |  |  |  |     |    
+ |     |  |  |  |     +- _Jump_Table_Addr    
+ |     |  |  |  |     |    
+ |     |  |  |  |     +- _Search_Table_8_Addr
+ |     |  |  |  |     |    
+ |     |  |  |  |     +- _SEXT16_32          
+ |     |  |  |  |     |    
+ |     |  |  |  |     +- _POP32               (see above)
+ |     |  |  |  |     |  
+ |     |  |  |  |     +- _LNEG               
+ |     |  |  |  |     |  | 
+ |     |  |  |  |     |  +- _ENTER_UNARY_L       (see above)
+ |     |  |  |  |     |     
+ |     |  |  |  |     +- _LCMP               
+ |     |  |  |  |     |  | 
+ |     |  |  |  |     |  +- _ENTER_BINARY_L      (see above)
+ |     |  |  |  |     |  |  
+ |     |  |  |  |     |  +- _LCMP_k_rel_j       
+ |     |  |  |  |     |       
+ |     |  |  |  |     +- _COPY                (see above)
+ |     |  |  |  |     |  
+ |     |  |  |  |     +- _LSUB               
+ |     |  |  |  |        | 
+ |     |  |  |  |        +- _ENTER_BINARY_L      (see above)
+ |     |  |  |  |        |  
+ |     |  |  |  |        +- _LSUB_k_is_k_minus_j
+ |     |  |  |  |             
+ |     |  |  |  +- UART0_puts          
+ |     |  |  |  |  | 
+ |     |  |  |  |  +- UART0_putchar        (see above)
+ |     |  |  |  |     
+ |     |  |  |  +- __delay_ms           (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- _LCMP_RC            
+ |     |  |  |     | 
+ |     |  |  |     +- _ENTER_BINARY_L_RC   (see above)
+ |     |  |  |     |  
+ |     |  |  |     +- _LCMP_k_rel_j        (see above)
+ |     |  |  |        
+ |     |  |  +- CC_D3_SendIrStatus   (see above)
+ |     |  |  |  
+ |     |  |  +- _LADD_RC             (see above)
+ |     |  |  |  
+ |     |  |  +- IrSendCmd           
+ |     |  |     | 
+ |     |  |     +- ResetTimer          
+ |     |  |     |    
+ |     |  |     +- _LADD                (see above)
+ |     |  |     |  
+ |     |  |     +- flash_read           (see above)
+ |     |  |     |  
+ |     |  |     +- _LCMP                (see above)
+ |     |  |        
+ |     |  +- CC_C7_ReadIRCmdNumber
+ |     |  |  | 
+ |     |  |  +- CC_D7_SendIrTotalCmd
+ |     |  |     | 
+ |     |  |     +- _LLSL                (see above)
+ |     |  |     |  
+ |     |  |     +- flash_read           (see above)
+ |     |  |     |  
+ |     |  |     +- xor_int              (see above)
+ |     |  |     |  
+ |     |  |     +- xor_str              (see above)
+ |     |  |     |  
+ |     |  |     +- UART0_putchar        (see above)
+ |     |  |     |  
+ |     |  |     +- UART0_putstr         (see above)
+ |     |  |        
+ |     |  +- CC_C8_StopLearnIRCmd
+ |     |  |    
+ |     |  +- CC_C9_AddIrCmdInfo  
+ |     |  |  | 
+ |     |  |  +- _LLSL                (see above)
+ |     |  |  |  
+ |     |  |  +- flash_read           (see above)
+ |     |  |  |  
+ |     |  |  +- flash_sector_erase   (see above)
+ |     |  |  |  
+ |     |  |  +- flash_page_program  
+ |     |  |  |  | 
+ |     |  |  |  +- flash_WIP_poll       (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- flash_cmd            (see above)
+ |     |  |  |  |  
+ |     |  |  |  +- spi_rw               (see above)
+ |     |  |  |     
+ |     |  |  +- _LADD_RC             (see above)
+ |     |  |  |  
+ |     |  |  +- _LADD                (see above)
+ |     |  |  |  
+ |     |  |  +- _COPY                (see above)
+ |     |  |  |  
+ |     |  |  +- CC_D3_SendIrStatus   (see above)
+ |     |  |     
+ |     |  +- CC_CA_FindMaxIdRemote
+ |     |  |  | 
+ |     |  |  +- CC_DA_SendMaxIdRemote
+ |     |  |     | 
+ |     |  |     +- _LLSL                (see above)
+ |     |  |     |  
+ |     |  |     +- flash_read           (see above)
+ |     |  |     |  
+ |     |  |     +- xor_int              (see above)
+ |     |  |     |  
+ |     |  |     +- UART0_putchar        (see above)
+ |     |  |     |  
+ |     |  |     +- UART0_putstr         (see above)
+ |     |  |        
+ |     |  +- CC_CB_EraseIdRemote 
+ |     |  |  | 
+ |     |  |  +- _LLSL                (see above)
+ |     |  |  |  
+ |     |  |  +- flash_read           (see above)
+ |     |  |  |  
+ |     |  |  +- flash_sector_erase   (see above)
+ |     |  |  |  
+ |     |  |  +- _COPY                (see above)
+ |     |  |  |  
+ |     |  |  +- CC_D3_SendIrStatus   (see above)
+ |     |  |     
+ |     |  +- CC_SendAllIrFlashStore
+ |     |  |  | 
+ |     |  |  +- _LLSL                (see above)
+ |     |  |  |  
+ |     |  |  +- flash_read           (see above)
+ |     |  |  |  
+ |     |  |  +- sprintf              (see above)
+ |     |  |  |  
+ |     |  |  +- UART0_puts           (see above)
+ |     |  |  |  
+ |     |  |  +- _LADD_RC             (see above)
+ |     |  |  |  
+ |     |  |  +- _LADD                (see above)
+ |     |  |  |  
+ |     |  |  +- UART0_puti          
+ |     |  |     | 
+ |     |  |     +- ui2s                
+ |     |  |     |  | 
+ |     |  |     |  +- _IMODU_8            
+ |     |  |     |  |  | 
+ |     |  |     |  |  +- _IMODU_STAR08       
+ |     |  |     |  |     | 
+ |     |  |     |  |     +- _IDIVMOD             (see above)
+ |     |  |     |  |        
+ |     |  |     |  +- _IDIVU_STAR08       
+ |     |  |     |  |  | 
+ |     |  |     |  |  +- _IDIVMOD             (see above)
+ |     |  |     |  |     
+ |     |  |     |  +- _IDIVS_STAR08       
+ |     |  |     |     | 
+ |     |  |     |     +- _SPLITSIGN           (see above)
+ |     |  |     |        
+ |     |  |     +- UART0_puts           (see above)
+ |     |  |        
+ |     |  +- CompleteCommand     
+ |     |  |    
+ |     |  +- __delay_ms           (see above)
+ |     |     
  |     +- _LLSL                (see above)
  |     |  
  |     +- flash_page_program   (see above)
@@ -2256,5 +2212,5 @@ STATISTIC SECTION
 ExeFile:
 --------
 Number of blocks to be downloaded: 8
-Total size of all blocks to be downloaded: 10673
+Total size of all blocks to be downloaded: 10303
 

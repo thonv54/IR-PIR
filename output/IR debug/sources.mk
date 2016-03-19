@@ -91,7 +91,12 @@ OBJS_OS_FORMAT :=
 SUBDIRS := \
 output/PIR_No_CC/Sources \
 output/PIR_No_CC/Project_Settings/Startup_Code \
+output/PIR_No_CC \
 output/PIR_No_CC/Lib \
+output/PIR_CC/Sources \
+output/PIR_CC/Project_Settings/Startup_Code \
+output/PIR_CC \
+output/PIR_CC/Lib \
 output/IR/Sources \
 output/IR/Project_Settings/Startup_Code \
 output/IR/Lib \

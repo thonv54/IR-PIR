@@ -5,7 +5,6 @@
  *      Author: hp8460p
  */
 
-
 #include "Device.h"
 #include "IR.h"
 #include "FTM.h"
@@ -19,7 +18,6 @@
 #include "wdog.h"
 #include "EEP_ROM.h"
 #include "stdio.h"
-
 
 #ifdef IR
 //unsigned int TestData[10] = {9000,4500,500,500,500,500,500,500,500,500};
@@ -81,7 +79,7 @@ unsigned char CheckIrDataStore(irHeader_t tempIrHeader) {
 	unsigned int i;
 	unsigned int tempFlashData;
 	unsigned long irTotalTime = 0;
-	
+
 	if (tempIrHeader.cmdLen > 5000) {
 		flash_sector_erase(tempIrHeader.no * ByteInPage);
 		return 0;
@@ -92,20 +90,15 @@ unsigned char CheckIrDataStore(irHeader_t tempIrHeader) {
 	}
 	{
 		for (i = 0; i < tempIrHeader.cmdLen; i++) {
-			flash_read(tempIrHeader.no * ByteInPage + sizeof(tempIrHeader) + 2 * i,
+			flash_read(
+					tempIrHeader.no * ByteInPage + sizeof(tempIrHeader) + 2 * i,
 					&tempFlashData, sizeof(tempFlashData));
 			irTotalTime += tempFlashData;
 #ifdef Debug
-//			wdog_disable();
-			(void)sprintf(tempstr, "%4u %4u\n\r",i,tempFlashData);
+			(void) sprintf(tempstr, "%4u %4u\n\r", i, tempFlashData);
 			UART0_puts(tempstr);
-//			UART0_puti(i);
-//			UART0_puts("  ");
-//			UART0_puti(tempFlashData);
-//			UART0_puts("  ");
 			__delay_ms(30);
-//			wdog_refreshing();
-//			wdog_enable();
+
 #endif
 		}
 #ifdef Debug
@@ -113,7 +106,7 @@ unsigned char CheckIrDataStore(irHeader_t tempIrHeader) {
 //			(void)sprintf(tempstr, "total%4u\n\r",(unsigned int)(irTotalTime/1000));
 //			UART0_puts(tempstr);
 #endif
-		if (irTotalTime > 10000000UL ) {
+		if (irTotalTime > 10000000UL) {
 			flash_sector_erase(tempIrHeader.no * ByteInPage);
 			return 0;
 		}
@@ -138,9 +131,11 @@ void IrSendCmd(unsigned long flash_add, unsigned long length) {
 //		} else {
 //			IrData += 57;
 //		}
-		while (FTM2_CNT < IrData - 4);
+		while (FTM2_CNT < IrData - 4)
+			;
 	}
-	IR_OFF;
+	IR_OFF
+	;
 }
 
 void IR_Program(void) {
@@ -162,7 +157,7 @@ void IR_Program(void) {
 		// neu da luu xong lenh IR
 		if (IrCmdDataFlag) {
 			IrCmdDataFlag = 0;
-			
+
 			// luu lai header vao flash va xoa bien header tam
 			flash_page_program(NewIrHeader.no * ByteInPage, &NewIrHeader,
 					sizeof(NewIrHeader));
@@ -305,15 +300,14 @@ void IrStartUp(void) {
 interrupt VectorNumber_Vmtim0 void MTIMO_ISR(void) {
 	if (MTIM0_SC_TOF) {
 		MTIM0_SC_TOF = 0;
-		
-		if(Mtim_cnt < 1){
+
+		if (Mtim_cnt < _MTIM0_PWM) {
 			IR_OUT = 1;
-		}
-		else{
+		} else {
 			IR_OUT = 0;
 		}
 		Mtim_cnt++;
-		if(Mtim_cnt == 3){
+		if (Mtim_cnt == _MTIM0_PRESSCALE) {
 			Mtim_cnt = 0;
 		}
 	}
@@ -347,11 +341,11 @@ interrupt VectorNumber_Vkbi0 void KBI0_ISR(void) {
 					waitStatus = WaitLowPull();
 				}
 				//sau do
-				//neu thoi gian doi lon hon 20000
+				//neu thoi gian doi lon hon 60000
 				if (waitStatus == 0) {
 					//-> ket thuc
 					GetIR_flag = 0;
-					if (GetIRCommand_step > 16) {
+					if (GetIRCommand_step > 10) {				// lenh IR it nhat phai lon hon 1 byte
 						NewIrHeader.cmdLen = GetIRCommand_step;
 						IrCmdDataFlag = 1;
 					} else {
@@ -364,10 +358,10 @@ interrupt VectorNumber_Vkbi0 void KBI0_ISR(void) {
 					IrIntData = FTM2_CNT;
 					// reset timer
 					ResetTimer();
-					
+
 					IrCharData[0] = (IrIntData >> 8) & 0xFF;
 					IrCharData[1] = IrIntData & 0xFF;
-					
+
 					flash_page_program(
 							(NewIrHeader.no * ByteInPage)
 									+ (GetIRCommand_step * 2)
@@ -375,7 +369,6 @@ interrupt VectorNumber_Vkbi0 void KBI0_ISR(void) {
 					// bien+ 1
 					GetIRCommand_step++;
 				}
-
 			}
 		}
 	}

@@ -1,5 +1,4 @@
 
-
 Sources/UART_c.obj: \
 	C:/Users/hp8460p/Desktop/Fresscale_workspace/PIR_IR/Sources/UART.c \
 	C:/Users/hp8460p/Desktop/Fresscale_workspace/PIR_IR/Project_Headers/UART.h \

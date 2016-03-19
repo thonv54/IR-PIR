@@ -1,5 +1,4 @@
 
-
 Sources/RTC_c.obj: \
 	C:/Users/hp8460p/Desktop/Fresscale_workspace/PIR_IR/Sources/RTC.c \
 	C:/Users/hp8460p/Desktop/Fresscale_workspace/PIR_IR/Project_Headers/RTC.h \
